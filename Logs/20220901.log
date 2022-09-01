@@ -1207,3 +1207,16 @@
 0	16:58:51.157	ma_signal XAUUSDm,H1: Alert: Remove strategy
 0	16:58:51.179	Expert ma_signal XAUUSDm,H1: removed
 0	18:11:28.603	Compiling 'test_indicator'
+0	20:15:34.388	Compiling 'ma_signal'
+0	20:32:01.589	Script test\test_order XAUUSDm,H1: loaded successfully
+0	20:32:01.606	test_order XAUUSDm,H1: initialized
+0	20:32:01.606	test_order XAUUSDm,H1: Alert: History: 5
+0	20:32:01.606	test_order XAUUSDm,H1: Alert: 0 - 1712.046 - 2022.09.01 05:12:58 - 2022.09.01 05:13:11
+0	20:32:01.606	test_order XAUUSDm,H1: Alert: 1 - 1703.697 - 2022.09.01 05:13:32 - 2022.09.01 05:21:30
+0	20:32:01.606	test_order XAUUSDm,H1: Alert: 2 - 1712.593 - 2022.09.01 05:19:37 - 2022.09.01 05:20:01
+0	20:32:01.606	test_order XAUUSDm,H1: Alert: 3 - 1704.095 - 2022.09.01 05:21:20 - 2022.09.01 08:02:45
+0	20:32:01.606	test_order XAUUSDm,H1: Alert: 4 - 0.9788600000000001 - 2022.09.01 10:12:21 - 2022.09.01 10:13:33
+0	20:32:01.606	test_order XAUUSDm,H1: Alert: false
+0	20:32:01.606	test_order XAUUSDm,H1: uninit reason 0
+0	20:32:01.619	Script test_order XAUUSDm,H1: removed
+0	20:46:03.249	Compiling 'ma_signal'

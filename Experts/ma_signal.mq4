@@ -8,6 +8,13 @@
 #property version   "1.00"
 #property strict
 
+
+//+------------------------------------------------------------------+
+//| Include system modules                                           |
+//+------------------------------------------------------------------+
+#include <stderror.mqh>
+#include <stdlib.mqh>
+
 //+------------------------------------------------------------------+
 //| Include custom modules                                           |
 //+------------------------------------------------------------------+
@@ -22,7 +29,7 @@ input int TPPips = 100;
 input int SLPips = 50;
 input int stdDev = 5;
 input int maxPos = 1; //Max Position
-input int delay = 1;
+input int delay = 3;
 input long magicNumber = 7777;
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_H1;
 
@@ -129,30 +136,30 @@ void OnTick()
    //+------------------------------------------------------------------+   
    if(isBuy || isSell) {
       long delaySec = delay * PeriodSeconds(TIME_FRAME);
-      bool recentOpen = isDuplicateOrder(delaySec);
-      bool recentClose = isRecentClose(delaySec);      
-      if(recentOpen || recentClose) {
+      bool recentClose = isRecentClose(delaySec);   
+      if(recentClose) {
          isBuy = false;
          isSell = false;
-      } else {
-         MyAccount account("Nguyen", "Vo", magicNumber);
       }
    }
 
 
-   // Manage orders
-   if(isBuy) {
-      double TP = calTP(true, Ask,TPPips);
-      double SL = calSL(true, Bid,SLPips);
-      int orderID = OrderSend(NULL,OP_BUY,0.01,Ask,10,SL,TP, "Buy MA", magicNumber);
-      if(orderID < 0) Alert("order rejected. Order error: " + GetLastError());
-   } else if(isSell) {
-      double TP = calTP(false, Ask,TPPips);
-      double SL = calSL(false, Bid,SLPips);
-      int orderID = OrderSend(NULL,OP_SELL,0.01,Ask,10,SL,TP, "Sell MA", magicNumber);
-      if(orderID < 0) Alert("order rejected. Order error: " + GetLastError());
+   if(isBuy || isSell) {
+      MyAccount account("Nguyen", "Vo", magicNumber);
+      double lotSize = calcLot(account.info.BALANCE, riskLevel, SLPips);
+      // Manage orders
+      if(isBuy) {
+         double TP = calTP(true, Ask,TPPips);
+         double SL = calSL(true, Bid,SLPips);
+         int orderID = OrderSend(NULL,OP_BUY,lotSize,Ask,10,SL,TP, "Buy MA", magicNumber);
+         if(orderID < 0) Alert("Order rejected. Order error: " + ErrorDescription(GetLastError()));
+      } else if(isSell) {
+         double TP = calTP(false, Ask,TPPips);
+         double SL = calSL(false, Bid,SLPips);
+         int orderID = OrderSend(NULL,OP_SELL,lotSize,Bid,10,SL,TP, "Sell MA", magicNumber);
+         if(orderID < 0) Alert("order rejected. Order error: " + ErrorDescription(GetLastError()));
+      }
    }
-   
    
    // Close positions
    //for(int i=0; i<PositionsTotal(); i++) {

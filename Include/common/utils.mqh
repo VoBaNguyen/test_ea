@@ -93,18 +93,25 @@ bool isDuplicateOrder(long delaySeconds) {
 }
 
 bool isRecentClose(long delaySeconds) {
-   bool isRecent = false;
    for(int i=0; i<OrdersHistoryTotal(); i++) {
-      if(OrderSelect(i, SELECT_BY_POS) == true) {
-         datetime closeTime = OrderCloseTime();
-         datetime limitTime = closeTime + delaySeconds;
+      if(OrderSelect(i, SELECT_BY_POS, MODE_HISTORY) == true) {
+         datetime limitTime = OrderCloseTime() + delaySeconds;
          if(TimeCurrent() < limitTime) {
-            isRecent = true;
+            return true;
          }
       }
    }
-   return isRecent;
+   return false;
 }
+
+
+double calcLot(double balance, double riskLevel, int pipRange) {
+   double maxLoss = riskLevel*balance;
+   double lot = NormalizeDouble(maxLoss/pipRange, 2);
+   printf("Balance: %.2f - Risk: %.2f - Max loss: %.2f - Lot: %.2f", balance, riskLevel, maxLoss, lot);
+   return lot;
+}
+  
 
 
 

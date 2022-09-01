@@ -20,15 +20,15 @@ void OnStart()
    //}
    
   // retrieving info from trade history
-  //int hstTotal=OrdersHistoryTotal();
-  //Alert("History: ", hstTotal);
-  //for(int i=0;i<hstTotal;i++){
-  //   if(OrderSelect(i,SELECT_BY_POS,MODE_HISTORY)==false){
-  //      Print("Access to history failed with error (",GetLastError(),")");
-  //      break;
-  //    }
-  //    Alert(i, " - ", OrderOpenPrice(), " - ", OrderOpenTime(), " - ", OrderCloseTime());
-  // }
+  int hstTotal=OrdersHistoryTotal();
+  Alert("History: ", hstTotal);
+  for(int i=0;i<hstTotal;i++){
+     if(OrderSelect(i,SELECT_BY_POS,MODE_HISTORY)==false){
+        Print("Access to history failed with error (",GetLastError(),")");
+        break;
+      }
+      Alert(i, " - ", OrderOpenPrice(), " - ", OrderOpenTime(), " - ", OrderCloseTime());
+   }
    Alert(isDuplicateOrder(100));
    
    
