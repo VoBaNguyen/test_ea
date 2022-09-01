@@ -1,0 +1,42 @@
+0	00:26:14.633	Compiling 'ma_signal'
+0	00:26:17.067	Expert ma_signal XAUUSDm,H1: loaded successfully
+0	00:26:18.448	ma_signal XAUUSDm,H1 inputs: riskLevel=0.05; TPPips=100; SLPips=50; stdDev=5; maxPos=1; delayHours=1; magicNumber=7777; TIME_FRAME=60; 
+0	00:26:18.457	ma_signal XAUUSDm,H1: Alert: Init MA Scaplt strategy
+0	00:26:18.457	ma_signal XAUUSDm,H1: initialized
+1	00:26:18.798	ma_signal XAUUSDm,H1: array out of range in 'ma_signal.mq4' (61,17)
+0	00:27:15.414	Automated trading enabled
+0	00:27:21.679	ma_signal XAUUSDm,H1: uninit reason 1
+0	00:27:21.696	Expert ma_signal XAUUSDm,H1: removed
+0	00:27:21.696	Expert ma_signal XAUUSDm,H1: loaded successfully
+0	00:27:22.738	ma_signal XAUUSDm,H1 inputs: riskLevel=0.05; TPPips=100; SLPips=50; stdDev=5; maxPos=1; delayHours=1; magicNumber=7777; TIME_FRAME=60; 
+0	00:27:22.747	ma_signal XAUUSDm,H1: Alert: Init MA Scaplt strategy
+0	00:27:22.747	ma_signal XAUUSDm,H1: initialized
+1	00:27:24.024	ma_signal XAUUSDm,H1: array out of range in 'ma_signal.mq4' (61,17)
+0	00:27:37.681	ma_signal XAUUSDm,H1: uninit reason 2
+0	00:27:37.681	Expert ma_signal XAUUSDm,H1: removed
+0	00:27:37.681	Expert ma_signal XAUUSDm,H1: loaded successfully
+0	00:27:37.713	ma_signal XAUUSDm,H1: Alert: Init MA Scaplt strategy
+0	00:27:37.713	ma_signal XAUUSDm,H1: initialized
+0	00:27:37.762	Expert ma_signal XAUUSDm,H1: loaded successfully
+0	00:27:38.963	ma_signal XAUUSDm,H1 inputs: riskLevel=0.05; TPPips=100; SLPips=50; stdDev=5; maxPos=1; delayHours=1; magicNumber=7777; TIME_FRAME=60; 
+0	00:27:38.979	ma_signal XAUUSDm,H1: Alert: Init MA Scaplt strategy
+0	00:27:38.979	ma_signal XAUUSDm,H1: initialized
+1	00:27:40.615	ma_signal XAUUSDm,H1: array out of range in 'ma_signal.mq4' (61,17)
+1	00:28:26.261	ma_signal XAUUSDm,H1: array out of range in 'ma_signal.mq4' (61,17)
+0	00:28:26.275	ma_signal XAUUSDm,H1: uninit reason 4
+0	00:28:26.321	Expert ma_signal XAUUSDm,H1: removed
+0	00:28:29.763	ma_signal XAUUSDm,H1: uninit reason 2
+0	00:28:29.763	Expert ma_signal XAUUSDm,H1: removed
+0	00:28:29.777	Expert ma_signal XAUUSDm,H1: loaded successfully
+0	00:28:29.800	ma_signal XAUUSDm,H1: Alert: Init MA Scaplt strategy
+0	00:28:29.800	ma_signal XAUUSDm,H1: initialized
+0	00:28:29.855	Expert ma_signal XAUUSDm,H1: loaded successfully
+0	00:28:31.023	ma_signal XAUUSDm,H1 inputs: riskLevel=0.05; TPPips=100; SLPips=50; stdDev=5; maxPos=1; delayHours=1; magicNumber=7777; TIME_FRAME=60; 
+0	00:28:31.032	ma_signal XAUUSDm,H1: Alert: Init MA Scaplt strategy
+0	00:28:31.032	ma_signal XAUUSDm,H1: initialized
+1	00:28:32.045	ma_signal XAUUSDm,H1: array out of range in 'ma_signal.mq4' (61,17)
+0	00:29:02.175	ma_signal XAUUSDm,H1: uninit reason 9
+1	00:29:02.191	ma_signal XAUUSDm,H1: array out of range in 'ma_signal.mq4' (61,17)
+0	00:29:02.191	ma_signal XAUUSDm,H1: uninit reason 9
+0	00:29:02.238	Expert ma_signal XAUUSDm,H1: removed
+0	00:29:02.238	Expert ma_signal XAUUSDm,H1: removed

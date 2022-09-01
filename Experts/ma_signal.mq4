@@ -22,17 +22,16 @@ input int TPPips = 100;
 input int SLPips = 50;
 input int stdDev = 5;
 input int maxPos = 1; //Max Position
-input int delayHours = 1;
+input int delay = 1;
 input long magicNumber = 7777;
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_H1;
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
-int MA10Handler, MA20Handler, MA50Handler, MA200Handler, ADXHandler;
-double bufferMA10[], bufferMA20[], bufferMA50[], bufferMA200[],
-       priceClose[], priceOpen[],
-       bufferADX[];
+double bufMA10[5], bufMA20[5], bufMA50[5], bufMA200[5],
+       priceClose[5], priceOpen[5],
+       bufADX[5];
 
 int OnInit()
   {
@@ -41,6 +40,7 @@ int OnInit()
 //---
    return(INIT_SUCCEEDED);
   }
+  
 //+------------------------------------------------------------------+
 //| Expert deinitialization function                                 |
 //+------------------------------------------------------------------+
@@ -49,6 +49,7 @@ void OnDeinit(const int reason)
 //---
    Alert("Remove strategy");
   }
+  
 //+------------------------------------------------------------------+
 //| Expert tick function                                             |
 //+------------------------------------------------------------------+
@@ -57,28 +58,27 @@ void OnTick()
 //---
    
    // Collect data
-   int count = 5;
-   for(int i=0; i<count; i++) {
-      bufferMA10[i] = iMA(NULL,TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
-      bufferMA20[i] = iMA(NULL,TIME_FRAME,20,0,MODE_SMA,PRICE_CLOSE,i);
-      bufferMA50[i] = iMA(NULL,TIME_FRAME,50,0,MODE_SMA,PRICE_CLOSE,i);
-      bufferMA200[i] = iMA(NULL,TIME_FRAME,200,0,MODE_SMA,PRICE_CLOSE,i);
-      bufferADX[i] = iADX(NULL, TIME_FRAME, 20, PRICE_CLOSE, MODE_MAIN,i);
+   int arrSize = 5;
+   for(int i=0; i<arrSize-1; i++) {
+      bufMA10[i] = iMA(NULL,TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA20[i] = iMA(NULL,TIME_FRAME,20,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA50[i] = iMA(NULL,TIME_FRAME,50,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA200[i] = iMA(NULL,TIME_FRAME,200,0,MODE_SMA,PRICE_CLOSE,i);
+      bufADX[i] = iADX(NULL, TIME_FRAME, 20, PRICE_CLOSE, MODE_MAIN,i);
    }
    
    
-   CopyClose(Symbol(), TIME_FRAME, 0, count, priceClose);
-   CopyOpen(Symbol(), TIME_FRAME, 0, count, priceOpen);
+   CopyClose(Symbol(), TIME_FRAME, 0, arrSize, priceClose);
+   CopyOpen(Symbol(), TIME_FRAME, 0, arrSize, priceOpen);
    
    // Last price
-   int shift = 1;
-   double ma10  = NormalizeDouble(bufferMA10[count-shift], Digits());
-   double ma20  = NormalizeDouble(bufferMA20[count-shift], Digits());
-   double ma50  = NormalizeDouble(bufferMA50[count-shift], Digits());
-   double ma200 = NormalizeDouble(bufferMA200[count-shift], Digits());
-   double close = NormalizeDouble(priceClose[count-shift], Digits());
-   double open  = NormalizeDouble(priceOpen[count-shift], Digits());
-   double ADX   = NormalizeDouble(bufferADX[count-shift], Digits());
+   double ma10  = NormalizeDouble(bufMA10[1], _Digits);
+   double ma20  = NormalizeDouble(bufMA20[1], _Digits);
+   double ma50  = NormalizeDouble(bufMA50[1], _Digits);
+   double ma200 = NormalizeDouble(bufMA200[1], _Digits);
+   double close = NormalizeDouble(priceClose[1], _Digits);
+   double open  = NormalizeDouble(priceOpen[1], _Digits);
+   double ADX   = NormalizeDouble(bufADX[1], _Digits);
 
    // Signal
    bool isADXUpward = false;
@@ -90,15 +90,14 @@ void OnTick()
    int totalPos = countPosition(magicNumber);
    if(totalPos < maxPos) {
       // Check for BUY signal
-      isADXUpward = idcUpward(ADXHandler, 0, count, 4);
-      
-      if(isADXUpward) {
-         isUpward = crossUpward(MA10Handler, 0, MA20Handler, 0, count);
-         isUpward = isUpward || crossUpward(MA10Handler, 0, MA50Handler, 0, count);
-         isUpward = isUpward || crossUpward(MA10Handler, 0, MA200Handler, 0, count);
-         bool ma20Upward = idcUpward(MA20Handler, 0, count);
-         bool ma50Upward = idcUpward(MA50Handler, 0, count);
-         bool ma200Upward = idcUpward(MA200Handler, 0, count);
+      isADXUpward = idcUpward(bufADX, arrSize, 4);     
+      if(isADXUpward) {      
+         isUpward = crossUpward(bufMA10[0],bufMA10[1],bufMA20[0],bufMA20[1]);
+         isUpward = isUpward || crossUpward(bufMA10[0],bufMA10[1],bufMA50[0],bufMA50[1]);
+         isUpward = isUpward || crossUpward(bufMA10[0],bufMA10[1],bufMA200[0],bufMA200[1]);
+         bool ma20Upward = idcUpward(bufMA20,arrSize);
+         bool ma50Upward = idcUpward(bufMA50,arrSize);
+         bool ma200Upward = idcUpward(bufMA200,arrSize);
          bool upward = isUpward && ma20Upward && ma50Upward && ma200Upward;
       
          if(ma10 > ma20 && ma20 > ma50 && ma50 > ma200 && upward) {
@@ -107,12 +106,12 @@ void OnTick()
             isBuy = true;
          }
 
-         isDownward = crossDownward(MA10Handler, 0, MA20Handler, 0, count);
-         isDownward = isDownward || crossDownward(MA10Handler, 0, MA50Handler, 0, count);
-         isDownward = isDownward || crossDownward(MA10Handler, 0, MA200Handler, 0, count);
-         bool ma20Downward = idcDownward(MA20Handler, 0, count);
-         bool ma50Downward = idcDownward(MA50Handler, 0, count);
-         bool ma200Downward = idcDownward(MA200Handler, 0, count);
+         isDownward = crossDownward(bufMA10[0],bufMA10[1],bufMA20[0],bufMA20[1]);
+         isDownward = isDownward || crossDownward(bufMA10[0],bufMA10[1],bufMA50[0],bufMA50[1]);
+         isDownward = isDownward || crossDownward(bufMA10[0],bufMA10[1],bufMA200[0],bufMA200[1]);
+         bool ma20Downward = idcDownward(bufMA20,arrSize);
+         bool ma50Downward = idcDownward(bufMA50,arrSize);
+         bool ma200Downward = idcDownward(bufMA200,arrSize);
          bool downward = isDownward && ma20Downward && ma50Downward && ma200Downward;
          
          // Check for SELL signal
@@ -127,39 +126,30 @@ void OnTick()
 
    //+------------------------------------------------------------------+
    //| CHECK DUPLICATE POSITIONS                                        |
-   //+------------------------------------------------------------------+ 
-   MqlTick lastTick;
-   SymbolInfoTick(Symbol(),lastTick);
-   
+   //+------------------------------------------------------------------+   
    if(isBuy || isSell) {
-      datetime lastHours = TimeCurrent() - (delayHours * 60 * 60);
-      for(int i=0; i<OrdersHistoryTotal(); i++) {
-         if(OrderSelect(i, SELECT_BY_POS, MODE_HISTORY) == true) {
-            datetime closeTime = OrderCloseTime();
-
-            if(closeTime > lastHours) {
-               isBuy = false;
-               isSell = false;
-            }
-         }
+      long delaySec = delay * PeriodSeconds(TIME_FRAME);
+      bool recentOpen = isDuplicateOrder(delaySec);
+      bool recentClose = isRecentClose(delaySec);      
+      if(recentOpen || recentClose) {
+         isBuy = false;
+         isSell = false;
+      } else {
+         MyAccount account("Nguyen", "Vo", magicNumber);
       }
    }
 
 
    // Manage orders
    if(isBuy) {
-      MyAccount account("Nguyen", "Vo", magicNumber);
-      isBuy = false;
       double TP = calTP(true, Ask,TPPips);
       double SL = calSL(true, Bid,SLPips);
-      int orderID = OrderSend(NULL,OP_BUYLIMIT,0.01,Ask,10,SL,TP);
+      int orderID = OrderSend(NULL,OP_BUY,0.01,Ask,10,SL,TP, "Buy MA", magicNumber);
       if(orderID < 0) Alert("order rejected. Order error: " + GetLastError());
    } else if(isSell) {
-      MyAccount account("Nguyen", "Vo", magicNumber);
-      isSell = false;
       double TP = calTP(false, Ask,TPPips);
       double SL = calSL(false, Bid,SLPips);
-      int orderID = OrderSend(NULL,OP_SELLLIMIT,0.01,Ask,10,SL,TP);
+      int orderID = OrderSend(NULL,OP_SELL,0.01,Ask,10,SL,TP, "Sell MA", magicNumber);
       if(orderID < 0) Alert("order rejected. Order error: " + GetLastError());
    }
    
@@ -168,8 +158,8 @@ void OnTick()
    //for(int i=0; i<PositionsTotal(); i++) {
    //   ulong ticket = PositionGetTicket(i);
    //   PositionSelectByTicket(ticket);
-   //   double prevMa10 = NormalizeDouble(bufferMA10[count-1], Digits());
-   //   double prevMa20 = NormalizeDouble(bufferMA10[count-1], Digits());
+   //   double prevMa10 = NormalizeDouble(bufMA10[count-1], Digits());
+   //   double prevMa20 = NormalizeDouble(bufMA10[count-1], Digits());
    //   if(magicNumber == PositionGetInteger(POSITION_MAGIC)) {
    //      // Close BUY position
    //      if(PositionGetInteger(POSITION_TYPE) == 0) {

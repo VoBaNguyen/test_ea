@@ -28,8 +28,11 @@
 //+------------------------------------------------------------------+
 
 
+/*********************************
+*         COMMON METHODS         *
+*********************************/
+
 double getPip() {
-   Alert("Digits: ", _Digits);
    return MathPow(10, -_Digits+2);
 }
 
@@ -56,6 +59,10 @@ double calSL(bool isLong, double entry, int pips) {
 }
 
 
+/*********************************
+*          ORDER METHODS         *
+*********************************/
+
 int countPosition(long magicNumber) {
    int count = 0;
    for(int i=0; i<OrdersTotal(); i++) {
@@ -71,73 +78,73 @@ int countPosition(long magicNumber) {
 }
 
 
-bool crossUpward(int idcHandler1, int idx1, double idcHandler2, int idx2, int count) {
-   double buffer1[], buffer2[];
-   CopyBuffer(idcHandler1, idx1, 0, count, buffer1);
-   CopyBuffer(idcHandler2, idx2, 0, count, buffer2);
-   int idxBefore = count-3;
-   int idxAfter = count-2;
-   if(buffer1[idxBefore] < buffer2[idxBefore] && buffer1[idxAfter] >= buffer2[idxAfter]) {
-      return true;
-   }
-   return false;
-}
-
-
-bool crossDownward(int idcHandler1, int idx1, double idcHandler2, int idx2, int count) {
-   double buffer1[], buffer2[];
-   CopyBuffer(idcHandler1, idx1, 0, count, buffer1);
-   CopyBuffer(idcHandler2, idx2, 0, count, buffer2);
-   int idxBefore = count-3;
-   int idxAfter = count-2;
-   if(buffer1[idxBefore] > buffer2[idxBefore] && buffer1[idxAfter] <= buffer2[idxAfter]) {
-      return true;
-   }
-   return false;
-}
-
-
-bool idcUpward(int idcHandler, int idx, int count, double threshold=0) {
-   double buffer[];
-   CopyBuffer(idcHandler, idx, 0, count, buffer);
-   bool upward = true;
-   double curValue = buffer[0];
-   for(int i=1; i<count-1; i++) {
-      double nextValue = buffer[i];
-      if(curValue >= nextValue) {
-         upward = false;
-      } else {
-         curValue = nextValue;
+bool isDuplicateOrder(long delaySeconds) {
+   bool isDuplicate = false;
+   for(int i=0; i<OrdersTotal(); i++) {
+      if(OrderSelect(i, SELECT_BY_POS) == true) {
+         datetime openTime = OrderOpenTime();
+         datetime limitTime = openTime + delaySeconds;
+         if(TimeCurrent() < limitTime) {
+            isDuplicate = true;
+         }
       }
    }
-   
+   return isDuplicate;
+}
+
+bool isRecentClose(long delaySeconds) {
+   bool isRecent = false;
+   for(int i=0; i<OrdersHistoryTotal(); i++) {
+      if(OrderSelect(i, SELECT_BY_POS) == true) {
+         datetime closeTime = OrderCloseTime();
+         datetime limitTime = closeTime + delaySeconds;
+         if(TimeCurrent() < limitTime) {
+            isRecent = true;
+         }
+      }
+   }
+   return isRecent;
+}
+
+
+
+/*********************************
+*         INDICATOR TREND        *
+*********************************/
+
+bool crossDownward(double a0, double a1, double b0, double b1) {
+   if(a0 < b0 && a1 >= b1) {
+      return true;
+   }
+   return false;
+}
+
+
+bool crossUpward(double a0, double a1, double b0, double b1) {
+   if(a0 > b0 && a1 <= b1) {
+      return true;
+   }
+   return false;
+}
+
+
+bool idcUpward(double& buffer[], int size, double threshold=0) {
+   bool upward = isArrIncrease(buffer);
    if(upward) {
-      double delta = MathAbs(buffer[0] - buffer[count-1]);
+      double delta = MathAbs(buffer[0] - buffer[size-1]);
       if(delta < threshold) {
          upward = false;
       }
    }
-   
+
    return upward;
 }
 
 
-bool idcDownward(int idcHandler, int idx, int count, double threshold=0) {
-   double buffer[];
-   CopyBuffer(idcHandler, idx, 0, count, buffer);
-   bool downward = true;
-   double curValue = buffer[0];
-   for(int i=1; i<count-1; i++) {
-      double nextValue = buffer[i];
-      if(curValue <= nextValue) {
-         downward = false;
-      } else {
-         curValue = nextValue;
-      }
-   }
-
+bool idcDownward(double& buffer[], int size, double threshold=0) {
+   bool downward = isArrDecrease(buffer);
    if(downward) {
-      double delta = MathAbs(buffer[0] - buffer[count-1]);
+      double delta = MathAbs(buffer[0] - buffer[size-1]);
       if(delta < threshold) {
          downward = false;
       }
@@ -147,15 +154,34 @@ bool idcDownward(int idcHandler, int idx, int count, double threshold=0) {
 }
 
 
-bool isDuplicateOrder(long delay) {
-   for(int i=0; i<OrdersTotal(); i++) {
-      if(OrderSelect(i, SELECT_BY_POS) == true) {
-         datetime openTime = OrderOpenTime();
-         datetime boundTime = TimeCurrent() + delay;
-         if(TimeCurrent() > boundTime) {
-            return true;
-         }
+
+/*********************************
+*         ARRAY METHODS          *
+*********************************/
+bool isArrIncrease(double& data[]) {
+   int size = ArraySize(data);
+   double curValue = data[0];
+   for(int i=1; i<size-1; i++) {
+      double nextValue = data[i];
+      if(curValue <= nextValue) {
+         return false;
+      } else {
+         curValue = nextValue;
       }
    }
-   return false;
+   return true;
+}
+
+bool isArrDecrease(double& data[]) {
+   int size = ArraySize(data);
+   double curValue = data[0];
+   for(int i=1; i<size-1; i++) {
+      double nextValue = data[i];
+      if(curValue >= nextValue) {
+         return false;
+      } else {
+         curValue = nextValue;
+      }
+   }
+   return true;
 }
