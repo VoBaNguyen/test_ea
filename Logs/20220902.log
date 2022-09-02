@@ -1,0 +1,340 @@
+0	11:30:51.799	Compiling 'Keltner_Channel'
+0	11:31:01.316	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	11:31:21.097	Keltner_Channel XAUUSDm,H1: initialized
+0	11:38:01.785	Compiling 'scalp_keltner_ma_v1'
+0	11:38:02.794	Keltner_Channel XAUUSDm,H1: uninit reason 2
+0	11:38:02.794	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	11:38:02.806	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	11:38:02.815	Keltner_Channel XAUUSDm,H1: initialized
+0	12:04:45.764	Script test\test_keltner XAUUSDm,H1: loaded successfully
+0	12:04:45.764	test_keltner XAUUSDm,H1: initialized
+0	12:04:45.780	test_keltner XAUUSDm,H1: Cur keltner: 1711.12 - 1707.01 - 1702.89
+0	12:04:45.780	test_keltner XAUUSDm,H1: uninit reason 0
+0	12:04:45.796	Script test_keltner XAUUSDm,H1: removed
+0	12:05:12.554	Script test\test_keltner XAUUSDm,H1: loaded successfully
+0	12:05:12.554	test_keltner XAUUSDm,H1: initialized
+0	12:05:12.585	test_keltner XAUUSDm,H1: Cur keltner: 1711.12 - 1707.01 - 1702.89
+0	12:05:12.585	test_keltner XAUUSDm,H1: uninit reason 0
+0	12:05:12.585	Script test_keltner XAUUSDm,H1: removed
+0	12:05:16.458	Script test\test_keltner XAUUSDm,H1: loaded successfully
+0	12:05:16.458	test_keltner XAUUSDm,H1: initialized
+0	12:05:16.473	test_keltner XAUUSDm,H1: Cur keltner: 1711.12 - 1707.01 - 1702.89
+0	12:05:16.473	test_keltner XAUUSDm,H1: uninit reason 0
+0	12:05:16.489	Script test_keltner XAUUSDm,H1: removed
+0	12:05:17.505	Script test\test_keltner XAUUSDm,H1: loaded successfully
+0	12:05:17.514	test_keltner XAUUSDm,H1: initialized
+0	12:05:17.528	test_keltner XAUUSDm,H1: Cur keltner: 1711.12 - 1707.01 - 1702.89
+0	12:05:17.528	test_keltner XAUUSDm,H1: uninit reason 0
+0	12:05:17.528	Script test_keltner XAUUSDm,H1: removed
+0	12:05:23.465	Script test\test_keltner XAUUSDm,H1: loaded successfully
+0	12:05:23.480	test_keltner XAUUSDm,H1: initialized
+0	12:05:23.496	test_keltner XAUUSDm,H1: Cur keltner: 1711.12 - 1707.01 - 1702.89
+0	12:05:23.496	test_keltner XAUUSDm,H1: uninit reason 0
+0	12:05:23.496	Script test_keltner XAUUSDm,H1: removed
+0	12:06:26.432	Keltner_Channel XAUUSDm,H1: uninit reason 5
+0	12:06:26.442	Keltner_Channel XAUUSDm,H1: initialized
+0	12:06:33.847	Script test\test_keltner XAUUSDm,H1: loaded successfully
+0	12:06:33.847	test_keltner XAUUSDm,H1: initialized
+0	12:06:33.878	test_keltner XAUUSDm,H1: Cur keltner: 1711.12 - 1707.00 - 1702.89
+0	12:06:33.878	test_keltner XAUUSDm,H1: uninit reason 0
+0	12:06:33.878	Script test_keltner XAUUSDm,H1: removed
+0	15:11:39.897	Keltner_Channel XAUUSDm,H1: uninit reason 9
+0	15:11:39.938	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	15:19:51.850	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	15:19:53.315	Keltner_Channel XAUUSDm,H1: initialized
+0	15:30:27.316	Keltner_Channel XAUUSDm,H1: uninit reason 1
+0	15:30:27.318	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	15:41:38.237	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	15:41:42.327	Keltner_Channel XAUUSDm,H1: initialized
+0	15:43:55.552	Expert scalp_keltner_ma_v1 XAUUSDm,H1: loaded successfully
+0	15:43:56.965	scalp_keltner_ma_v1 XAUUSDm,H1 inputs: riskLevel=0.01; TPPips=30; SLPips=30; maxPos=1; delay=1; magicNumber=8888; TIME_FRAME=0; 
+0	15:43:56.970	scalp_keltner_ma_v1 XAUUSDm,H1: Alert: Init Kelter MA scalping strategy
+0	15:43:56.970	scalp_keltner_ma_v1 XAUUSDm,H1: initialized
+0	15:43:59.594	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:00.653	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:02.060	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:03.499	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:03.827	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:05.497	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:06.815	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:07.937	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:10.383	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:11.723	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:12.038	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:13.008	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:15.243	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:17.678	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:18.756	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:20.046	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:22.464	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:23.574	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:25.778	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:28.053	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:29.535	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:30.745	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:32.114	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:33.949	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:35.183	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:35.619	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:37.246	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:38.417	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:39.780	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:40.789	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:41.616	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:42.663	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:43.986	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:45.220	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:47.300	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:48.394	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:48.972	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:49.972	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:50.777	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:51.827	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:52.756	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:53.850	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:54.546	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:54.812	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:55.941	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:56.988	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:57.616	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:57.959	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:59.049	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:44:59.291	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:00.379	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:01.511	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:02.637	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:04.302	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:05.418	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:06.489	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:07.568	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:45:08.899	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:11.027	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:12.417	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:13.761	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:14.902	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:18.692	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:45:20.806	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:45:22.055	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:45:24.377	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:45:24.643	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:45:26.059	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:45:26.990	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:28.115	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:29.113	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:30.300	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:31.573	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:32.553	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:33.690	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:34.830	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:35.973	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:37.046	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:44.069	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:45.256	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:46.551	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:48.004	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:55.530	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:56.808	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:58.764	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:45:59.873	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:03.384	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:04.915	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:07.051	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:08.380	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:09.598	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:10.697	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:12.182	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:14.007	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:17.142	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:18.461	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:19.586	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:20.593	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:24.210	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:26.054	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:27.244	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:30.419	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:32.866	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:33.633	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:34.778	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:36.359	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:38.249	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:39.228	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:40.718	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:42.565	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:46.220	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:46.595	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:47.614	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:48.711	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:57.224	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:58.490	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:46:59.989	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:01.208	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:02.407	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:03.845	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:06.491	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:09.351	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:11.056	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:12.181	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:13.181	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:14.807	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:16.033	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:17.503	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:17.770	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:18.917	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:20.067	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:26.889	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:26.999	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:27.124	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:27.358	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:30.821	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:32.434	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:33.778	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:34.870	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:37.660	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:39.395	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:40.575	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:45.707	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:45.910	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:47.316	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:48.504	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:51.119	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:53.172	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:47:58.698	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:00.274	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:01.358	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:02.655	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:03.342	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:03.654	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:04.712	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:07.981	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:11.419	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:12.794	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:14.627	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:15.905	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:16.922	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:17.909	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:19.284	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:20.376	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:21.407	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:23.272	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:23.554	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:24.550	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:26.496	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:27.746	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:33.026	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:33.759	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:34.141	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:35.166	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:36.500	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:40.576	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:42.862	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:44.189	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:45.612	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:46.907	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:48.089	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:50.649	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:51.766	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:52.829	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:55.800	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:56.175	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:48:56.425	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:48:57.624	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:48:59.376	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:00.138	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:01.091	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:02.487	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:04.275	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:05.581	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:06.175	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:09.535	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:10.288	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:11.782	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:12.566	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:13.566	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:14.918	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:17.177	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:19.447	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:20.619	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:21.791	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:22.211	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:23.522	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:24.659	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:26.343	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:28.441	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:29.956	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:30.216	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:31.506	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:32.537	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:33.337	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:34.995	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:37.134	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:39.833	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:41.275	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:42.667	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:42.980	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:44.128	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:44.384	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:45.481	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:47.361	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:48.745	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:50.777	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:52.535	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:54.097	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:56.232	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:57.247	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:58.552	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:49:59.226	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:00.897	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:02.328	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:03.355	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:05.402	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:08.218	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:09.553	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:10.633	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:12.004	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:12.976	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:14.242	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:15.514	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:16.895	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:18.148	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:50:19.172	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:50:20.506	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:50:22.255	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:50:25.840	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.57
+0	15:50:28.771	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:29.240	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:30.874	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:31.858	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:35.335	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:37.846	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:38.174	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:39.499	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:41.952	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:43.153	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:44.477	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:45.286	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:46.314	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:46.984	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:48.632	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:49.691	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:50.974	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:52.005	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:53.610	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:55.013	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:55.999	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:57.032	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:57.739	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:58.195	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:50:59.191	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:00.110	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:01.376	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:02.465	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:04.768	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:05.938	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:08.640	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:09.985	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:11.162	scalp_keltner_ma_v1 XAUUSDm,H1: Cur keltner: 1710.00 - 1705.79 - 1701.58
+0	15:51:11.435	scalp_keltner_ma_v1 XAUUSDm,H1: uninit reason 1
+0	15:51:11.435	scalp_keltner_ma_v1 XAUUSDm,H1: Alert: Remove strategy
+0	15:51:11.446	Expert scalp_keltner_ma_v1 XAUUSDm,H1: removed
+0	16:02:55.971	Keltner_Channel XAUUSDm,H1: uninit reason 9
+0	16:02:56.056	Custom indicator Keltner_Channel XAUUSDm,H1: removed

@@ -25,20 +25,20 @@
 //| Input EA                                                         |
 //+------------------------------------------------------------------+
 input double riskLevel = 0.05;
-input int TPPips = 100;
-input int SLPips = 50;
+input int TPPips = 200;
+input int SLPips = 100;
 input int stdDev = 5;
 input int maxPos = 1; //Max Position
-input int delay = 3;
+input int delay = 1;
 input long magicNumber = 7777;
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_H1;
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
-double bufMA10[5], bufMA20[5], bufMA50[5], bufMA200[5],
-       priceClose[5], priceOpen[5],
-       bufADX[5];
+double bufMA10[6], bufMA20[6], bufMA50[6], bufMA200[6],
+       priceClose[6], priceOpen[6],
+       bufADX[6];
 
 int OnInit()
   {
@@ -65,7 +65,8 @@ void OnTick()
 //---
    
    // Collect data
-   int arrSize = 5;
+   int arrSize = 6;
+   int threshold = 4;
    for(int i=0; i<arrSize-1; i++) {
       bufMA10[i] = iMA(NULL,TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
       bufMA20[i] = iMA(NULL,TIME_FRAME,20,0,MODE_SMA,PRICE_CLOSE,i);
@@ -89,6 +90,8 @@ void OnTick()
 
    // Signal
    bool isADXUpward = false;
+   bool isMA10Upward = false;
+   bool isMA10Downward = false;
    bool isBuy = false;
    bool isSell = false;
    bool isUpward = false;
@@ -97,8 +100,9 @@ void OnTick()
    int totalPos = countPosition(magicNumber);
    if(totalPos < maxPos) {
       // Check for BUY signal
-      isADXUpward = idcUpward(bufADX, arrSize, 4);
-      isMA10Upward = idcUpward(bufMA10, arrSize, 4);   
+      isADXUpward = idcUpward(bufADX, arrSize, threshold);
+      isMA10Upward = idcUpward(bufMA10, arrSize, threshold);   
+      isMA10Downward = idcDownward(bufMA10, arrSize, threshold);
       if(isADXUpward) {      
          isUpward = crossUpward(bufMA10[0],bufMA10[1],bufMA20[0],bufMA20[1]);
          isUpward = isUpward || crossUpward(bufMA10[0],bufMA10[1],bufMA50[0],bufMA50[1]);
@@ -125,7 +129,7 @@ void OnTick()
          // Check for SELL signal
          if(ma10 < ma20 && ma20 < ma50 && ma50 < ma200 && downward) {
             isSell = true;
-         } else if (ma10 < ma20 && ma10 < ma50 && ma10 < ma200 && ADX > 20 && ADX < 40) {
+         } else if (ma10 < ma20 && ma10 < ma50 && ma10 < ma200 && ADX > 20 && ADX < 40 && isMA10Downward) {
             isSell = true;
          }  
       }

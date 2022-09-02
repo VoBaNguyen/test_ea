@@ -1220,3 +1220,5 @@
 0	20:32:01.606	test_order XAUUSDm,H1: uninit reason 0
 0	20:32:01.619	Script test_order XAUUSDm,H1: removed
 0	20:46:03.249	Compiling 'ma_signal'
+0	22:36:53.109	Compiling 'ma_signal'
+0	22:40:16.115	Compiling 'ma_signal'

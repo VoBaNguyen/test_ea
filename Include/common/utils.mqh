@@ -27,6 +27,12 @@
 // #import
 //+------------------------------------------------------------------+
 
+//+------------------------------------------------------------------+
+//| Include system modules                                           |
+//+------------------------------------------------------------------+
+#include <stderror.mqh>
+#include <stdlib.mqh>
+
 
 /*********************************
 *         COMMON METHODS         *
@@ -111,7 +117,12 @@ double calcLot(double balance, double riskLevel, int pipRange) {
    printf("Balance: %.2f - Risk: %.2f - Max loss: %.2f - Lot: %.2f", balance, riskLevel, maxLoss, lot);
    return lot;
 }
-  
+
+
+string getErr() {
+   string errMsg = ErrorDescription(GetLastError());
+   return errMsg;
+}
 
 
 
