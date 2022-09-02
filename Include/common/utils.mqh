@@ -112,8 +112,10 @@ bool isRecentClose(long delaySeconds) {
 
 
 double calcLot(double balance, double riskLevel, int pipRange) {
+   // 1 lot -> 1 pip = 10$
+   // pips * 10 * lot = maxLoss
    double maxLoss = riskLevel*balance;
-   double lot = NormalizeDouble(maxLoss/pipRange, 2);
+   double lot = NormalizeDouble(maxLoss/(pipRange*10), 2);
    printf("Balance: %.2f - Risk: %.2f - Max loss: %.2f - Lot: %.2f", balance, riskLevel, maxLoss, lot);
    return lot;
 }
@@ -124,6 +126,14 @@ string getErr() {
    return errMsg;
 }
 
+
+void modifyOrder(int ticket, double open, double SL, double TP) {
+   Alert ("Modification order: ",open,". Awaiting response..");
+   bool stt = OrderModify(ticket,open,SL,TP,0);
+   if (stt == false) {
+      Alert ("Failed to modify order: ", getErr());
+   }
+}
 
 
 /*********************************

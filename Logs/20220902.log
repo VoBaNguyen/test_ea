@@ -359,3 +359,30 @@
 0	17:34:20.439	Keltner_Channel XAUUSDm,H1: initialized
 0	17:39:21.985	Keltner_Channel XAUUSDm,H1: uninit reason 9
 0	17:39:22.058	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	17:39:31.782	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:39:33.210	Keltner_Channel XAUUSDm,H1: initialized
+0	22:12:27.643	Keltner_Channel XAUUSDm,H1: uninit reason 7
+0	22:12:27.645	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	22:21:12.534	Compiling 'scalp_keltner_ma_v1'
+0	22:21:13.674	Compiling 'scalp_keltner_pullback_v1'
+0	22:21:14.791	Compiling 'Keltner_Channel'
+0	22:43:52.160	Expert ma_signal __v2 XAUUSDm,H4: loaded successfully
+0	22:43:53.561	ma_signal __v2 XAUUSDm,H4 inputs: riskLevel=0.05; TPPips=200; SLPips=100; maxPos=1; delay=1; magicNumber=7777; TIME_FRAME=60; TIME_FRAME_SLOW=240; 
+0	22:43:53.608	ma_signal __v2 XAUUSDm,H4: Alert: Init MA Scaplt strategy
+0	22:43:53.608	ma_signal __v2 XAUUSDm,H4: initialized
+0	22:44:03.619	ma_signal __v2 XAUUSDm,H4: uninit reason 2
+0	22:44:03.619	ma_signal __v2 XAUUSDm,H4: Alert: Remove strategy
+0	22:44:03.619	Expert ma_signal __v2 XAUUSDm,H4: removed
+0	22:44:03.634	Expert ma_signal __v2 XAUUSDm,H4: loaded successfully
+0	22:44:03.666	ma_signal __v2 XAUUSDm,H4: Alert: Init MA Scaplt strategy
+0	22:44:03.666	ma_signal __v2 XAUUSDm,H4: initialized
+0	22:53:02.520	Compiling 'ma_signal __v2'
+0	22:53:03.741	ma_signal __v2 XAUUSDm,H4: uninit reason 2
+0	22:53:03.741	ma_signal __v2 XAUUSDm,H4: Alert: Remove strategy
+0	22:53:03.744	Expert ma_signal __v2 XAUUSDm,H4: removed
+0	22:53:03.761	Expert ma_signal __v2 XAUUSDm,H4: loaded successfully
+0	22:53:03.800	ma_signal __v2 XAUUSDm,H4: Alert: Init MA Scaplt strategy
+0	22:53:03.800	ma_signal __v2 XAUUSDm,H4: initialized
+0	23:10:40.951	ma_signal __v2 XAUUSDm,H4: uninit reason 9
+0	23:10:40.951	ma_signal __v2 XAUUSDm,H4: Alert: Remove strategy
+0	23:10:41.038	Expert ma_signal __v2 XAUUSDm,H4: removed

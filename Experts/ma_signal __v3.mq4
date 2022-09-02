@@ -3,6 +3,7 @@
    - Su dung MA10,20,50,200
    - Ket hop ADX khung H1
    - Dung khung H4 de xac dinh suc manh cua xu huong - Tranh case sideway
+   - Ket hop chot lai 50% o 100 pip va doi SL
 */
 
 
@@ -31,6 +32,7 @@ input int TPPips = 200;
 input int SLPips = 100;
 input int maxPos = 1; //Max Position
 input int delay = 1;
+input int slippage = 10;
 input long magicNumber = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_H1;
 input ENUM_TIMEFRAMES TIME_FRAME_SLOW = PERIOD_H4;
@@ -105,14 +107,14 @@ void OnTick()
    bool isSell = false;
    bool upward = false;
    bool downward = false;
-   
    int totalPos = countPosition(magicNumber);
+   
    if(totalPos < maxPos) {
       // Check for BUY signal
       ADXUpward = idcUpward(bufADXFast, arrSize, threshold);
       MA10Upward = idcUpward(bufMA10, arrSize, threshold);   
       MA10Downward = idcDownward(bufMA10, arrSize, threshold);
-      if(ADXUpward && ADXSlow >= 20) {      
+      if(ADXUpward) {      
          upward = crossUpward(bufMA10[0],bufMA10[1],bufMA20[0],bufMA20[1]);
          upward = upward || crossUpward(bufMA10[0],bufMA10[1],bufMA50[0],bufMA50[1]);
          upward = upward || crossUpward(bufMA10[0],bufMA10[1],bufMA200[0],bufMA200[1]);
@@ -174,29 +176,31 @@ void OnTick()
          if(orderID < 0) Alert("order rejected. Order error: " + getErr());
       }
    }
-   
-   // Close positions
-   //for(int i=0; i<PositionsTotal(); i++) {
-   //   ulong ticket = PositionGetTicket(i);
-   //   PositionSelectByTicket(ticket);
-   //   double prevMa10 = NormalizeDouble(bufMA10[count-1], Digits());
-   //   double prevMa20 = NormalizeDouble(bufMA10[count-1], Digits());
-   //   if(magicNumber == PositionGetInteger(POSITION_MAGIC)) {
-   //      // Close BUY position
-   //      if(PositionGetInteger(POSITION_TYPE) == 0) {
-   //         if(prevMa10 < prevMa20) {
-   //            closePosition(ticket);
-   //         }
-   //      }
-   //      // Close SELL position
-   //      else if(PositionGetInteger(POSITION_TYPE) == 1) {
-   //         if(prevMa10 > prevMa20) {
-   //            closePosition(ticket);
-   //         }
-   //      }
-   //   }
-   //}
-   
+
+
+   if(totalPos == maxPos) {
+      //+------------------------------------------------------------------+
+      //| TAKE PROFIT 50%                                                  |
+      //+------------------------------------------------------------------+
+      for(int i=0; i<OrdersTotal(); i++) {
+         if(OrderSelect(i, SELECT_BY_POS) == true) {
+            int ticket = OrderTicket();
+            double lotSize = OrderLots();
+            double open = OrderOpenPrice();
+            Alert("Id: %d - Ticket: %d", i, ticket);
+            if(OrderProfit() > TPPips/2) {
+               Alert("Take profit 1/222222222222222222");
+               if(OrderType() == 0) {
+                  OrderClose(ticket, lotSize/2, Bid, slippage, 0);
+               }
+               if(OrderType() == 1) {
+                  OrderClose(ticket, lotSize/2, Ask, slippage, 0);
+               }
+               modifyOrder(ticket, open, open, OrderTakeProfit());//Modify it!
+            }
+         }
+      }
+   }
    
   }
 //+------------------------------------------------------------------+
