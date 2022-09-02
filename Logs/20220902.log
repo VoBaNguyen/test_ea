@@ -338,3 +338,24 @@
 0	15:51:11.446	Expert scalp_keltner_ma_v1 XAUUSDm,H1: removed
 0	16:02:55.971	Keltner_Channel XAUUSDm,H1: uninit reason 9
 0	16:02:56.056	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	16:03:05.617	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	16:03:07.045	Keltner_Channel XAUUSDm,H1: initialized
+0	17:12:18.860	Keltner_Channel XAUUSDm,H1: uninit reason 9
+0	17:12:18.970	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	17:12:28.669	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:12:30.100	Keltner_Channel XAUUSDm,H1: initialized
+0	17:17:38.691	Keltner_Channel XAUUSDm,H1: uninit reason 9
+0	17:17:38.722	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	17:17:47.891	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:17:49.296	Keltner_Channel XAUUSDm,H1: initialized
+0	17:28:00.250	Keltner_Channel XAUUSDm,H1: uninit reason 9
+0	17:28:00.297	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	17:28:09.719	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:28:11.140	Keltner_Channel XAUUSDm,H1: initialized
+0	17:33:58.849	Compiling 'scalp_keltner_ma_v1'
+0	17:34:06.440	Keltner_Channel XAUUSDm,H1: uninit reason 9
+0	17:34:06.500	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	17:34:18.947	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:34:20.439	Keltner_Channel XAUUSDm,H1: initialized
+0	17:39:21.985	Keltner_Channel XAUUSDm,H1: uninit reason 9
+0	17:39:22.058	Custom indicator Keltner_Channel XAUUSDm,H1: removed

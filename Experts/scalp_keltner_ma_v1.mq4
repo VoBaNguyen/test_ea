@@ -26,19 +26,23 @@
 //+------------------------------------------------------------------+
 input double lotSize = 0.1; // Lot Size
 input int maxPos = 1; //Max Position
-input int delay = 1;
+input int delay = 2;
+input int threshold = 2; // Trend delta
 input long magicNumber = 8888; // Expert ID
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
-
 
 int slippage = 10;
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
-double bufMA1[6], bufMA2[6], 
-       keltnerUp[6], keltnerMid[6], keltnerLow[6],
-       priceClose[6], priceOpen[6];
+double   bufMA1[3], 
+         bufMA2[3], 
+         keltnerUp[3], 
+         keltnerMid[3], 
+         keltnerLow[3],
+         priceClose[3], 
+         priceOpen[3];
 
 int OnInit()
   {
@@ -65,11 +69,10 @@ void OnTick()
 //---
    
    // Collect data
-   int arrSize = 6;
-   int threshold = 4;
+   int arrSize = 3;
    for(int i=0; i<arrSize-1; i++) {
-      bufMA1[i] = iMA(NULL,TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
-      bufMA2[i] = iMA(NULL,TIME_FRAME,200,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA1[i] = iMA(NULL,TIME_FRAME,5,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA2[i] = iMA(NULL,TIME_FRAME,100,0,MODE_SMA,PRICE_CLOSE,i);
       keltnerUp[i] = iCustom(NULL,TIME_FRAME,"Keltner_Channel",50,0,i);
       keltnerMid[i] = iCustom(NULL,TIME_FRAME,"Keltner_Channel",50,1,i);
       keltnerLow[i] = iCustom(NULL,TIME_FRAME,"Keltner_Channel",50,2,i);
@@ -95,8 +98,8 @@ void OnTick()
    bool isSell = false;
    
    int totalPos = countPosition(magicNumber);
-   isMA1Upward = idcUpward(bufMA1, arrSize);   
-   isMA1Downward = idcDownward(bufMA1, arrSize);
+   isMA1Upward = idcUpward(bufMA1, arrSize, threshold);   
+   isMA1Downward = idcDownward(bufMA1, arrSize, threshold);
    
    if(totalPos < maxPos) {
       // Check for BUY signal
@@ -104,13 +107,27 @@ void OnTick()
          if(ma1 > ma2 && close > upKN) {
             isBuy = true;
          }
-      } else if(isMA1Downward) {
-         // Check for SELL signal
+      } 
+      
+      // Check for SELL signal
+      if(isMA1Downward) {
          if(ma1 < ma2 && close < lowKN) {
             isSell = true;
          }
       }
-   
+      
+      //+------------------------------------------------------------------+
+      //| CHECK DUPLICATE POSITIONS                                        |
+      //+------------------------------------------------------------------+   
+      if(isBuy || isSell) {
+         long delaySec = delay * PeriodSeconds(TIME_FRAME);
+         bool recentClose = isRecentClose(delaySec);   
+         if(recentClose) {
+            isBuy = false;
+            isSell = false;
+         }
+      }
+      
       int delta = 10;
       if(isBuy || isSell) {
          // Manage orders
@@ -130,14 +147,16 @@ void OnTick()
       //| MOVE STOPLOSS                                                    |
       //+------------------------------------------------------------------+
       bool moveSL = true;
+      int SLPips = 10;
       if (moveSL) {
         for(int i=0; i<OrdersTotal(); i++) {
            if(OrderSelect(i, SELECT_BY_POS) == true) {
-              double newSL = upKN; // For SELL case
               double oldSL = OrderStopLoss();
-              if(OrderType() == 0) {
-                 newSL = lowKN;
-              }
+              //double newSL = calSL(true,upKN,SLPips);
+              //if(OrderType() == 0) {
+              //   double newSL = calSL(true,lowKN,SLPips);
+              //}
+              double newSL = calSL(true,midKN,SLPips);
                
               if(newSL != oldSL && MathAbs(newSL - oldSL) > 0.1) {
                  modifyOrder(newSL,0);//Modify it!
@@ -148,22 +167,19 @@ void OnTick()
 
       //+------------------------------------------------------------------+
       //| TAKE PROFIT 50%                                                  |
-      //+------------------------------------------------------------------+      
-      for(int i=0; i<OrdersTotal(); i++) {
-         if(OrderSelect(i, SELECT_BY_POS) == true) {
-            int ticket = OrderTicket();
-            double size = OrderLots();
-            if(OrderType() == 0 && isMA1Downward && OrderLots() == lotSize) {
-               OrderClose(ticket, lotSize/2, Bid, slippage, 0);
-            }
-            
-            if(OrderType() == 1 && isMA1Upward && OrderLots() == lotSize) {
-               OrderClose(ticket, lotSize/2, Ask, slippage, 0);
-            }
-         }
-      }
-      
-      
+      //+------------------------------------------------------------------+
+      //for(int i=0; i<OrdersTotal(); i++) {
+      //   if(OrderSelect(i, SELECT_BY_POS) == true) {
+      //      int ticket = OrderTicket();
+      //      double size = OrderLots();
+      //      if(OrderType() == 0 && !isMA1Upward && OrderLots() == lotSize) {
+      //         OrderClose(ticket, lotSize/2, Bid, slippage, 0);
+      //      }
+      //      if(OrderType() == 1 && !isMA1Downward && OrderLots() == lotSize) {
+      //         OrderClose(ticket, lotSize/2, Ask, slippage, 0);
+      //      }
+      //   }
+      //}
    }
 
 
