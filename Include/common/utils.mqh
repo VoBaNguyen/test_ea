@@ -69,6 +69,65 @@ double calSL(bool isLong, double entry, int pips) {
 *          ORDER METHODS         *
 *********************************/
 
+bool selectOrder(int id, int idType, int mode) {
+   bool stt = OrderSelect(id, idType, mode);
+   if(!stt) {
+      Alert("Failed to select order: ", id);
+   }
+   return stt;
+}
+
+int sendOrder(string symbol, ENUM_ORDER_TYPE ordType, 
+               double lot, double entry, int slippage, 
+               double SL, double TP, string comment, int EA) {
+   Alert("Send order. Type: ", ordType, 
+         " - Lot: ", lot, " - Entry: ", entry,
+         " - SL: ", SL, " - TP: ", TP);
+   int orderID = OrderSend(symbol,ordType,lot,entry,slippage,SL,TP,comment,EA);
+   if(orderID < 0) {
+      Alert("Send order ERROR: " + getErr());
+   }
+   return orderID;
+}
+
+
+double orderProfit(int ticket) {
+   double delta, pips, entry;
+   if(OrderSelect(ticket, SELECT_BY_TICKET) == true) {
+      
+      entry = OrderOpenPrice();
+      if(OrderType() == 0) {
+         delta = Ask - entry;
+      } else {
+         delta = entry - Bid;
+      }
+      pips = NormalizeDouble(delta/getPip(), 1);
+      return pips;
+   } else {
+      Alert("Failed to select order with ticket: ", ticket);
+      return 0;
+   }
+}
+
+
+void closeOrder(int ticket, double lotSize, double price, int slippage) {
+   Alert ("Close order: ",ticket,". Awaiting response..");
+   bool stt = OrderClose(ticket, lotSize, price, slippage, 0);
+   if (stt == false) {
+      Alert ("Failed to close order: ", getErr());
+   }
+}
+
+
+void modifyOrder(int ticket, double open, double SL, double TP) {
+   Alert("Modification order: ",ticket,". Awaiting response...");
+   bool stt = OrderModify(ticket,open,SL,TP,0, Black);
+   if (stt == false) {
+      Alert ("Failed to modify order: ", getErr());
+   }
+}
+
+
 int countPosition(long magicNumber) {
    int count = 0;
    for(int i=0; i<OrdersTotal(); i++) {
@@ -126,14 +185,6 @@ string getErr() {
    return errMsg;
 }
 
-
-void modifyOrder(int ticket, double open, double SL, double TP) {
-   Alert ("Modification order: ",open,". Awaiting response..");
-   bool stt = OrderModify(ticket,open,SL,TP,0);
-   if (stt == false) {
-      Alert ("Failed to modify order: ", getErr());
-   }
-}
 
 
 /*********************************

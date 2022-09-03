@@ -49,6 +49,10 @@ double bufMA10[6],
        bufADXFast[6],
        bufADXSlow[6];
 
+double lotSize = 0.01;
+int ticket = 0;
+
+
 int OnInit()
   {
 //---
@@ -100,103 +104,93 @@ void OnTick()
    double ADXSlow   = NormalizeDouble(bufADXSlow[1], _Digits);
 
    // Signal
-   bool ADXUpward = false;
-   bool MA10Upward = false;
-   bool MA10Downward = false;
+
    bool isBuy = false;
    bool isSell = false;
-   bool upward = false;
-   bool downward = false;
    int totalPos = countPosition(magicNumber);
    
    if(totalPos < maxPos) {
       // Check for BUY signal
-      ADXUpward = idcUpward(bufADXFast, arrSize, threshold);
-      MA10Upward = idcUpward(bufMA10, arrSize, threshold);   
-      MA10Downward = idcDownward(bufMA10, arrSize, threshold);
-      if(ADXUpward) {      
-         upward = crossUpward(bufMA10[0],bufMA10[1],bufMA20[0],bufMA20[1]);
-         upward = upward || crossUpward(bufMA10[0],bufMA10[1],bufMA50[0],bufMA50[1]);
-         upward = upward || crossUpward(bufMA10[0],bufMA10[1],bufMA200[0],bufMA200[1]);
-         bool ma20Upward = idcUpward(bufMA20,arrSize);
-         bool ma50Upward = idcUpward(bufMA50,arrSize);
-         bool ma200Upward = idcUpward(bufMA200,arrSize);
-         bool upward = upward && ma20Upward && ma50Upward && ma200Upward;
+      bool ADXUpward = idcUpward(bufADXFast, arrSize, threshold);
+      bool MA10Upward = idcUpward(bufMA10, arrSize, threshold);
+      bool MA20Upward = idcUpward(bufMA20, arrSize, threshold);
+      bool MA50Upward = idcUpward(bufMA50, arrSize, threshold);
+      bool MA200Upward = idcUpward(bufMA200, arrSize, threshold);
+      bool upward = MA10Upward && MA20Upward && MA50Upward && MA200Upward;
       
+      bool MA10Downward = idcDownward(bufMA10, arrSize, threshold);
+      bool MA20Downward = idcDownward(bufMA20, arrSize, threshold);
+      bool MA50Downward = idcDownward(bufMA50, arrSize, threshold);
+      bool MA200Downward = idcDownward(bufMA200, arrSize, threshold);
+      bool downward = MA10Downward && MA20Downward && MA50Downward && MA200Downward;
+      
+      if(ADXUpward) {      
          if(ma10 > ma20 && ma20 > ma50 && ma50 > ma200 && upward) {
             isBuy = true;
-         } else if (ma10 > ma20 && ma10 > ma50 && ma10 > ma200 && ADXFast > 20 && ADXFast < 40 && MA10Upward) {
+         } else if (ma10 > ma20 && ma10 > ma50 && ADXFast > 20 && ADXFast < 40 && MA10Upward) {
             isBuy = true;
          }
-
-         downward = crossDownward(bufMA10[0],bufMA10[1],bufMA20[0],bufMA20[1]);
-         downward = downward || crossDownward(bufMA10[0],bufMA10[1],bufMA50[0],bufMA50[1]);
-         downward = downward || crossDownward(bufMA10[0],bufMA10[1],bufMA200[0],bufMA200[1]);
-         bool ma20Downward = idcDownward(bufMA20,arrSize);
-         bool ma50Downward = idcDownward(bufMA50,arrSize);
-         bool ma200Downward = idcDownward(bufMA200,arrSize);
-         bool downward = downward && ma20Downward && ma50Downward && ma200Downward;
-         
+      }
+      if(ADXUpward) {      
          // Check for SELL signal
          if(ma10 < ma20 && ma20 < ma50 && ma50 < ma200 && downward) {
             isSell = true;
-         } else if (ma10 < ma20 && ma10 < ma50 && ma10 < ma200 && ADXFast > 20 && ADXFast < 40 && MA10Downward) {
+         } else if (ma10 < ma20 && ma10 < ma50 && ADXFast > 20 && ADXFast < 40 && MA10Downward) {
             isSell = true;
          }  
       }
-   }
-
-
-   //+------------------------------------------------------------------+
-   //| CHECK DUPLICATE POSITIONS                                        |
-   //+------------------------------------------------------------------+   
-   if(isBuy || isSell) {
-      long delaySec = delay * PeriodSeconds(TIME_FRAME);
-      bool recentClose = isRecentClose(delaySec);   
-      if(recentClose) {
-         isBuy = false;
-         isSell = false;
+      
+      //+------------------------------------------------------------------+
+      //| CHECK DUPLICATE POSITIONS                                        |
+      //+------------------------------------------------------------------+   
+      if(isBuy || isSell) {
+         long delaySec = delay * PeriodSeconds(TIME_FRAME);
+         bool recentClose = isRecentClose(delaySec);   
+         if(recentClose) {
+            isBuy = false;
+            isSell = false;
+         }
+      }
+      
+      
+      if(isBuy || isSell) {
+         MyAccount account("Nguyen", "Vo", magicNumber);
+         lotSize = calcLot(account.info.BALANCE, riskLevel, SLPips);
+         // Manage orders
+         if(isBuy) {
+            double TP = calTP(true, Ask,TPPips);
+            double SL = calSL(true, Bid,SLPips);
+            ticket = sendOrder(Symbol(), OP_BUY, lotSize, Ask, slippage, SL, TP, "Buy MA", magicNumber);
+         } else if(isSell) {
+            double TP = calTP(false, Ask,TPPips);
+            double SL = calSL(false, Bid,SLPips);
+            ticket = sendOrder(Symbol(), OP_SELL, lotSize, Bid, slippage, SL, TP, "Buy MA", magicNumber);
+         }
       }
    }
 
-
-   if(isBuy || isSell) {
-      MyAccount account("Nguyen", "Vo", magicNumber);
-      double lotSize = calcLot(account.info.BALANCE, riskLevel, SLPips);
-      // Manage orders
-      if(isBuy) {
-         double TP = calTP(true, Ask,TPPips);
-         double SL = calSL(true, Bid,SLPips);
-         int orderID = OrderSend(NULL,OP_BUY,lotSize,Ask,10,SL,TP, "Buy MA", magicNumber);
-         if(orderID < 0) Alert("Order rejected. Order error: " + getErr());
-      } else if(isSell) {
-         double TP = calTP(false, Ask,TPPips);
-         double SL = calSL(false, Bid,SLPips);
-         int orderID = OrderSend(NULL,OP_SELL,lotSize,Bid,10,SL,TP, "Sell MA", magicNumber);
-         if(orderID < 0) Alert("order rejected. Order error: " + getErr());
-      }
-   }
 
 
    if(totalPos == maxPos) {
       //+------------------------------------------------------------------+
       //| TAKE PROFIT 50%                                                  |
       //+------------------------------------------------------------------+
-      for(int i=0; i<OrdersTotal(); i++) {
-         if(OrderSelect(i, SELECT_BY_POS) == true) {
-            int ticket = OrderTicket();
-            double lotSize = OrderLots();
-            double open = OrderOpenPrice();
-            Alert("Id: %d - Ticket: %d", i, ticket);
-            if(OrderProfit() > TPPips/2) {
-               Alert("Take profit 1/222222222222222222");
-               if(OrderType() == 0) {
-                  OrderClose(ticket, lotSize/2, Bid, slippage, 0);
-               }
-               if(OrderType() == 1) {
-                  OrderClose(ticket, lotSize/2, Ask, slippage, 0);
-               }
+      if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES)) {
+         double ordLot = OrderLots();
+         double profit = orderProfit(ticket);
+         if(profit > TPPips/2 && ordLot == lotSize) {
+            // Move SL to entry
+            double open = OrderOpenPrice();            
+            if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES) == true) {
                modifyOrder(ticket, open, open, OrderTakeProfit());//Modify it!
+            }
+            
+            // TP 50%
+            if(OrderType() == 0) {
+               closeOrder(ticket, ordLot/2, Bid, slippage);
+            }
+            if(OrderType() == 1) {
+               closeOrder(ticket, ordLot/2, Ask, slippage);
             }
          }
       }

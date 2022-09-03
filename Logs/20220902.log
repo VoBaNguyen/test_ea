@@ -386,3 +386,10 @@
 0	23:10:40.951	ma_signal __v2 XAUUSDm,H4: uninit reason 9
 0	23:10:40.951	ma_signal __v2 XAUUSDm,H4: Alert: Remove strategy
 0	23:10:41.038	Expert ma_signal __v2 XAUUSDm,H4: removed
+0	23:10:52.164	Expert ma_signal __v2 XAUUSDm,H4: loaded successfully
+0	23:10:52.164	ma_signal __v2 XAUUSDm,H4 inputs: riskLevel=0.05; TPPips=200; SLPips=100; maxPos=1; delay=1; magicNumber=7777; TIME_FRAME=60; TIME_FRAME_SLOW=240; 
+0	23:10:54.899	ma_signal __v2 XAUUSDm,H4: Alert: Init MA Scaplt strategy
+0	23:10:56.341	ma_signal __v2 XAUUSDm,H4: initialized
+0	23:11:02.153	ma_signal __v2 XAUUSDm,H4: uninit reason 1
+0	23:11:02.153	ma_signal __v2 XAUUSDm,H4: Alert: Remove strategy
+0	23:11:02.169	Expert ma_signal __v2 XAUUSDm,H4: removed
