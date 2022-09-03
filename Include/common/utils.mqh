@@ -257,6 +257,20 @@ bool isDivergence(double& line1[], double& line2[], int size) {
 }
 
 
+bool isConvergence(double& line1[], double& line2[], int size) {
+   int midIdx = MathRound(size/2);
+   double firstDiff = MathAbs(line2[size-1] - line1[size-1]);
+   double midDiff   = MathAbs(line2[midIdx] - line1[midIdx]);
+   double lastDiff  = MathAbs(line2[0] - line1[0]);
+   
+   printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
+   if(firstDiff > midDiff && midDiff > lastDiff) {
+      return true;
+   }
+   return false;
+}
+
+
 bool isSideway(double& line1[], double& line2[], int size, double threshold) {
    double sum = 0;
    for(int i=0; i<size-1; i++) {
@@ -265,10 +279,10 @@ bool isSideway(double& line1[], double& line2[], int size, double threshold) {
    }
    double avg = sum/size;
    if(avg > threshold) {
-      return true;
+      return false;
    }
    
-   return false;
+   return true;
 }
 
 

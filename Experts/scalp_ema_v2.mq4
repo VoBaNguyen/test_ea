@@ -39,16 +39,18 @@ input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M5;
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
-double EMA50[6], 
-       EMA100[6], 
-       EMA150[6], 
-       priceClose[6], 
-       priceOpen[6];
+double EMA50[4], 
+       EMA100[4], 
+       EMA150[4], 
+       priceClose[4], 
+       priceOpen[4];
 
 double lotSize = 0.01;
 int ticket = 0;
-int arrSize = 6;
-int threshold = 2;
+int arrSize = 4;
+int sidewayThreshold = 0.2;
+double multiple = 1;
+double deltaPrice = 2;
 
 int OnInit()
   {
@@ -111,20 +113,22 @@ void OnTick()
       bool downward = EMA5Down && EMA10Down && EMA15Down;
       
       bool divergence = isDivergence(EMA50, EMA100, arrSize);
-      bool sideway = isSideway(EMA50, EMA100, arrSize, threshold);
+      bool sideway = isSideway(EMA50, EMA100, arrSize, sidewayThreshold);
       
       // Check for BUY signal
-      if(ema50 > ema100 && upward && divergence) {
+      if(ema50 > ema100 && upward && divergence && !sideway) {
          bool parallel = isParallel(EMA50, EMA100, EMA150, arrSize);
-         if(parallel) {
+         double limitPrice = ema50 + deltaPrice;
+         if(parallel && Ask < limitPrice && !sideway) {
             isBuy = true;
          }
       }
       
       // Check for SELL signal
-      if(ema50 < ema100 && downward && divergence) {
+      if(ema50 < ema100 && downward && divergence && !sideway) {
          bool parallel = isParallel(EMA150, EMA100, EMA50, arrSize);
-         if(parallel) {
+         double limitPrice = ema50 - deltaPrice;
+         if(parallel && Bid > limitPrice && !sideway) {
             isSell = true;
          }
       }
@@ -141,7 +145,10 @@ void OnTick()
          }
       }
       
-      
+
+      //+------------------------------------------------------------------+
+      //| SEND ORDER                                                       |
+      //+------------------------------------------------------------------+ 
       if(isBuy || isSell) {
          MyAccount account("Nguyen", "Vo", magicNumber);
          lotSize = calcLot(account.info.BALANCE, riskLevel, SLPips);
@@ -152,14 +159,14 @@ void OnTick()
             if(close > ema50) {
                SL = ema50;
             }
-            ticket = sendOrder(Symbol(), OP_BUY, lotSize, Ask, slippage, SL, TP, "Buy MA", magicNumber);
+            ticket = sendOrder(Symbol(), OP_BUY, lotSize, Ask, slippage, SL, 0, "Buy MA", magicNumber);
          } else if(isSell) {
             double TP = calTP(false, Ask,TPPips);
             double SL = calSL(false, Bid,SLPips);
             if(close < ema50) {
                SL = ema50;
             }
-            ticket = sendOrder(Symbol(), OP_SELL, lotSize, Bid, slippage, SL, TP, "Buy MA", magicNumber);
+            ticket = sendOrder(Symbol(), OP_SELL, lotSize, Bid, slippage, SL, 0, "Buy MA", magicNumber);
          }
       }
    }
@@ -168,7 +175,7 @@ void OnTick()
 
    if(totalPos == maxPos) {
       //+------------------------------------------------------------------+
-      //| MOVE SL                                                          |
+      //| MOVE STOPLOSS                                                    |
       //+------------------------------------------------------------------+
       if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES)) {
          double oldSL = OrderStopLoss();
