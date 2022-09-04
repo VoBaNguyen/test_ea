@@ -208,7 +208,8 @@ bool crossUpward(double a0, double a1, double b0, double b1) {
 }
 
 
-bool idcUpward(double& buffer[], int size, double threshold = 0.0) {
+bool idcUpward(double& buffer[], double threshold = 0.0) {
+   int size = ArraySize(buffer);
    bool upward = isArrIncrease(buffer);
    if(upward) {
       double delta = MathAbs(buffer[0] - buffer[size-1]);
@@ -220,7 +221,8 @@ bool idcUpward(double& buffer[], int size, double threshold = 0.0) {
 }
 
 
-bool idcDownward(double& buffer[], int size, double threshold = 0.0) {
+bool idcDownward(double& buffer[], double threshold = 0.0) {
+   int size = ArraySize(buffer);
    bool downward = isArrDecrease(buffer);
    if(downward) {
       double delta = MathAbs(buffer[0] - buffer[size-1]);
@@ -232,7 +234,8 @@ bool idcDownward(double& buffer[], int size, double threshold = 0.0) {
 }
 
 
-bool isParallel(double& line1[], double& line2[], double& line3[], int size) {
+bool isParallel(double& line1[], double& line2[], double& line3[]) {
+   int size = ArraySize(line1);
    for(int i=1; i<size-1; i++) {
       if(!(line1[i] > line2[i] && line2[i] > line3[i])) {
          return false;
@@ -242,8 +245,9 @@ bool isParallel(double& line1[], double& line2[], double& line3[], int size) {
 }
 
 
-bool isDivergence(double& line1[], double& line2[], int size) {
-   int midIdx = MathRound(size/2);
+bool isDivergence(double& line1[], double& line2[]) {
+   int size = ArraySize(line1);
+   int midIdx = MathRound(size/2) + 1;
    double firstDiff = MathAbs(line2[size-1] - line1[size-1]);
    double midDiff   = MathAbs(line2[midIdx] - line1[midIdx]);
    double lastDiff  = MathAbs(line2[0] - line1[0]);
@@ -256,21 +260,23 @@ bool isDivergence(double& line1[], double& line2[], int size) {
 }
 
 
-bool isConvergence(double& line1[], double& line2[], int size) {
-   int midIdx = MathRound(size/2);
+bool isConvergence(double& line1[], double& line2[], double threshold = 999) {
+   int size = ArraySize(line1);
+   int midIdx = MathRound(size/2) + 1;
    double firstDiff = MathAbs(line2[size-1] - line1[size-1]);
    double midDiff   = MathAbs(line2[midIdx] - line1[midIdx]);
    double lastDiff  = MathAbs(line2[0] - line1[0]);
    
    // printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
-   if(firstDiff >= midDiff && midDiff >= lastDiff) {
+   if(firstDiff >= midDiff && midDiff >= lastDiff && lastDiff < threshold) {  
       return true;
    }
    return false;
 }
 
 
-bool isSideway(double& line1[], double& line2[], int size, double threshold) {
+bool isSideway(double& line1[], double& line2[], double threshold) {
+   int size = ArraySize(line1);
    double sum = 0;
    for(int i=0; i<size-1; i++) {
       double delta = MathAbs(line2[i] - line1[i]);

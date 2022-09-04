@@ -313,3 +313,5 @@
 0	21:32:12.389	Script test_array XAUUSDm,H1: removed
 0	21:35:12.379	Keltner_Channel XAUUSDm,M5: uninit reason 9
 0	21:35:12.514	Custom indicator Keltner_Channel XAUUSDm,M5: removed
+0	21:35:30.412	Custom indicator Keltner_Channel XAUUSDm,M5: loaded successfully
+0	21:35:31.802	Keltner_Channel XAUUSDm,M5: initialized
