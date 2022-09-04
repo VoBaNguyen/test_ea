@@ -121,9 +121,12 @@ void closeOrder(int ticket, double lotSize, double price, int slippage) {
 
 void modifyOrder(int ticket, double open, double SL, double TP) {
    Alert("Modification order: ",ticket,". Awaiting response...");
-   bool stt = OrderModify(ticket,open,SL,TP,0, Black);
-   if (stt == false) {
-      Alert ("Failed to modify order: ", getErr());
+   OrderSelect(ticket, SELECT_BY_TICKET);
+   if(OrderStopLoss() != SL || OrderTakeProfit() != TP) {
+      bool stt = OrderModify(ticket,open,SL,TP,0, Black);
+      if (stt == false) {
+         Alert ("Failed to modify order: ", getErr());
+      }
    }
 }
 
@@ -143,19 +146,19 @@ int countPosition(long magicNumber) {
 }
 
 
-bool isDuplicateOrder(long delaySeconds) {
-   bool isDuplicate = false;
+bool isRecentOpen(long delaySeconds) {
    for(int i=0; i<OrdersTotal(); i++) {
       if(OrderSelect(i, SELECT_BY_POS) == true) {
          datetime openTime = OrderOpenTime();
          datetime limitTime = openTime + delaySeconds;
          if(TimeCurrent() < limitTime) {
-            isDuplicate = true;
+            return true;
          }
       }
    }
-   return isDuplicate;
+   return false;
 }
+
 
 bool isRecentClose(long delaySeconds) {
    for(int i=0; i<OrdersHistoryTotal(); i++) {
@@ -168,6 +171,7 @@ bool isRecentClose(long delaySeconds) {
    }
    return false;
 }
+
 
 
 double calcLot(double balance, double riskLevel, int pipRange) {
@@ -250,7 +254,7 @@ bool isDivergence(double& line1[], double& line2[], int size) {
    double lastDiff  = MathAbs(line2[0] - line1[0]);
    
    printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
-   if(firstDiff < midDiff && midDiff < lastDiff) {
+   if(firstDiff <= midDiff && midDiff <= lastDiff) {
       return true;
    }
    return false;
@@ -264,7 +268,7 @@ bool isConvergence(double& line1[], double& line2[], int size) {
    double lastDiff  = MathAbs(line2[0] - line1[0]);
    
    printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
-   if(firstDiff > midDiff && midDiff > lastDiff) {
+   if(firstDiff >= midDiff && midDiff >= lastDiff) {
       return true;
    }
    return false;
@@ -316,3 +320,46 @@ bool isArrDecrease(double& data[]) {
    }
    return true;
 }
+
+
+/*********************************
+*        CANDEL METHODS          *
+*********************************/
+
+bool isCandlesType(string symbol, ENUM_TIMEFRAMES time_frame, int range, int type) {
+   for(int i=1; i<=range; i++) {
+      int eleType = candleType(symbol, time_frame, i);
+      if (eleType != type) {
+         return false;
+      }      
+   }
+   return true;
+}
+
+
+int candleType(string symbol, ENUM_TIMEFRAMES time_frame, int shift) {
+   double open = iOpen(symbol, time_frame,shift); 
+   double close = iClose(symbol, time_frame,shift);
+   if(open < close) {
+      return 0;   //GREEN
+   }
+   return 1;      //RED
+}
+
+
+
+
+/*********************************
+*      MATHEMATIC METHODS        *
+*********************************/
+bool inRange(double value, double center, double delta) {
+   if(center - delta <= value && value <= center + delta) {
+      return true;
+   }
+   return false;
+}
+
+
+
+
+

@@ -86,7 +86,7 @@ void OnTick()
    }
    
    // Last price
-   int shift = 0;
+   int shift = 1;
    double ema50 = NormalizeDouble(EMA50[shift], _Digits);
    double ema100 = NormalizeDouble(EMA100[shift], _Digits);
    double ema150 = NormalizeDouble(EMA150[shift], _Digits);
@@ -107,11 +107,6 @@ void OnTick()
       bool EMA150Up = idcUpward(EMA150, arrSize);
       bool upward = EMA50Up && EMA100Up && EMA150Up;
       
-      bool EMA5Down = idcDownward(EMA50, arrSize);
-      bool EMA10Down = idcDownward(EMA100, arrSize);
-      bool EMA15Down = idcDownward(EMA150, arrSize);
-      bool downward = EMA5Down && EMA10Down && EMA15Down;
-      
       bool divergence = isDivergence(EMA50, EMA100, arrSize);
       bool sideway = isSideway(EMA50, EMA100, arrSize, sidewayThreshold);
       
@@ -124,27 +119,7 @@ void OnTick()
          }
       }
       
-      // Check for SELL signal
-      if(ema50 < ema100 && downward && divergence && !sideway) {
-         bool parallel = isParallel(EMA150, EMA100, EMA50, arrSize);
-         double limitPrice = ema50 - deltaPrice;
-         if(parallel && Bid > limitPrice && !sideway) {
-            isSell = true;
-         }
-      }
-      
-      //+------------------------------------------------------------------+
-      //| CHECK DUPLICATE POSITIONS                                        |
-      //+------------------------------------------------------------------+   
-      if(isBuy || isSell) {
-         long delaySec = delay * PeriodSeconds(TIME_FRAME);
-         bool recentClose = isRecentClose(delaySec);   
-         if(recentClose) {
-            isBuy = false;
-            isSell = false;
-         }
-      }
-      
+
 
       //+------------------------------------------------------------------+
       //| SEND ORDER                                                       |
@@ -160,13 +135,6 @@ void OnTick()
                SL = ema50;
             }
             ticket = sendOrder(Symbol(), OP_BUY, lotSize, Ask, slippage, SL, 0, "Buy MA", magicNumber);
-         } else if(isSell) {
-            double TP = calTP(false, Ask,TPPips);
-            double SL = calSL(false, Bid,SLPips);
-            if(close < ema50) {
-               SL = ema50;
-            }
-            ticket = sendOrder(Symbol(), OP_SELL, lotSize, Bid, slippage, SL, 0, "Buy MA", magicNumber);
          }
       }
    }
@@ -185,26 +153,9 @@ void OnTick()
                modifyOrder(ticket, OrderOpenPrice(), newSL, OrderTakeProfit());
             }  
          }
-         if(OrderType() == 1 && close < ema50) {
-            if(newSL < oldSL) {
-               modifyOrder(ticket, OrderOpenPrice(), newSL, OrderTakeProfit());
-            }
-         }
-         
-         // CLOSE ORDER BASE ON PROFIT
-         int range = 2;
-         bool recentOpen = isRecentOpen(range*PeriodSeconds(TIME_FRAME));         
-         bool isGreen = isCandlesType(Symbol(), TIME_FRAME, range, 0);
-         bool isRed = isCandlesType(Symbol(), TIME_FRAME, range, 1);
-
-         if(!recentOpen) {
-            if(OrderType() == 0 && isRed) {
-               closeOrder(ticket, OrderLots(), Bid, slippage);
-            } else if (OrderType() == 1 && isGreen) {
-               closeOrder(ticket, OrderLots(), Ask, slippage);
-            }
-         }
-      }      
+      }
+      
    }
+   
   }
 //+------------------------------------------------------------------+
