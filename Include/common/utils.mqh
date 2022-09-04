@@ -93,8 +93,8 @@ int sendOrder(string symbol, ENUM_ORDER_TYPE ordType,
 
 double orderProfit(int ticket) {
    double delta, pips, entry;
-   if(OrderSelect(ticket, SELECT_BY_TICKET) == true) {
-      
+   
+   if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES)){      
       entry = OrderOpenPrice();
       if(OrderType() == 0) {
          delta = Ask - entry;
@@ -104,14 +104,12 @@ double orderProfit(int ticket) {
       pips = NormalizeDouble(delta/getPip(), 1);
       return pips;
    } else {
-      Alert("Failed to select order with ticket: ", ticket);
       return 0;
    }
 }
 
 
 void closeOrder(int ticket, double lotSize, double price, int slippage) {
-   Alert ("Close order: ",ticket,". Awaiting response..");
    bool stt = OrderClose(ticket, lotSize, price, slippage, 0);
    if (stt == false) {
       Alert ("Failed to close order: ", getErr());
@@ -119,12 +117,11 @@ void closeOrder(int ticket, double lotSize, double price, int slippage) {
 }
 
 
-void modifyOrder(int ticket, double open, double SL, double TP) {
-   Alert("Modification order: ",ticket,". Awaiting response...");
+void modifyOrder(int ticket, double open, double SL, double TP, double delta = 0.05) {
    OrderSelect(ticket, SELECT_BY_TICKET);
-   if(OrderStopLoss() != SL || OrderTakeProfit() != TP) {
+   if(OrderStopLoss() != SL && MathAbs(OrderStopLoss() - SL) > delta) {
       bool stt = OrderModify(ticket,open,SL,TP,0, Black);
-      if (stt == false) {
+      if (!stt) {
          Alert ("Failed to modify order: ", getErr());
       }
    }
@@ -211,29 +208,27 @@ bool crossUpward(double a0, double a1, double b0, double b1) {
 }
 
 
-bool idcUpward(double& buffer[], int size, double threshold=0) {
+bool idcUpward(double& buffer[], int size, double threshold = 0.0) {
    bool upward = isArrIncrease(buffer);
    if(upward) {
       double delta = MathAbs(buffer[0] - buffer[size-1]);
-      if(delta < threshold) {
-         upward = false;
+      if(delta > threshold) {
+         return true;
       }
    }
-
-   return upward;
+   return false;
 }
 
 
-bool idcDownward(double& buffer[], int size, double threshold=0) {
+bool idcDownward(double& buffer[], int size, double threshold = 0.0) {
    bool downward = isArrDecrease(buffer);
    if(downward) {
       double delta = MathAbs(buffer[0] - buffer[size-1]);
-      if(delta < threshold) {
-         downward = false;
+      if(delta > threshold) {
+         return true;
       }
    }
-
-   return downward;
+   return false;
 }
 
 
@@ -253,7 +248,7 @@ bool isDivergence(double& line1[], double& line2[], int size) {
    double midDiff   = MathAbs(line2[midIdx] - line1[midIdx]);
    double lastDiff  = MathAbs(line2[0] - line1[0]);
    
-   printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
+   // printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
    if(firstDiff <= midDiff && midDiff <= lastDiff) {
       return true;
    }
@@ -267,7 +262,7 @@ bool isConvergence(double& line1[], double& line2[], int size) {
    double midDiff   = MathAbs(line2[midIdx] - line1[midIdx]);
    double lastDiff  = MathAbs(line2[0] - line1[0]);
    
-   printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
+   // printf("firstDiff: %.2f, midDiff: %.2f, lastDiff: %.2f", firstDiff, midDiff, lastDiff);
    if(firstDiff >= midDiff && midDiff >= lastDiff) {
       return true;
    }

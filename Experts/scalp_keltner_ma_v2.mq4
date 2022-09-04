@@ -26,9 +26,11 @@
 //+------------------------------------------------------------------+
 input double lotSize = 0.1; // Lot Size
 input int maxPos = 1; //Max Position
-input int TPPips = 30; //Take profit pips
+input int TPPips = 20; //Take profit pips
+input int SLPips = 20; //Take profit pips
 input int delay = 2;
-input int threshold = 2; // Trend delta
+input int thresholdKN = 0.5; // Trend delta
+input int thresholdMA = 0.5; // Trend delta
 input long magicNumber = 8888; // Expert ID
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
 
@@ -71,12 +73,12 @@ void OnTick()
 //---
    
    // Collect data   
-   for(int i=0; i<arrSize-1; i++) {
-      bufMA1[i] = iMA(NULL,TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
-      bufMA2[i] = iMA(NULL,TIME_FRAME,200,0,MODE_SMA,PRICE_CLOSE,i);
-      keltnerUp[i] = iCustom(NULL,TIME_FRAME,"Keltner_Channel",50,0,i);
-      keltnerMid[i] = iCustom(NULL,TIME_FRAME,"Keltner_Channel",50,1,i);
-      keltnerLow[i] = iCustom(NULL,TIME_FRAME,"Keltner_Channel",50,2,i);
+   for(int i=0; i<arrSize; i++) {
+      bufMA1[i] = iMA(Symbol(),TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA2[i] = iMA(Symbol(),TIME_FRAME,200,0,MODE_SMA,PRICE_CLOSE,i);
+      keltnerUp[i] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",50,0,i);
+      keltnerMid[i] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",50,1,i);
+      keltnerLow[i] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",50,2,i);
    }
    
    CopyClose(Symbol(), TIME_FRAME, 0, arrSize, priceClose);
@@ -101,34 +103,24 @@ void OnTick()
    bool isSell = false;
    
    int totalPos  = countPosition(magicNumber);
-   isMA1Upward   = idcUpward(bufMA1, arrSize);   
-   isMA1Downward = idcDownward(bufMA1, arrSize);
-   isKNUpward    = idcUpward(keltnerMid, arrSize);
-   isKNDownward  = idcDownward(keltnerMid, arrSize);
+   isMA1Upward   = idcUpward(bufMA1, arrSize, thresholdMA);   
+   isMA1Downward = idcDownward(bufMA1, arrSize, thresholdMA);
+   isKNUpward    = idcUpward(keltnerMid, arrSize, thresholdKN);
+   isKNDownward  = idcDownward(keltnerMid, arrSize, thresholdKN);
    
-   if(totalPos < maxPos) {
-      // Check for BUY signal
-      //if(isMA1Upward && isKNUpward) {
-      //   if(open < midKN && close > midKN) {
-      //      isBuy = true;
-      //   }
-      //} 
-      
-      // Check for SELL signal
-      //if(isMA1Downward && isKNDownward) {
-      //   if(open > midKN && close < midKN) {
-      //      isSell = true;
-      //   }
-      //}
-      
+   if(totalPos < maxPos) {     
       double SL;
+      double keltnerWidth = MathAbs(lowKN-upKN);
+      double curMA1 = NormalizeDouble(bufMA1[0], _Digits);
+      double lastMA1 = NormalizeDouble(bufMA1[1], _Digits);
       // CANDLE COVER 2 KELTNER BAND
       // PRICE BELOW MID KELTNER AND 2 PREVIOUS CANDLES ARE RED
       
+      
       // BUY
-      if(isMA1Upward) {
-         if (Ask > upKN && isCandlesType(Symbol(),TIME_FRAME,2,0)) {
-            if(inRange(Ask, upKN, MathAbs(lowKN-upKN))) {
+      if(isMA1Upward && isKNUpward) {
+         if (close > upKN && isCandlesType(Symbol(),TIME_FRAME,2,0)) {
+            if(inRange(close, upKN, keltnerWidth) && curMA1 > lastMA1) {
                isBuy = true;
                SL = midKN;
             }
@@ -139,9 +131,9 @@ void OnTick()
       }
       
       // SELL
-      if(isMA1Downward) {
-         if(Bid < lowKN && isCandlesType(Symbol(),TIME_FRAME,2,1)) {
-            if(inRange(Bid, lowKN, MathAbs(upKN-lowKN))) {
+      if(isMA1Downward && isKNDownward) {
+         if(close < lowKN && isCandlesType(Symbol(),TIME_FRAME,2,1)) {
+            if(inRange(close, lowKN, keltnerWidth) && curMA1 < lastMA1) {
                isSell = true;
                SL = midKN;
             }
@@ -186,40 +178,29 @@ void OnTick()
             int ticket = OrderTicket();
             double size = OrderLots();
             if(OrderType() == 0){
-               // Move SL to upper band
-               ref = upKN + MathAbs(upKN - midKN);
-               if(Bid > ref && ref > OrderStopLoss()) {
-                  modifyOrder(ticket, OrderOpenPrice(), upKN, 0);
-               } 
                // Move SL to middle band
-               else if(Bid > upKN && midKN > OrderStopLoss()) {
+               if(Bid > upKN) {
                   modifyOrder(ticket, OrderOpenPrice(), midKN, 0);
                }
             }
             
             if(OrderType() == 1) {
-               // Move SL to lower band
-               ref = lowKN - MathAbs(lowKN - midKN);
-               if(Ask < ref && ref < OrderStopLoss()) {
-                  modifyOrder(ticket, OrderOpenPrice(), lowKN, 0);
-               } 
                // Move SL to middle band
-               else if(Ask < lowKN && midKN < OrderStopLoss()) {
+               if(Ask < lowKN) {
                   modifyOrder(ticket, OrderOpenPrice(), midKN, 0);
                }
-
             }
 
 
-            // TP 50%
-            if(orderProfit(ticket) > TPPips/2) {
-               if(OrderType() == 0) {
-                  closeOrder(ticket, OrderLots()/2, Bid, slippage);
-               }
-               if(OrderType() == 1) {
-                  closeOrder(ticket, OrderLots()/2, Ask, slippage);
-               }
-            }
+            //TP 50%
+            //if(orderProfit(ticket) > TPPips/2 && OrderLots() > lotSize/2) {
+            //   if(OrderType() == 0) {
+            //      closeOrder(ticket, OrderLots()/2, Bid, slippage);
+            //   }
+            //   if(OrderType() == 1) {
+            //      closeOrder(ticket, OrderLots()/2, Ask, slippage);
+            //   }
+            //}
             
             // TAKE PROFIT
             if(orderProfit(ticket) > TPPips) {

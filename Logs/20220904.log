@@ -1,1 +1,246 @@
 3	09:51:06.076	cannot open file 'C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\indicators\Keltner_Channel.ex4' [2]
+0	09:53:29.664	Custom indicator Keltner_Channel XAUUSDm,M15: loaded successfully
+0	09:53:37.281	Keltner_Channel XAUUSDm,M15: initialized
+0	09:54:14.401	Keltner_Channel XAUUSDm,M15: uninit reason 5
+0	09:54:14.418	Keltner_Channel XAUUSDm,M15: initialized
+0	09:54:22.280	Custom indicator Keltner_Channel XAUUSDm,M15: loaded successfully
+0	09:54:27.892	Keltner_Channel XAUUSDm,M15: initialized
+0	09:55:15.225	Keltner_Channel XAUUSDm,M15: uninit reason 2
+0	09:55:15.226	Custom indicator Keltner_Channel XAUUSDm,M15: removed
+0	09:55:15.234	Custom indicator Keltner_Channel XAUUSDm,M15: loaded successfully
+0	09:55:15.244	Keltner_Channel XAUUSDm,M15: initialized
+0	09:55:15.262	Keltner_Channel XAUUSDm,M15: uninit reason 2
+0	09:55:15.263	Custom indicator Keltner_Channel XAUUSDm,M15: removed
+0	09:55:15.271	Custom indicator Keltner_Channel XAUUSDm,M15: loaded successfully
+0	09:55:15.280	Keltner_Channel XAUUSDm,M15: initialized
+0	09:55:16.234	Keltner_Channel XAUUSDm,M15: uninit reason 2
+0	09:55:16.236	Custom indicator Keltner_Channel XAUUSDm,M15: removed
+0	09:55:16.244	Custom indicator Keltner_Channel XAUUSDm,M15: loaded successfully
+0	09:55:16.255	Keltner_Channel XAUUSDm,M15: initialized
+0	09:55:16.273	Keltner_Channel XAUUSDm,M15: uninit reason 2
+0	09:55:16.275	Custom indicator Keltner_Channel XAUUSDm,M15: removed
+0	09:55:16.283	Custom indicator Keltner_Channel XAUUSDm,M15: loaded successfully
+0	09:55:16.293	Keltner_Channel XAUUSDm,M15: initialized
+0	09:55:41.073	Keltner_Channel XAUUSDm,M15: uninit reason 1
+0	09:55:41.075	Custom indicator Keltner_Channel XAUUSDm,M15: removed
+0	09:55:56.396	Keltner_Channel XAUUSDm,M15: uninit reason 5
+0	09:55:56.411	Keltner_Channel XAUUSDm,M15: initialized
+0	09:58:09.922	Expert scalp_keltner_ma_v2 XAUUSDm,H1: loaded successfully
+0	09:58:11.466	scalp_keltner_ma_v2 XAUUSDm,H1 inputs: lotSize=0.1; maxPos=1; delay=2; threshold=2; magicNumber=8888; TIME_FRAME=0; 
+0	09:58:11.493	scalp_keltner_ma_v2 XAUUSDm,H1: Alert: Init Kelter MA scalping strategy
+0	09:58:11.493	scalp_keltner_ma_v2 XAUUSDm,H1: initialized
+0	09:58:16.720	scalp_keltner_ma_v2 XAUUSDm,H1: uninit reason 1
+0	09:58:16.720	scalp_keltner_ma_v2 XAUUSDm,H1: Alert: Remove strategy
+0	09:58:16.749	Expert scalp_keltner_ma_v2 XAUUSDm,H1: removed
+0	10:16:35.171	Keltner_Channel XAUUSDm,M15: uninit reason 4
+0	10:16:35.173	Custom indicator Keltner_Channel XAUUSDm,M15: removed
+0	14:46:36.225	Compiling 'scalp_keltner_ma_v2'
+0	15:59:43.506	Compiling 'scalp_keltner_ma_v2'
+0	15:59:46.992	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	15:59:46.992	test_indicator XAUUSDm,H1: initialized
+0	15:59:46.992	test_indicator XAUUSDm,H1: Alert: false
+0	15:59:46.992	test_indicator XAUUSDm,H1: uninit reason 0
+0	15:59:47.023	Script test_indicator XAUUSDm,H1: removed
+0	15:59:55.843	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	15:59:55.854	test_indicator XAUUSDm,H1: initialized
+0	15:59:55.854	test_indicator XAUUSDm,H1: Alert: true
+0	15:59:55.854	test_indicator XAUUSDm,H1: uninit reason 0
+0	15:59:55.870	Script test_indicator XAUUSDm,H1: removed
+0	16:00:06.302	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	16:00:06.309	test_indicator XAUUSDm,H1: initialized
+0	16:00:06.309	test_indicator XAUUSDm,H1: Alert: true
+0	16:00:06.309	test_indicator XAUUSDm,H1: uninit reason 0
+0	16:00:06.325	Script test_indicator XAUUSDm,H1: removed
+0	16:00:14.841	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	16:00:14.854	test_indicator XAUUSDm,H1: initialized
+0	16:00:14.854	test_indicator XAUUSDm,H1: Alert: false
+0	16:00:14.854	test_indicator XAUUSDm,H1: uninit reason 0
+0	16:00:14.869	Script test_indicator XAUUSDm,H1: removed
+0	17:28:03.097	Compiling 'scalp_keltner_ma_v2'
+0	17:44:50.066	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:44:50.082	test_indicator XAUUSDm,H1: initialized
+0	17:44:50.113	test_indicator XAUUSDm,H1: Alert: 0 - 1700.14184
+0	17:44:50.113	test_indicator XAUUSDm,H1: Alert: 1 - 1700.254106666666
+0	17:44:50.113	test_indicator XAUUSDm,H1: Alert: 2 - 1700.444113333333
+0	17:44:50.113	test_indicator XAUUSDm,H1: Alert: 3 - 1700.492639999999
+0	17:44:50.113	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:44:50.129	Script test_indicator XAUUSDm,H1: removed
+0	17:45:52.755	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:45:52.771	Keltner_Channel XAUUSDm,H1: initialized
+0	17:47:38.097	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:47:38.107	test_indicator XAUUSDm,H1: initialized
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: 0 - 1700.14184
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: false
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: 1 - 1700.254106666666
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: false
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: 2 - 1700.444113333333
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: false
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: 3 - 1700.492639999999
+0	17:47:38.138	test_indicator XAUUSDm,H1: Alert: true
+0	17:47:38.138	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:47:38.161	Script test_indicator XAUUSDm,H1: removed
+0	17:48:07.811	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:48:07.827	test_indicator XAUUSDm,H1: initialized
+0	17:48:07.842	test_indicator XAUUSDm,H1: Alert: 0 - 1700.14184
+0	17:48:07.842	test_indicator XAUUSDm,H1: Alert: 1 - 1700.254106666666
+0	17:48:07.842	test_indicator XAUUSDm,H1: Alert: 2 - 1700.444113333333
+0	17:48:07.858	test_indicator XAUUSDm,H1: Alert: 3 - 1700.492639999999
+0	17:48:07.858	test_indicator XAUUSDm,H1: Alert: true
+0	17:48:07.858	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:48:07.875	Script test_indicator XAUUSDm,H1: removed
+0	17:48:18.479	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:48:18.481	test_indicator XAUUSDm,H1: initialized
+0	17:48:18.512	test_indicator XAUUSDm,H1: Alert: 0 - 1700.14184
+0	17:48:18.512	test_indicator XAUUSDm,H1: Alert: 1 - 1700.254106666666
+0	17:48:18.512	test_indicator XAUUSDm,H1: Alert: 2 - 1700.444113333333
+0	17:48:18.512	test_indicator XAUUSDm,H1: Alert: 3 - 1700.492639999999
+0	17:48:18.512	test_indicator XAUUSDm,H1: Alert: true
+0	17:48:18.512	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:48:18.528	Script test_indicator XAUUSDm,H1: removed
+0	17:48:22.054	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:48:22.054	test_indicator XAUUSDm,H1: initialized
+0	17:48:22.085	test_indicator XAUUSDm,H1: Alert: 0 - 1700.14184
+0	17:48:22.085	test_indicator XAUUSDm,H1: Alert: 1 - 1700.254106666666
+0	17:48:22.085	test_indicator XAUUSDm,H1: Alert: 2 - 1700.444113333333
+0	17:48:22.085	test_indicator XAUUSDm,H1: Alert: 3 - 1700.492639999999
+0	17:48:22.085	test_indicator XAUUSDm,H1: Alert: true
+0	17:48:22.085	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:48:22.101	Script test_indicator XAUUSDm,H1: removed
+0	17:48:58.301	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:48:58.316	test_indicator XAUUSDm,H1: initialized
+0	17:48:58.332	test_indicator XAUUSDm,H1: Alert: 0 - 1700.14184
+0	17:48:58.332	test_indicator XAUUSDm,H1: Alert: 1 - 1700.254106666666
+0	17:48:58.332	test_indicator XAUUSDm,H1: Alert: 2 - 1700.444113333333
+0	17:48:58.332	test_indicator XAUUSDm,H1: Alert: 3 - 1700.492639999999
+0	17:48:58.332	test_indicator XAUUSDm,H1: Alert: 4 - 1700.49884
+1	17:49:35.833	test_indicator XAUUSDm,H1: debugging terminated
+0	17:49:35.880	test_indicator XAUUSDm,H1: uninit reason 4
+0	17:49:35.944	Script test_indicator XAUUSDm,H1: removed
+0	17:49:42.225	Keltner_Channel XAUUSDm,H1: uninit reason 3
+0	17:49:42.225	Keltner_Channel XAUUSDm,M5: initialized
+0	17:49:57.103	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:49:57.103	test_indicator XAUUSDm,H1: initialized
+0	17:49:57.134	test_indicator XAUUSDm,H1: Alert: 0 - 1704.2692
+0	17:49:57.134	test_indicator XAUUSDm,H1: Alert: 1 - 1704.377046666666
+0	17:49:57.134	test_indicator XAUUSDm,H1: Alert: 2 - 1704.552793333333
+0	17:49:57.134	test_indicator XAUUSDm,H1: Alert: 3 - 1704.683039999999
+0	17:49:57.134	test_indicator XAUUSDm,H1: Alert: 4 - 1704.74952
+0	17:49:57.134	test_indicator XAUUSDm,H1: Alert: true
+0	17:49:57.134	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:49:57.150	Script test_indicator XAUUSDm,H1: removed
+0	17:50:19.294	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:50:19.305	test_indicator XAUUSDm,H1: initialized
+0	17:50:19.336	test_indicator XAUUSDm,H1: Alert: 0 - 1704.2692
+0	17:50:19.336	test_indicator XAUUSDm,H1: Alert: 1 - 1704.377046666666
+0	17:50:19.336	test_indicator XAUUSDm,H1: Alert: 2 - 1704.552793333333
+0	17:50:19.336	test_indicator XAUUSDm,H1: Alert: 3 - 1704.683039999999
+0	17:50:19.336	test_indicator XAUUSDm,H1: Alert: 4 - 1704.74952
+0	17:50:19.336	test_indicator XAUUSDm,H1: Alert: 5 - 1704.709553333333
+0	17:50:19.336	test_indicator XAUUSDm,H1: Alert: false
+0	17:50:19.336	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:50:19.361	Script test_indicator XAUUSDm,H1: removed
+0	17:50:29.545	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:50:29.545	test_indicator XAUUSDm,H1: initialized
+0	17:50:29.576	test_indicator XAUUSDm,H1: Alert: 0 - 1704.2692
+0	17:50:29.576	test_indicator XAUUSDm,H1: Alert: 1 - 1704.377046666666
+0	17:50:29.576	test_indicator XAUUSDm,H1: Alert: 2 - 1704.552793333333
+0	17:50:29.576	test_indicator XAUUSDm,H1: Alert: 3 - 1704.683039999999
+0	17:50:29.576	test_indicator XAUUSDm,H1: Alert: 4 - 1704.74952
+0	17:50:29.576	test_indicator XAUUSDm,H1: Alert: 5 - 1704.709553333333
+0	17:50:29.576	test_indicator XAUUSDm,H1: Alert: false
+0	17:50:29.576	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:50:29.592	Script test_indicator XAUUSDm,H1: removed
+0	17:50:54.369	Expert scalp_keltner_ma_v2 XAUUSDm,H1: loaded successfully
+0	17:50:55.963	scalp_keltner_ma_v2 XAUUSDm,H1 inputs: lotSize=0.1; maxPos=1; TPPips=20; SLPips=20; delay=2; thresholdKN=1; thresholdMA=1; magicNumber=8888; TIME_FRAME=0; 
+0	17:50:55.994	scalp_keltner_ma_v2 XAUUSDm,H1: Alert: Init Kelter MA scalping strategy
+0	17:50:55.994	scalp_keltner_ma_v2 XAUUSDm,H1: initialized
+0	17:50:59.976	scalp_keltner_ma_v2 XAUUSDm,H1: uninit reason 1
+0	17:50:59.976	scalp_keltner_ma_v2 XAUUSDm,H1: Alert: Remove strategy
+0	17:51:00.007	Expert scalp_keltner_ma_v2 XAUUSDm,H1: removed
+0	17:51:06.029	Keltner_Channel XAUUSDm,M5: uninit reason 4
+0	17:51:06.029	Custom indicator Keltner_Channel XAUUSDm,M5: removed
+0	17:51:25.048	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:51:25.064	Keltner_Channel XAUUSDm,H1: initialized
+0	17:51:28.236	Keltner_Channel XAUUSDm,H1: uninit reason 3
+0	17:51:28.236	Keltner_Channel XAUUSDm,M5: initialized
+0	17:51:33.430	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:51:33.440	test_indicator XAUUSDm,H1: initialized
+0	17:51:33.455	test_indicator XAUUSDm,H1: Alert: 0 - 1704.2692
+0	17:51:33.455	test_indicator XAUUSDm,H1: Alert: 1 - 1704.377046666666
+0	17:51:33.455	test_indicator XAUUSDm,H1: Alert: 2 - 1704.552793333333
+0	17:51:33.471	test_indicator XAUUSDm,H1: Alert: 3 - 1704.683039999999
+0	17:51:33.471	test_indicator XAUUSDm,H1: Alert: 4 - 1704.74952
+0	17:51:33.471	test_indicator XAUUSDm,H1: Alert: 5 - 1704.709553333333
+0	17:51:33.471	test_indicator XAUUSDm,H1: Alert: false
+0	17:51:33.471	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:51:33.487	Script test_indicator XAUUSDm,H1: removed
+0	17:51:56.561	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:51:56.577	test_indicator XAUUSDm,H1: initialized
+0	17:51:56.655	test_indicator XAUUSDm,H1: Alert: 0 - 1711.727419999998
+0	17:51:56.655	test_indicator XAUUSDm,H1: Alert: 1 - 1711.745319999998
+0	17:51:56.655	test_indicator XAUUSDm,H1: Alert: 2 - 1711.775079999998
+0	17:51:56.655	test_indicator XAUUSDm,H1: Alert: 3 - 1711.823733333331
+0	17:51:56.655	test_indicator XAUUSDm,H1: Alert: 4 - 1711.867726666665
+0	17:51:56.655	test_indicator XAUUSDm,H1: Alert: 5 - 1711.929846666665
+0	17:51:56.670	test_indicator XAUUSDm,H1: Alert: false
+0	17:51:56.670	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:51:56.688	Script test_indicator XAUUSDm,H1: removed
+0	17:52:38.858	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:52:38.867	test_indicator XAUUSDm,H1: initialized
+0	17:52:38.945	test_indicator XAUUSDm,H1: Alert: 0 - 1711.727419999998
+0	17:52:38.945	test_indicator XAUUSDm,H1: Alert: 1 - 1711.745319999998
+0	17:52:38.945	test_indicator XAUUSDm,H1: Alert: 2 - 1711.775079999998
+0	17:52:38.945	test_indicator XAUUSDm,H1: Alert: 3 - 1711.823733333331
+0	17:52:38.945	test_indicator XAUUSDm,H1: Alert: 4 - 1711.867726666665
+0	17:52:38.945	test_indicator XAUUSDm,H1: Alert: 5 - 1711.929846666665
+0	17:52:38.945	test_indicator XAUUSDm,H1: Alert: true
+0	17:52:38.945	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:52:38.977	Script test_indicator XAUUSDm,H1: removed
+0	17:54:21.047	Keltner_Channel XAUUSDm,M5: uninit reason 4
+0	17:54:21.049	Custom indicator Keltner_Channel XAUUSDm,M5: removed
+0	17:57:24.724	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	17:57:24.735	Keltner_Channel XAUUSDm,H1: initialized
+0	17:57:36.241	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:57:36.256	test_indicator XAUUSDm,H1: initialized
+0	17:57:36.340	test_indicator XAUUSDm,H1: Alert: 0 - 1711.727419999998
+0	17:57:36.340	test_indicator XAUUSDm,H1: Alert: 1 - 1711.745319999998
+0	17:57:36.340	test_indicator XAUUSDm,H1: Alert: 2 - 1711.775079999998
+0	17:57:36.340	test_indicator XAUUSDm,H1: Alert: 3 - 1711.823733333331
+0	17:57:36.340	test_indicator XAUUSDm,H1: Alert: 4 - 1711.867726666665
+0	17:57:36.340	test_indicator XAUUSDm,H1: Alert: 5 - 1711.929846666665
+0	17:57:36.340	test_indicator XAUUSDm,H1: Alert: true
+0	17:57:36.340	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:57:36.360	Script test_indicator XAUUSDm,H1: removed
+0	17:57:42.640	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:57:42.667	test_indicator XAUUSDm,H1: initialized
+0	17:57:42.748	test_indicator XAUUSDm,H1: Alert: 0 - 1711.727419999998
+0	17:57:42.748	test_indicator XAUUSDm,H1: Alert: 1 - 1711.745319999998
+0	17:57:42.748	test_indicator XAUUSDm,H1: Alert: 2 - 1711.775079999998
+0	17:57:42.748	test_indicator XAUUSDm,H1: Alert: 3 - 1711.823733333331
+0	17:57:42.748	test_indicator XAUUSDm,H1: Alert: 4 - 1711.867726666665
+0	17:57:42.748	test_indicator XAUUSDm,H1: Alert: 5 - 1711.929846666665
+0	17:57:42.748	test_indicator XAUUSDm,H1: Alert: true
+0	17:57:42.748	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:57:42.768	Script test_indicator XAUUSDm,H1: removed
+0	17:58:26.721	Keltner_Channel XAUUSDm,H1: uninit reason 3
+0	17:58:26.721	Keltner_Channel XAUUSDm,M5: initialized
+0	17:58:52.476	Script test\test_indicator XAUUSDm,H1: loaded successfully
+0	17:58:52.489	test_indicator XAUUSDm,H1: initialized
+0	17:58:52.570	test_indicator XAUUSDm,H1: Alert: 0 - 1711.727419999998
+0	17:58:52.570	test_indicator XAUUSDm,H1: Alert: 1 - 1711.745319999998
+0	17:58:52.570	test_indicator XAUUSDm,H1: Alert: 2 - 1711.775079999998
+0	17:58:52.570	test_indicator XAUUSDm,H1: Alert: 3 - 1711.823733333331
+0	17:58:52.570	test_indicator XAUUSDm,H1: Alert: 4 - 1711.867726666665
+0	17:58:52.570	test_indicator XAUUSDm,H1: Alert: 5 - 1711.929846666665
+0	17:58:52.570	test_indicator XAUUSDm,H1: Alert: false
+0	17:58:52.570	test_indicator XAUUSDm,H1: uninit reason 0
+0	17:58:52.599	Script test_indicator XAUUSDm,H1: removed
+0	18:02:34.484	Expert scalp_keltner_ma_v2 XAUUSDm,H1: loaded successfully
+0	18:02:35.591	scalp_keltner_ma_v2 XAUUSDm,H1 inputs: lotSize=0.1; maxPos=1; TPPips=20; SLPips=20; delay=2; thresholdKN=0; thresholdMA=0; magicNumber=8888; TIME_FRAME=0; 
+0	18:02:35.613	scalp_keltner_ma_v2 XAUUSDm,H1: Alert: Init Kelter MA scalping strategy
+0	18:02:35.613	scalp_keltner_ma_v2 XAUUSDm,H1: initialized
+0	18:02:39.116	scalp_keltner_ma_v2 XAUUSDm,H1: uninit reason 1
+0	18:02:39.116	scalp_keltner_ma_v2 XAUUSDm,H1: Alert: Remove strategy
+0	18:02:39.130	Expert scalp_keltner_ma_v2 XAUUSDm,H1: removed
+0	20:17:58.770	Keltner_Channel XAUUSDm,M5: uninit reason 9
+0	20:17:58.851	Custom indicator Keltner_Channel XAUUSDm,M5: removed
