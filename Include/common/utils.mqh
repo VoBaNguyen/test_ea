@@ -291,7 +291,7 @@ bool isSideway(double& line1[], double& line2[], int size, double threshold) {
 bool isArrIncrease(double& data[]) {
    int size = ArraySize(data);
    double curValue = data[0];
-   for(int i=1; i<size-1; i++) {
+   for(int i=1; i<size; i++) {
       double nextValue = data[i];
       if(curValue <= nextValue) {
          return false;
@@ -305,7 +305,7 @@ bool isArrIncrease(double& data[]) {
 bool isArrDecrease(double& data[]) {
    int size = ArraySize(data);
    double curValue = data[0];
-   for(int i=1; i<size-1; i++) {
+   for(int i=1; i<size; i++) {
       double nextValue = data[i];
       if(curValue >= nextValue) {
          return false;

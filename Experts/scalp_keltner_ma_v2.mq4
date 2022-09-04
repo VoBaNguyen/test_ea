@@ -26,11 +26,11 @@
 //+------------------------------------------------------------------+
 input double lotSize = 0.1; // Lot Size
 input int maxPos = 1; //Max Position
-input int TPPips = 20; //Take profit pips
-input int SLPips = 20; //Take profit pips
+input int TPPips = 25; //Take profit pips
+input int SLPips = 25; //Take profit pips
 input int delay = 2;
-input int thresholdKN = 0.5; // Trend delta
-input int thresholdMA = 0.5; // Trend delta
+input double thresholdKN = 0.0; // Trend delta
+input double thresholdMA = 0.25; // Trend delta
 input long magicNumber = 8888; // Expert ID
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
 
@@ -39,14 +39,17 @@ int slippage = 10;
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
-double   bufMA1[5], 
-         bufMA2[5], 
-         keltnerUp[5], 
-         keltnerMid[5], 
-         keltnerLow[5],
-         priceClose[5], 
-         priceOpen[5];
-int arrSize = 5;
+double   bufMA1[4], 
+         bufMA2[4], 
+         keltnerUp[4], 
+         keltnerMid[4], 
+         keltnerLow[4],
+         priceClose[4], 
+         priceOpen[4];
+int arrSize = 4;
+int periodMA1 = 10;
+int periodMA2 = 200;
+int periodLKN = 50;
 
 int OnInit()
   {
@@ -73,19 +76,18 @@ void OnTick()
 //---
    
    // Collect data   
-   for(int i=0; i<arrSize; i++) {
-      bufMA1[i] = iMA(Symbol(),TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
-      bufMA2[i] = iMA(Symbol(),TIME_FRAME,200,0,MODE_SMA,PRICE_CLOSE,i);
-      keltnerUp[i] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",50,0,i);
-      keltnerMid[i] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",50,1,i);
-      keltnerLow[i] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",50,2,i);
+   for(int i=1; i<arrSize+1; i++) {
+      bufMA1[i-1]     = iMA(Symbol(),TIME_FRAME,periodMA1,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA2[i-1]     = iMA(Symbol(),TIME_FRAME,periodMA2,0,MODE_SMA,PRICE_CLOSE,i);
+      keltnerUp[i-1]  = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",periodLKN,0,i);
+      keltnerMid[i-1] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",periodLKN,1,i);
+      keltnerLow[i-1] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",periodLKN,2,i);
    }
-   
    CopyClose(Symbol(), TIME_FRAME, 0, arrSize, priceClose);
    CopyOpen(Symbol(), TIME_FRAME, 0, arrSize, priceOpen);
    
    // Last price
-   int shift = 1;
+   int shift = 0;
    double ma1   = NormalizeDouble(bufMA1[shift], _Digits);
    double ma2   = NormalizeDouble(bufMA2[shift], _Digits);
    double upKN  = NormalizeDouble(keltnerUp[shift], _Digits);
@@ -94,33 +96,28 @@ void OnTick()
    double close = NormalizeDouble(priceClose[shift], _Digits);
    double open  = NormalizeDouble(priceOpen[shift], _Digits);
 
-   // Signal
-   bool isMA1Upward = false;
-   bool isMA1Downward = false;
-   bool isKNUpward = false;
-   bool isKNDownward = false;
-   bool isBuy = false;
-   bool isSell = false;
-   
+
    int totalPos  = countPosition(magicNumber);
-   isMA1Upward   = idcUpward(bufMA1, arrSize, thresholdMA);   
-   isMA1Downward = idcDownward(bufMA1, arrSize, thresholdMA);
-   isKNUpward    = idcUpward(keltnerMid, arrSize, thresholdKN);
-   isKNDownward  = idcDownward(keltnerMid, arrSize, thresholdKN);
+   if(totalPos < maxPos) {
    
-   if(totalPos < maxPos) {     
-      double SL;
+      // Signal
+      bool isMA1Upward   = idcUpward(bufMA1, arrSize, thresholdMA);   
+      bool isMA1Downward = idcDownward(bufMA1, arrSize, thresholdMA);
+      bool isKNUpward    = idcUpward(keltnerMid, arrSize, thresholdKN);
+      bool isKNDownward  = idcDownward(keltnerMid, arrSize, thresholdKN);
       double keltnerWidth = MathAbs(lowKN-upKN);
-      double curMA1 = NormalizeDouble(bufMA1[0], _Digits);
-      double lastMA1 = NormalizeDouble(bufMA1[1], _Digits);
-      // CANDLE COVER 2 KELTNER BAND
-      // PRICE BELOW MID KELTNER AND 2 PREVIOUS CANDLES ARE RED
+      double curMA1 = NormalizeDouble(iMA(Symbol(),TIME_FRAME,periodMA1,0,MODE_SMA,PRICE_CLOSE,0), _Digits);
+      double lastMA1 = NormalizeDouble(iMA(Symbol(),TIME_FRAME,periodMA1,0,MODE_SMA,PRICE_CLOSE,1), _Digits);
+      bool isBuy = false;
+      bool isSell = false;
+      double SL;
       
-      
+      // Case 1: CANDLE COVER 2 KELTNER BAND
+      // Case 2: PRICE BELOW MID KELTNER AND 2 PREVIOUS CANDLES ARE RED
       // BUY
       if(isMA1Upward && isKNUpward) {
          if (close > upKN && isCandlesType(Symbol(),TIME_FRAME,2,0)) {
-            if(inRange(close, upKN, keltnerWidth) && curMA1 > lastMA1) {
+            if(inRange(close, upKN, keltnerWidth/2) && curMA1 > lastMA1) {
                isBuy = true;
                SL = midKN;
             }
@@ -133,7 +130,7 @@ void OnTick()
       // SELL
       if(isMA1Downward && isKNDownward) {
          if(close < lowKN && isCandlesType(Symbol(),TIME_FRAME,2,1)) {
-            if(inRange(close, lowKN, keltnerWidth) && curMA1 < lastMA1) {
+            if(inRange(close, lowKN, keltnerWidth/2) && curMA1 < lastMA1) {
                isSell = true;
                SL = midKN;
             }
@@ -156,7 +153,9 @@ void OnTick()
          }
       }
       
-      
+      //+------------------------------------------------------------------+
+      //| SEND ORDERS                                                      |
+      //+------------------------------------------------------------------+  
       if(isBuy || isSell) {
          // Manage orders
          if(isBuy) {
