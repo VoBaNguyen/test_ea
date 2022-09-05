@@ -3,7 +3,6 @@
    - Su dung MA10,20,50,200
    - Ket hop ADX khung H1
    - Dung khung H4 de xac dinh suc manh cua xu huong - Tranh case sideway
-   - Ket hop chot lai 50% o 100 pip va doi SL
 */
 
 
@@ -34,30 +33,29 @@ input int maxPos = 1; //Max Position
 input int delay = 1;
 input int slippage = 10;
 input long magicNumber = 7777; //EA Id
-input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
-int threshold = 0.0;
-int convergenceThreshold = 1; 
-
+input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_H1;
+input ENUM_TIMEFRAMES TIME_FRAME_SLOW = PERIOD_H4;
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
-
-
-int arrSize = 5;
-double idcMAPrev[5],
-       idcMACur[5],
-       idcADX[5];
-
-int shiftMA = 1;
-
-double lotSize = 0.01;
+double bufMA10[4], 
+       bufMA20[4], 
+       bufMA50[4], 
+       bufMA200[4],
+       priceClose[4], 
+       priceOpen[4],
+       bufADX[4];
 int ticket = 0;
+double lotSize = 0.0;
+int threshold = 4;
 
 
 int OnInit()
   {
+//---
    Alert("Init MA Scaplt strategy");
+//---
    return(INIT_SUCCEEDED);
   }
   
@@ -78,34 +76,64 @@ void OnTick()
 //---
    
    // Collect data
-   for(int i=2; i<arrSize+2; i++) {
-      idcMAPrev[i-2] = NormalizeDouble(iMA(Symbol(),TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i-1), 1);
-      idcMACur[i-2] = NormalizeDouble(iMA(Symbol(),TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i), 1);
-      Alert(idcMAPrev[i-2], " - ", idcMACur[i-2]);
+   int arrSize = ArraySize(bufMA10);
+   for(int i=1; i < ArraySize(bufMA10)+1; i++) {
+      bufMA10[i-1] = iMA(Symbol(),TIME_FRAME,10,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA20[i-1] = iMA(Symbol(),TIME_FRAME,20,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA50[i-1] = iMA(Symbol(),TIME_FRAME,50,0,MODE_SMA,PRICE_CLOSE,i);
+      bufMA200[i-1] = iMA(Symbol(),TIME_FRAME,200,0,MODE_SMA,PRICE_CLOSE,i);
+      bufADX[i-1] = iADX(Symbol(), TIME_FRAME, 20, PRICE_CLOSE, MODE_MAIN,i);
+      Alert(bufMA10[i-1]);
    }
+   Alert("====================\n\n");
    
-   Alert("======================\n");
    
+   CopyClose(Symbol(), TIME_FRAME, 0, arrSize, priceClose);
+   CopyOpen(Symbol(), TIME_FRAME, 0, arrSize, priceOpen);
    
-   // Signal
-   int totalPos = countPosition(magicNumber);   
+   // Last price
+   int shift = 0;
+   double ma10  = NormalizeDouble(bufMA10[shift], _Digits);
+   double ma20  = NormalizeDouble(bufMA20[shift], _Digits);
+   double ma50  = NormalizeDouble(bufMA50[shift], _Digits);
+   double ma200 = NormalizeDouble(bufMA200[shift], _Digits);
+   double close = NormalizeDouble(priceClose[shift], _Digits);
+   double open  = NormalizeDouble(priceOpen[shift], _Digits);
+   double ADX   = NormalizeDouble(bufADX[1], _Digits);
+   int totalPos = countPosition(magicNumber);
+   
    if(totalPos < maxPos) {
       bool isBuy = false;
-      bool isSell = false;
-      
-      // Check for BUY signal
-      bool MAPrevUpward   = idcUpward(idcMAPrev, threshold);
-      bool MAPrevDownward = idcDownward(idcMAPrev, threshold);
-      bool MACurUpward    = idcUpward(idcMACur, threshold);
-      bool MACurDownward  = idcDownward(idcMACur, threshold);
+      bool isSell = false;      
+      bool ADXUpward = idcUpward(bufADX, threshold);
 
-       if(MAPrevUpward && !MACurUpward) {
-         isSell = true;
-       }
-       if(MAPrevDownward && !MACurDownward) {
-         isBuy = true;
-       }
-      
+      bool MA10Upward = idcUpward(bufMA10);
+      bool MA20Upward = idcUpward(bufMA20);
+      bool MA50Upward = idcUpward(bufMA50);
+      bool upward = MA10Upward && MA20Upward && MA50Upward;
+       
+      bool MA10Downward = idcDownward(bufMA10);
+      bool MA20Downward = idcDownward(bufMA20);
+      bool MA50Downward = idcDownward(bufMA50);
+      bool downward = MA10Downward && MA20Downward && MA50Downward;
+   
+   
+      if(ADXUpward && 20 < ADX && ADX < 45) {
+         if(ma10 > ma20 && ma20 > ma50 && upward) {
+            isBuy = true;
+         }
+         //else if (MA20Upward && ma10 > ma20 && ma10 > ma50 && ma10 > ma200 && ADX > 20 && ADX < 40) {
+         //   isBuy = true;
+         //}
+            
+         if(ma10 < ma20 && ma20 < ma50 && downward) {
+            isSell = true;
+         } 
+         //else if (MA20Downward && ma10 < ma20 && ma10 < ma50 && ma10 < ma200 && ADX > 20 && ADX < 40) {
+         //   isSell = true;
+         //}
+      }
+
       //+------------------------------------------------------------------+
       //| CHECK DUPLICATE POSITIONS                                        |
       //+------------------------------------------------------------------+   
@@ -117,13 +145,19 @@ void OnTick()
             isSell = false;
          }
       }
-      
+   
       //+------------------------------------------------------------------+
       //| SEND ORDERS                                                      |
       //+------------------------------------------------------------------+   
       if(isBuy || isSell) {
          MyAccount account("Nguyen", "Vo", magicNumber);
          lotSize = calcLot(account.info.BALANCE, riskLevel, SLPips);
+         if(isBuy && idcUpward(bufMA200)) {
+            lotSize = lotSize*2;
+         } else if(isSell && idcDownward(bufMA200)) {
+            lotSize = lotSize*2;
+         }
+         
          // Manage orders
          if(isBuy) {
             double TP = calTP(true, Ask,TPPips);
@@ -138,17 +172,16 @@ void OnTick()
    }
 
 
-
    if(totalPos == maxPos) {
       //+------------------------------------------------------------------+
       //| TAKE PROFIT 50%                                                  |
       //+------------------------------------------------------------------+
       if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES)) {
-         if(orderProfit(ticket) > TPPips/2 && OrderLots() == lotSize) {
+         if(orderProfit(ticket) > TPPips/2 && OrderLots() > lotSize/2) {
             // Move SL to entry
             double open = OrderOpenPrice();            
             if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES) == true) {
-               modifyOrder(ticket, open, open, OrderTakeProfit());//Modify it!
+               modifyOrder(ticket, open, open, OrderTakeProfit());
             }
             
             // TP 50%
@@ -162,5 +195,23 @@ void OnTick()
       }
    }
    
+   
   }
 //+------------------------------------------------------------------+
+
+
+//void takeProfitPart(int ticket, int TPPips, int tpTimes) {
+//   // Move SL to entry
+//   double open = OrderOpenPrice();            
+//   if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES) == true) {
+//      modifyOrder(ticket, open, open, OrderTakeProfit());
+//   }
+//   
+//   // TP 50%
+//   if(OrderType() == 0) {
+//      closeOrder(ticket, OrderLots()/2, Bid, slippage);
+//   }
+//   if(OrderType() == 1) {
+//      closeOrder(ticket, OrderLots()/2, Ask, slippage);
+//   }
+//}

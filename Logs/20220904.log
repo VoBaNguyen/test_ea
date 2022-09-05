@@ -315,3 +315,18 @@
 0	21:35:12.514	Custom indicator Keltner_Channel XAUUSDm,M5: removed
 0	21:35:30.412	Custom indicator Keltner_Channel XAUUSDm,M5: loaded successfully
 0	21:35:31.802	Keltner_Channel XAUUSDm,M5: initialized
+0	22:03:50.722	Keltner_Channel XAUUSDm,M5: uninit reason 3
+0	22:03:50.723	Keltner_Channel XAUUSDm,H1: initialized
+0	22:03:56.011	Keltner_Channel XAUUSDm,H1: uninit reason 1
+0	22:03:56.013	Custom indicator Keltner_Channel XAUUSDm,H1: removed
+0	22:22:22.533	Compiling 'ma_signal _v3'
+0	22:28:57.147	Compiling 'ma_signal _v4'
+0	22:28:58.344	Script test\test_funciton XAUUSDm,H1: loaded successfully
+0	22:28:58.358	test_funciton XAUUSDm,H1: initialized
+0	22:28:58.359	test_funciton XAUUSDm,H1: Alert: 1.0
+0	22:28:58.359	test_funciton XAUUSDm,H1: uninit reason 0
+0	22:28:58.376	Script test_funciton XAUUSDm,H1: removed
+0	22:59:54.557	Custom indicator Keltner_Channel XAUUSDm,H1: loaded successfully
+0	22:59:54.573	Keltner_Channel XAUUSDm,H1: initialized
+0	23:00:00.656	Keltner_Channel XAUUSDm,H1: uninit reason 1
+0	23:00:00.657	Custom indicator Keltner_Channel XAUUSDm,H1: removed

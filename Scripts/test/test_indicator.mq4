@@ -23,13 +23,14 @@ void OnStart()
 
 
    // Collect data
-   for(int i=0; i<arrSize; i++) {
-      keltnerMid[i] = iCustom(Symbol(),PERIOD_M5,"Keltner_Channel",50,1,i);
-      Alert(i, " - ", keltnerMid[i]);      
-   }
-   
-   bool isKNDownward  = idcDownward(keltnerMid, arrSize, 0.3);
-   Alert(isKNDownward);   
+   //for(int i=0; i<arrSize; i++) {
+   //   keltnerMid[i] = iCustom(Symbol(),PERIOD_M5,"Keltner_Channel",50,1,i);
+   //   Alert(i, " - ", keltnerMid[i]);      
+   //}
+   //bool isKNDownward  = idcDownward(keltnerMid, arrSize, 0.3);
+   //Alert(isKNDownward);
+   int shift = 1;   
+   Alert(NormalizeDouble(iMA(Symbol(),PERIOD_H4,20,0,MODE_SMA,PRICE_CLOSE,shift), _Digits));
    
   }
 //+------------------------------------------------------------------+
