@@ -18,7 +18,7 @@
 //| Input EA                                                         |
 //+------------------------------------------------------------------+
 input int TrendCCI_Period = 14;
-input bool Automatic_Timeframe_setting;
+input bool Automatic_Timeframe_setting = true;
 input int M1_CCI_Period = 14;
 input int M5_CCI_Period = 14;
 input int M15_CCI_Period = 14;
@@ -40,7 +40,9 @@ input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_H1;
 
 double lotSize = 0.1;
 int ticket = 0;
-double trendUp[2], trendDown[2];
+double   trendUp[4], 
+         trendDown[4],
+         MA50[6];
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
@@ -85,25 +87,34 @@ void OnTick()
       	i+1
       );
    }
-    
+   
+   for(int i=0; i<ArraySize(MA50); i++) {
+      MA50[i] = iMA(Symbol(), TIME_FRAME, 50, 0, MODE_SMA, PRICE_CLOSE, i+1);
+   }
+   
+   
    bool isUptrend = isPivotUp(trendUp, trendDown);
    bool isDowntrend = isPivotDown(trendUp, trendDown);
    bool isSideway = isPivotSideway(trendUp, trendDown);
+   bool isMAUpward = idcUpward(MA50);
+   bool isMADownward = idcDownward(MA50);
    bool isBuy = false;
    bool isSell = false;
    int totalPos = countPosition(magicNumber);   
 
    if(totalPos == maxPos) {
       if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES) == true) {
-         if(OrderType() == 0 && isDowntrend) {
-            isSell = true;
+         if(OrderType() == 0 && (isDowntrend || isSideway)) {
             closeOrder(ticket, OrderLots(), Bid, slippage);
-         } else if(OrderType() == 1 && isUptrend) {
-            isBuy = true;
+         } else if(OrderType() == 1 && (isUptrend || isSideway)) {
             closeOrder(ticket, OrderLots(), Ask, slippage);
          }
       }
-   } else if(totalPos < maxPos) {
+   }
+   
+   
+   // NEW SIGNAL
+   if(totalPos < maxPos) {
       if(isDowntrend) {
          isSell = true;
       } else if(isUptrend) {
@@ -111,19 +122,19 @@ void OnTick()
       }
    }
 
-   // NEW SIGNAL
+   
    if(totalPos < maxPos && (isBuy || isSell)) {
       //+------------------------------------------------------------------+
       //| CHECK DUPLICATE POSITIONS                                        |
       //+------------------------------------------------------------------+   
-      if(isBuy || isSell) {
-         long delaySec = delay * PeriodSeconds(TIME_FRAME);
-         bool recentClose = isRecentClose(delaySec);   
-         if(recentClose) {
-            isBuy = false;
-            isSell = false;
-         }
-      }
+      //if(isBuy || isSell) {
+      //   long delaySec = delay * PeriodSeconds(TIME_FRAME);
+      //   bool recentClose = isRecentClose(delaySec);   
+      //   if(recentClose) {
+      //      isBuy = false;
+      //      isSell = false;
+      //   }
+      //}
       
       //+------------------------------------------------------------------+
       //| SEND ORDERS                                                      |

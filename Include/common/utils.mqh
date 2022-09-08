@@ -170,7 +170,6 @@ bool isRecentClose(long delaySeconds) {
 }
 
 
-
 double calcLot(double balance, double riskLevel, int pipRange) {
    // 1 lot -> 1 pip = 10$
    // pips * 10 * lot = maxLoss
@@ -185,7 +184,6 @@ string getErr() {
    string errMsg = ErrorDescription(GetLastError());
    return errMsg;
 }
-
 
 
 /*********************************
