@@ -46,16 +46,19 @@ void OnStart()
       Alert("==============================================");
       string objName = ObjectName(ChartID(), i, 0, objType);
       Alert("Name: ", objName);
-      Alert("Time: ", ObjectGet(objName, OBJPROP_CREATETIME));
+      string strTime = StringSubstr(objName, 12, 11);
+      datetime createTime = StrToInteger(strTime);
+      Alert("createTime: ", createTime);
+      Alert("OBJPROP_CREATETIME: ", (datetime) ObjectGet(objName, OBJPROP_CREATETIME));
       Alert("Description: ", ObjectDescription(objName));
-      Alert("Tooltip: ", ObjectGetString(ChartID(),objName,OBJPROP_TOOLTIP));
-      Alert("OBJPROP_TIME1: ", ObjectGet(objName, OBJPROP_TIME1));
-      Alert("OBJPROP_TIME2: ", ObjectGet(objName, OBJPROP_TIME2));
-      Alert("OBJPROP_TIME3: ", ObjectGet(objName, OBJPROP_TIME3));
-      Alert("OBJPROP_PRICE1: ", ObjectGet(objName, OBJPROP_PRICE1));
-      Alert("OBJPROP_PRICE2: ", ObjectGet(objName, OBJPROP_PRICE2));
-      Alert("OBJPROP_PRICE3: ", ObjectGet(objName, OBJPROP_PRICE3));
-      Alert("Cur price: ", ObjectGetValueByTime(ChartID(), objName, ObjectGet(objName, OBJPROP_TIME1)));
+      //Alert("Tooltip: ", ObjectGetString(ChartID(),objName,OBJPROP_TOOLTIP));
+      //Alert("OBJPROP_TIME1: ", (datetime) ObjectGet(objName, OBJPROP_TIME1));
+      //Alert("OBJPROP_TIME2: ", (datetime) ObjectGet(objName, OBJPROP_TIME2));
+      //Alert("OBJPROP_TIME3: ", (datetime) ObjectGet(objName, OBJPROP_TIME3));
+      //Alert("OBJPROP_PRICE1: ", ObjectGet(objName, OBJPROP_PRICE1));
+      //Alert("OBJPROP_PRICE2: ", ObjectGet(objName, OBJPROP_PRICE2));
+      //Alert("OBJPROP_PRICE3: ", ObjectGet(objName, OBJPROP_PRICE3));
+      //ObjectSet(objName, OBJPROP_SELECTABLE, true);
    }
   }
 //+------------------------------------------------------------------+

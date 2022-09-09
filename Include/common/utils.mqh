@@ -42,6 +42,12 @@ double getPip() {
    return MathPow(10, -_Digits+2);
 }
 
+int calcPip(double price1, double price2) {
+   double delta = MathAbs(price1 - price2);
+   int pips = MathRound(delta/getPip());
+   return pips;
+}
+
 
 double calTP(bool isLong, double entry, int pips) {
    double TP;
