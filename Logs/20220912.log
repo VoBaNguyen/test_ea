@@ -1,0 +1,10 @@
+0	22:46:53.189	Custom indicator Market\Dark Point AUDUSDm,H1: loaded successfully
+0	22:46:56.331	Dark Point AUDUSDm,H1: initialized
+0	22:47:11.129	Dark Point AUDUSDm,H1: uninit reason 3
+0	22:47:11.145	Dark Point AUDUSDm,H4: initialized
+0	22:47:15.301	Dark Point AUDUSDm,H4: uninit reason 3
+0	22:47:15.301	Dark Point AUDUSDm,M30: initialized
+0	22:47:17.786	Dark Point AUDUSDm,M30: uninit reason 3
+0	22:47:17.786	Dark Point AUDUSDm,H1: initialized
+0	23:05:18.581	Dark Point AUDUSDm,H1: uninit reason 1
+0	23:05:18.581	Custom indicator Dark Point AUDUSDm,H1: removed

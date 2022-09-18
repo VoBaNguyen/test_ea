@@ -46,11 +46,12 @@ void OnStart()
       Alert("==============================================");
       string objName = ObjectName(ChartID(), i, 0, objType);
       Alert("Name: ", objName);
-      string strTime = StringSubstr(objName, 12, 11);
-      datetime createTime = StrToInteger(strTime);
-      Alert("createTime: ", createTime);
-      Alert("OBJPROP_CREATETIME: ", (datetime) ObjectGet(objName, OBJPROP_CREATETIME));
       Alert("Description: ", ObjectDescription(objName));
+      string strTime = StringSubstr(objName, 12, 11);
+      Alert("strTime: ", strTime);
+      datetime openTime = StrToInteger(strTime);
+      Alert("openTime: ", openTime);
+      Alert("OBJPROP_CREATETIME: ", (datetime) ObjectGet(objName, OBJPROP_CREATETIME));
       //Alert("Tooltip: ", ObjectGetString(ChartID(),objName,OBJPROP_TOOLTIP));
       //Alert("OBJPROP_TIME1: ", (datetime) ObjectGet(objName, OBJPROP_TIME1));
       //Alert("OBJPROP_TIME2: ", (datetime) ObjectGet(objName, OBJPROP_TIME2));
@@ -69,7 +70,7 @@ void OnStart()
 //      Alert("==============================================");
 //      string objName = ObjectName(ChartID(), i, 0, objType);
 //      Alert("Name: ", objName);
-//      Alert("Time: ", ObjectGet(objName, OBJPROP_CREATETIME));
+//      Alert("Time: ", ObjectGet(objName, OBJPROP_openTime));
 //      Alert("Description: ", ObjectDescription(objName));
 //      Alert("Tooltip: ", ObjectGetString(ChartID(),objName,OBJPROP_TOOLTIP));
 //      Alert("OBJPROP_TIME1: ", ObjectGet(objName, OBJPROP_TIME1));

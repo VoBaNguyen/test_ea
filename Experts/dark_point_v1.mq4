@@ -66,11 +66,11 @@ void OnTick()
       for(int i=0; i<ObjectsTotal(0, 0, objType); i++) {
          string objName = ObjectName(ChartID(), i, 0, objType);
          string strTime = StringSubstr(objName, 12, 11);
-         datetime createTime = StrToInteger(strTime);
+         datetime openTime = StrToInteger(strTime);
          datetime curTime = TimeCurrent();
          datetime prevTime = curTime - (datetime) 2*PeriodSeconds(TIME_FRAME);
-         Alert(objName, " - createTime: ", createTime, " - curTime: ", curTime);
-         if(prevTime < createTime && createTime < TimeCurrent()) {
+         Alert(objName, " - openTime: ", openTime, " - curTime: ", curTime);
+         if(prevTime < openTime && openTime < TimeCurrent()) {
             string descr = ObjectDescription(objName);
             double createPrice = ObjectGet(objName, OBJPROP_PRICE1);
             if (descr == "TP 1") {
