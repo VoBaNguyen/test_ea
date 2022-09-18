@@ -19412,3 +19412,153 @@
 0	17:06:51.006	Custom indicator test_pinbar XAUUSDm,H1: removed
 0	17:06:51.006	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
 0	17:06:51.022	test_pinbar XAUUSDm,H1: initialized
+0	17:06:51.087	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:06:52.925	test_pinbar XAUUSDm,H1: initialized
+0	17:06:54.429	test_pinbar XAUUSDm,H1: uninit reason 4
+0	17:06:54.431	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:06:58.241	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:06:58.241	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:06:58.257	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:06:58.257	test_pinbar XAUUSDm,H1: initialized
+0	17:08:10.769	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:08:10.769	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:08:10.776	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:08:10.791	test_pinbar XAUUSDm,H1: initialized
+0	17:10:25.545	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:10:25.545	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:10:25.555	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:10:25.566	test_pinbar XAUUSDm,H1: initialized
+0	17:10:26.945	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:10:26.946	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:10:26.955	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:10:26.965	test_pinbar XAUUSDm,H1: initialized
+0	17:10:27.675	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:10:27.675	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:10:27.686	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:10:27.700	test_pinbar XAUUSDm,H1: initialized
+0	17:10:36.926	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:10:36.930	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:10:36.939	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:10:36.946	test_pinbar XAUUSDm,H1: initialized
+0	17:14:06.761	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:14:06.762	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:14:06.763	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:14:06.778	test_pinbar XAUUSDm,H1: initialized
+0	17:14:23.753	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:14:23.753	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:14:23.762	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:14:23.776	test_pinbar XAUUSDm,H1: initialized
+0	17:14:50.923	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:14:50.932	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:14:50.933	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:14:50.948	test_pinbar XAUUSDm,H1: initialized
+0	17:14:51.833	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:14:51.842	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:14:51.842	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:14:51.862	test_pinbar XAUUSDm,H1: initialized
+0	17:21:50.914	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:21:50.930	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:21:50.930	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:21:50.945	test_pinbar XAUUSDm,H1: initialized
+0	17:21:58.123	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:21:58.139	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:21:58.139	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:21:58.154	test_pinbar XAUUSDm,H1: initialized
+0	17:22:05.877	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:22:05.877	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:22:05.877	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:22:05.893	test_pinbar XAUUSDm,H1: initialized
+0	17:23:48.005	test_pinbar XAUUSDm,H1: uninit reason 2
+0	17:23:48.020	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	17:23:48.020	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	17:23:48.036	test_pinbar XAUUSDm,H1: initialized
+0	21:23:40.009	test_pinbar XAUUSDm,H1: uninit reason 3
+0	21:23:40.017	test_pinbar XAUUSDm,H4: initialized
+0	21:23:42.766	test_pinbar XAUUSDm,H4: uninit reason 3
+0	21:23:42.767	test_pinbar XAUUSDm,H1: initialized
+0	21:24:40.587	test_pinbar XAUUSDm,H1: uninit reason 3
+0	21:24:40.587	test_pinbar XAUUSDm,H4: initialized
+0	21:24:42.081	test_pinbar XAUUSDm,H4: uninit reason 3
+0	21:24:42.086	test_pinbar XAUUSDm,Daily: initialized
+0	21:24:46.150	test_pinbar XAUUSDm,Daily: uninit reason 3
+0	21:24:46.162	test_pinbar XAUUSDm,Weekly: initialized
+0	21:24:53.412	test_pinbar XAUUSDm,Weekly: uninit reason 3
+0	21:24:53.412	test_pinbar XAUUSDm,Daily: initialized
+0	21:28:30.789	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:28:30.789	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:28:30.805	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:28:30.821	test_pinbar XAUUSDm,Daily: initialized
+0	21:30:47.360	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:30:47.360	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:30:47.360	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:30:47.375	test_pinbar XAUUSDm,Daily: initialized
+0	21:31:04.242	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:31:04.258	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:31:04.258	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:31:04.274	test_pinbar XAUUSDm,Daily: initialized
+0	21:31:06.133	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:31:06.133	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:31:06.133	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:31:06.149	test_pinbar XAUUSDm,Daily: initialized
+0	21:32:03.339	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:32:03.340	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:32:03.348	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:32:03.353	test_pinbar XAUUSDm,Daily: initialized
+0	21:44:34.679	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:44:34.679	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:44:34.679	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:44:34.694	test_pinbar XAUUSDm,Daily: initialized
+0	21:45:29.366	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:45:29.366	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:45:29.382	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:45:29.382	test_pinbar XAUUSDm,Daily: initialized
+0	21:48:34.170	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:48:34.170	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:48:34.170	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:48:34.186	test_pinbar XAUUSDm,Daily: initialized
+0	21:50:05.057	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:50:05.057	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:50:05.057	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:50:05.072	test_pinbar XAUUSDm,Daily: initialized
+0	21:52:51.411	Custom indicator Bulls XAUUSDm,Daily: loaded successfully
+0	21:52:52.868	Bulls XAUUSDm,Daily: initialized
+0	21:52:55.473	Bulls XAUUSDm,Daily: uninit reason 1
+0	21:52:55.475	Custom indicator Bulls XAUUSDm,Daily: removed
+0	21:57:13.679	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:57:13.679	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:57:13.695	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:57:13.695	test_pinbar XAUUSDm,Daily: initialized
+0	21:58:38.665	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	21:58:38.665	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	21:58:38.680	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	21:58:38.696	test_pinbar XAUUSDm,Daily: initialized
+0	22:01:12.491	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	22:01:12.491	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	22:01:12.507	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	22:01:12.507	test_pinbar XAUUSDm,Daily: initialized
+0	22:12:27.365	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	22:12:27.365	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	22:12:27.380	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	22:12:27.396	test_pinbar XAUUSDm,Daily: initialized
+0	22:14:32.201	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	22:14:32.201	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	22:14:32.216	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	22:14:32.216	test_pinbar XAUUSDm,Daily: initialized
+0	22:14:56.030	test_pinbar XAUUSDm,Daily: uninit reason 2
+0	22:14:56.030	Custom indicator test_pinbar XAUUSDm,Daily: removed
+0	22:14:56.046	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	22:14:56.046	test_pinbar XAUUSDm,Daily: initialized
+0	22:42:01.193	test_pinbar XAUUSDm,Daily: uninit reason 3
+0	22:42:01.193	test_pinbar XAUUSDm,H4: initialized
+0	22:43:11.842	test_pinbar XAUUSDm,H4: uninit reason 2
+0	22:43:11.842	Custom indicator test_pinbar XAUUSDm,H4: removed
+0	22:43:11.858	Custom indicator test\test_pinbar XAUUSDm,H4: loaded successfully
+0	22:43:11.874	test_pinbar XAUUSDm,H4: initialized
+0	22:45:15.247	test_pinbar XAUUSDm,H4: uninit reason 3
+0	22:45:15.247	test_pinbar XAUUSDm,H1: initialized
+0	22:53:46.196	Compiling 'Market\price_action_v1'
+0	22:53:47.184	Compiling 'test\test_price_action_v1'
+0	23:16:40.504	Custom indicator test\test_pinbar XAUUSDm,Daily: loaded successfully
+0	23:16:41.919	test_pinbar XAUUSDm,Daily: initialized
+0	23:19:02.057	test_pinbar XAUUSDm,Daily: uninit reason 9
+0	23:19:02.117	Custom indicator test_pinbar XAUUSDm,Daily: removed
