@@ -111,6 +111,46 @@ void classifyCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
    return;
 }
 
+
+bool classifyGrpCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
+   // GET CANDLE PRICE
+   double open1  = iOpen(Symbol(), TimeFrame, idx+1);
+   double close1 = iClose(Symbol(), TimeFrame, idx+1);
+   double high1  = iHigh(Symbol(), TimeFrame, idx+1);
+   double low1   = iLow(Symbol(), TimeFrame, idx+1);
+   double body1  = MathAbs(open1 - close1);
+
+   double open2  = iOpen(Symbol(), TimeFrame, idx);
+   double close2 = iClose(Symbol(), TimeFrame, idx);
+   double high2  = iHigh(Symbol(), TimeFrame, idx);
+   double low2   = iLow(Symbol(), TimeFrame, idx);
+   double body2  = MathAbs(open2 - close2);
+   
+   // Xet xu huong giam, dao chieu tang
+   double delta = 0.01;
+   
+   
+   double atr = iATR(Symbol(), TimeFrame, 14, idx);
+   // Mo hinh nen ben trai' nhan chim nen ben phai
+   if(low1 < low2 && high1 > high2 && body2 > body1/2 && body1 > atr*0.75) {
+      // Do - Xanh
+      if(close1 < close2 && open1 > close2) {
+         // Red cover Green - Nen nhan chim giam - Tiep tuc xu huong
+         return true;
+      }
+      // Xanh - Do
+      else if (open1 < close2 && close1 > close2) {
+         // Red cover Green - Nen nhan chim tang - Tiep tuc xu huong
+         return true;
+      }
+   } 
+   
+   
+   
+   return false;
+}
+
+
 bool isEqual(double A, double B, double delta) {
    if(MathAbs(A-B) < delta) {
       return true;
