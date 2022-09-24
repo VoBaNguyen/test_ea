@@ -31,9 +31,24 @@ void OnDeinit(const int reason)
 void OnTick()
   {
 //---
-	for(int i=0; i < 3; i++) {
-		double value = iCustom(Symbol(),PERIOD_H1,"test\\test_candel", i, 1);
-		if(value < 2147483647) Alert(i, " - ", value) ;
-	}  
+	double value = iCustom(Symbol(),PERIOD_H1,"test\\test_candel", 1, 2);
+
+
+   // Check insidebar
+   string grpInfo[2];
+   grpInfo[0] = "undefined";
+   grpInfo[1] = "undefined";
+   classifyGrpCandle(1, grpInfo, PERIOD_CURRENT);
+   if(grpInfo[1] == "insidebar") {
+      if(grpInfo[0] == "sell") {
+         InsideBarsDown[i] = High[i] + dist;
+      }
+      else if(grpInfo[0] == "buy") {
+         InsideBarsUp[i] = Low[i] - dist;
+      }
+
+   }
+
+
   }
 //+------------------------------------------------------------------+
