@@ -40,7 +40,7 @@ void classifyCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
    // CONFIG
    double tailShort = candleBody/6;
    double bodyShort = candleSize/6;
-   double bodyDoji = candleSize/10;
+   double bodyPinbar = candleSize/10;
    double seemZero = candleBody/20;
    double seemLong = candleBody*2;
    double seemEqual = candleBody/20;
@@ -48,14 +48,14 @@ void classifyCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
 
    string candleType;
    if(open <= close) {
-      candleType = "Bull";
+      candleType = "bull";
    } else {
-      candleType = "Bear";
+      candleType = "bear";
    }
    
    // Calculate candle tails
-   double upperTail = (high - MathMax(open, close));
-   double lowerTail = (MathMin(open, close)-low);
+   double upperTail = MathAbs(high - MathMax(open, close));
+   double lowerTail = MathAbs(MathMin(open, close) - low);
 
    //+------------------------------------------------------------------+
    //| CLASSIFY CANDLES                                                 |
@@ -74,16 +74,11 @@ void classifyCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
       return;
    }
    
-   // Spinning Tops: 
-   // Dac diem: Than nho 
-   // Y nghia: Tam ly nha dau tu dang do du trong viec mua/ban
-   
-   
    // Doji
    // Dac diem: Gia open/close xap xi ngang nhau
    // Y nghia: The hien su do du trong viec xac dinh vi the cua nha dau tu
-   if(candleBody < bodyDoji && MathMin(upperTail, lowerTail) > 3*bodyDoji) {
-      info[0] = "doji";
+   if(candleBody < bodyPinbar && MathMin(upperTail, lowerTail) > 3*bodyPinbar) {
+      info[0] = "pinbar";
       info[1] = candleType;
       return;
    }
@@ -91,7 +86,7 @@ void classifyCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
    // Hammer
    // Dac diem: Nen co rau dai hon phan than nen thuc. Rau nen rat nho hoac khong co
    // Y nghia: Bao hieu xu huong yeu di, dao chieu cuc ki manh
-   else if(MathMin(upperTail, lowerTail) < tailShort && candleBody < bodyShort) {
+   if(MathMin(upperTail, lowerTail) < tailShort && candleBody < bodyShort) {
       info[0] = "hammer";
       info[1] = candleType;
       return;
@@ -111,8 +106,7 @@ void classifyCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
    return;
 }
 
-
-bool classifyGrpCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
+void classifyGrpCandle(int idx, string &grpInfo[], ENUM_TIMEFRAMES TimeFrame) {
    // GET CANDLE PRICE
    double open1  = iOpen(Symbol(), TimeFrame, idx+1);
    double close1 = iClose(Symbol(), TimeFrame, idx+1);
@@ -127,27 +121,38 @@ bool classifyGrpCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
    double body2  = MathAbs(open2 - close2);
    
    // Xet xu huong giam, dao chieu tang
-   double delta = 0.01;
-   
-   
    double atr = iATR(Symbol(), TimeFrame, 14, idx);
-   // Mo hinh nen ben trai' nhan chim nen ben phai
+   // Left candle cover right candle
    if(low1 < low2 && high1 > high2 && body2 > body1/2 && body1 > atr*0.75) {
       // Do - Xanh
-      if(close1 < close2 && open1 > close2) {
-         // Red cover Green - Nen nhan chim giam - Tiep tuc xu huong
-         return true;
+      if(open1 > close1 && open2 < close2 && open1 > MathMax(open2, close2)) {
+         // Red cover Green - Nen nhan chim giam 
+         grpInfo[0] = "buy"; // Mode buy
+         grpInfo[1] = "insidebar"; // Insidebar
       }
       // Xanh - Do
-      else if (open1 < close2 && close1 > close2) {
-         // Red cover Green - Nen nhan chim tang - Tiep tuc xu huong
-         return true;
+      else if (open1 < close1 && open2 > close2 && open1 < MathMin(open2, close2)) {
+         // Red cover Green - Nen nhan chim tang
+         grpInfo[0] = "sell"; // Mode sell
+         grpInfo[1] = "insidebar"; // Insidebar
       }
-   } 
+   }
    
-   
-   
-   return false;
+   // Right candle cover left candle
+   if(low1 > low2 && high1 < high2 && body1 > body2/2 && body2 > atr*0.75) {
+      // Do - Xanh
+      if(open1 > close1 && open2 < close2 && close2 > MathMax(open1, close1)) {
+         // Red cover Green - Nen nhan chim giam 
+         grpInfo[0] = "buy"; // Mode buy
+         grpInfo[1] = "insidebar"; // Insidebar
+      }
+      // Xanh - Do
+      else if (open1 < close1 && open2 > close2 && close2 < MathMin(open1, close1)) {
+         // Red cover Green - Nen nhan chim tang
+         grpInfo[0] = "sell"; // Mode sell
+         grpInfo[1] = "insidebar"; // Insidebar
+      }
+   }
 }
 
 
@@ -157,4 +162,156 @@ bool isEqual(double A, double B, double delta) {
    }
    
    return false;
+}
+
+//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
+//| CLASSIFY CANDLES - VERSION 2.0                                   |
+//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
+//+------------------------------------------------------------------+
+
+void classifySingleCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) { 
+   // GET CANDLE PRICE
+   double open  = iOpen(Symbol(), TimeFrame, idx);
+   double close = iClose(Symbol(), TimeFrame, idx);
+   double high  = iHigh(Symbol(), TimeFrame, idx);
+   double low   = iLow(Symbol(), TimeFrame, idx);
+   double candleBody = MathAbs(open - close);
+   double candleSize = high - low;
+
+   // CONFIG
+   double tailShort = candleBody/4;
+   double bodyShort = candleSize/6;
+   double seemZero = candleBody/20;
+   double seemLong = candleBody*2;
+   double seemEqual = candleBody/20;
+   double bodyPinbar = candleSize/10;
+
+   string candleType;
+   if(open <= close) {
+      candleType = "bull";
+   } else {
+      candleType = "bear";
+   }
+   
+   // Calculate candle tails
+   double upperTail = MathAbs(high - MathMax(open, close));
+   double lowerTail = MathAbs(MathMin(open, close) - low);
+
+   //+------------------------------------------------------------------+
+   //| CLASSIFY CANDLES                                                 |
+   //+------------------------------------------------------------------+
+   double atr = iATR(Symbol(), TimeFrame, 7, idx);
+   // longTail
+   // Dac diem: Rau tren/duoi dai
+   // Y nghia: The hien su tranh chap, xu huong chinh dang yeu dan
+   if(MathMax(upperTail, lowerTail) > candleBody 
+      && (upperTail + lowerTail) > 2*candleBody
+      && candleSize > atr/2) {
+      
+
+
+      // Pinbar
+      // Dac diem: Gia open/close xap xi ngang nhau
+      // Y nghia: The hien su do du trong viec xac dinh vi the cua nha dau tu
+      if(MathMin(upperTail, lowerTail) > 3*bodyPinbar && candleBody < bodyPinbar) {
+         info[0] = "pinbar";
+         info[1] = candleType;
+         return;
+      }
+
+      // Hammer
+      // Dac diem: Nen co rau dai hon phan than nen thuc. Rau nen rat nho hoac khong co
+      // Y nghia: Bao hieu xu huong yeu di, dao chieu cuc ki manh
+      if(MathMin(upperTail, lowerTail) < tailShort && 
+         MathMax(upperTail, lowerTail) > 3*candleBody) {
+         info[0] = "hammer";
+         info[1] = candleType;
+         return;
+      }
+      
+      // Long Tail
+      if(upperTail > 1.5*lowerTail) {
+         info[0] = "longTailSell";
+         info[1] = candleType;
+         return;
+      }
+      
+      if (upperTail < 1.5*lowerTail) {
+         info[0] = "longTailBuy";
+         info[1] = candleType;
+         return;
+      }
+
+      return;
+   }
+   
+   
+   info[0] = "undefined";
+   info[1] = candleType;
+   return;
+}
+
+
+void classifyGroupCandle(int idx, string &grpInfo[], ENUM_TIMEFRAMES TimeFrame) {
+   // GET CANDLE PRICE
+   double open1  = iOpen(Symbol(), TimeFrame, idx+1);
+   double close1 = iClose(Symbol(), TimeFrame, idx+1);
+   double high1  = iHigh(Symbol(), TimeFrame, idx+1);
+   double low1   = iLow(Symbol(), TimeFrame, idx+1);
+   double body1  = MathAbs(open1 - close1);
+
+   double open2  = iOpen(Symbol(), TimeFrame, idx);
+   double close2 = iClose(Symbol(), TimeFrame, idx);
+   double high2  = iHigh(Symbol(), TimeFrame, idx);
+   double low2   = iLow(Symbol(), TimeFrame, idx);
+   double body2  = MathAbs(open2 - close2);
+   double atr = iATR(Symbol(), TimeFrame, 14, idx);
+   
+   // Englufing dao chieu giam
+   //      |
+   //      |          |
+   //     _|_ _|_    _|_ _|_
+   //     |^| |v|    |^| |v|
+   //     |^| |v|    |^| |v|
+   //     |_| |v|    |_| |v|
+   //      |  |v|     |  |v|
+   //         |_|     |  |_|
+   //          |      |   |
+   //          |          |
+   //      STRONG     WEAK
+   
+   if(open1 < close1 &&   // Candle 1 is bull
+      open2 > close2 &&   // Candle 2 is bear
+      MathMax(open1, close1) < high2 && low1 > close2 &&  // Candle 1 was covered by candle 2
+      body2 > atr
+   ) {
+      grpInfo[0] = "insidebar"; // Mode buy
+      grpInfo[1] = "sell"; // Insidebar
+   }
+   
+
+   // Englufing dao chieu tang
+   //          |                  
+   //         _|_         |   |   
+   //         |^|         |  _|_  
+   //     _|_ |^|        _|_ |^|  
+   //     |v| |^|        |v| |^|  
+   //     |v| |^|        |v| |^|  
+   //     |_| |_|        |_| |_|  
+   //      |   |          |   |   
+   //      |              |       
+   //      |                     
+   //      STRONG         WEAK
+   if(open1 > close1 &&   // Candle 1 is bull
+      open2 < close2 &&   // Candle 2 is bear
+      MathMax(open1, close1) < high2 && high1 < close2 &&  // Candle 1 was covered by candle 2
+      body2 > atr
+   ) {
+      grpInfo[0] = "insidebar"; // Mode buy
+      grpInfo[1] = "buy"; // Insidebar
+   }
+
 }

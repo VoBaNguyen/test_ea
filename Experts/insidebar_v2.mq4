@@ -34,10 +34,12 @@ input int SLPips = 100;
 input int maxPos = 1; //Max Position
 input int delay = 1;
 input int slippage = 10;
+input double atrMultiplier = 1; //ATR Multiplier
 input long magicNumber = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
 int threshold = 0.0;
 int convergenceThreshold = 1; 
+double bufMA20[3];
 
 
 //+------------------------------------------------------------------+
@@ -108,16 +110,16 @@ void OnTick()
       //+------------------------------------------------------------------+   
       if(isBuy || isSell) {
          MyAccount account("Nguyen", "Vo", magicNumber);
-         double ATRCurr = 2*iATR(Symbol(),PERIOD_CURRENT,14,1);
+         double ATRCurr = iATR(Symbol(),PERIOD_CURRENT,14,1);
          
          lotSize = calcLot(account.info.BALANCE, riskLevel, ATRCurr/getPip());
          // Manage orders
          if(isBuy) {
-            double TP = Ask + ATRCurr;
+            double TP = Ask + ATRCurr*atrMultiplier;
             double SL = Ask - ATRCurr;
             ticket = sendOrder(Symbol(), OP_BUY, lotSize, Ask, slippage, SL, TP, "Buy MA", magicNumber);
          } else if(isSell) {
-            double TP = Ask - ATRCurr;
+            double TP = Ask - ATRCurr*atrMultiplier;
             double SL = Ask + ATRCurr;
             ticket = sendOrder(Symbol(), OP_SELL, lotSize, Bid, slippage, SL, TP, "Buy MA", magicNumber);
          }

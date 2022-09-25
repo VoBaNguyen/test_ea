@@ -1,0 +1,58 @@
+0	06:58:33.115	Custom indicator test\test_pinbar XAUUSDm,H1: loaded successfully
+0	06:58:33.125	test_pinbar XAUUSDm,H1: initialized
+0	07:00:56.032	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:00:57.508	test_candel XAUUSDm,H1: initialized
+0	07:01:03.110	test_candel XAUUSDm,H1: uninit reason 1
+0	07:01:03.118	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:01:05.391	test_pinbar XAUUSDm,H1: uninit reason 1
+0	07:01:05.398	Custom indicator test_pinbar XAUUSDm,H1: removed
+0	07:01:09.025	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:01:11.179	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:01:24.849	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:01:28.762	test_candel XAUUSDm,H1: initialized
+0	07:05:41.090	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:05:43.986	test_candel XAUUSDm,H1: initialized
+0	07:06:35.196	test_candel XAUUSDm,H1: uninit reason 2
+0	07:06:35.198	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:06:35.206	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:06:35.218	test_candel XAUUSDm,H1: initialized
+0	07:06:35.218	test_candel XAUUSDm,H1: uninit reason 2
+0	07:06:35.218	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:06:35.228	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:06:35.238	test_candel XAUUSDm,H1: initialized
+0	07:06:37.925	test_candel XAUUSDm,H1: uninit reason 2
+0	07:06:37.935	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:06:37.935	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:06:37.955	test_candel XAUUSDm,H1: initialized
+0	07:06:37.955	test_candel XAUUSDm,H1: uninit reason 2
+0	07:06:37.955	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:06:37.965	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:06:37.975	test_candel XAUUSDm,H1: initialized
+0	07:07:30.733	test_candel XAUUSDm,H1: uninit reason 1
+0	07:07:30.734	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:07:32.811	test_candel XAUUSDm,H1: uninit reason 1
+0	07:07:32.813	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:07:37.099	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:07:39.570	test_candel XAUUSDm,H1: initialized
+0	07:10:57.972	test_candel XAUUSDm,H1: uninit reason 2
+0	07:10:57.974	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:10:57.983	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:10:57.994	test_candel XAUUSDm,H1: initialized
+0	07:10:59.531	test_candel XAUUSDm,H1: uninit reason 2
+0	07:10:59.531	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:10:59.541	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:10:59.561	test_candel XAUUSDm,H1: initialized
+0	07:11:29.985	test_candel XAUUSDm,H1: uninit reason 2
+0	07:11:29.985	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:11:29.985	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:11:30.005	test_candel XAUUSDm,H1: initialized
+0	07:12:46.192	test_candel XAUUSDm,H1: uninit reason 2
+0	07:12:46.192	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:12:46.202	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:12:46.212	test_candel XAUUSDm,H1: initialized
+0	07:12:47.434	test_candel XAUUSDm,H1: uninit reason 2
+0	07:12:47.444	Custom indicator test_candel XAUUSDm,H1: removed
+0	07:12:47.444	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	07:12:47.464	test_candel XAUUSDm,H1: initialized
+0	07:13:01.301	test_candel XAUUSDm,H1: uninit reason 9
+0	07:13:01.339	Custom indicator test_candel XAUUSDm,H1: removed
