@@ -2712,3 +2712,277 @@
 0	09:38:20.340	test_candel XAUUSDm,M5: uninit reason 9
 0	09:38:20.375	Custom indicator ZigZag XAUUSDm,M5: removed
 0	09:38:20.378	Custom indicator test_candel XAUUSDm,M5: removed
+0	11:16:21.407	Custom indicator ZigZag XAUUSDm,M5: loaded successfully
+0	11:16:21.417	Custom indicator test\test_candel XAUUSDm,M5: loaded successfully
+0	11:16:21.437	ZigZag XAUUSDm,M5: initialized
+0	11:16:21.447	test_candel XAUUSDm,M5: initialized
+0	11:35:50.131	ZigZag XAUUSDm,M5: uninit reason 3
+0	11:35:50.131	test_candel XAUUSDm,M5: uninit reason 3
+0	11:35:50.137	ZigZag XAUUSDm,M15: initialized
+0	11:35:50.137	test_candel XAUUSDm,M15: initialized
+0	11:35:52.357	ZigZag XAUUSDm,M15: uninit reason 3
+0	11:35:52.357	test_candel XAUUSDm,M15: uninit reason 3
+0	11:35:52.363	ZigZag XAUUSDm,H1: initialized
+0	11:35:52.363	test_candel XAUUSDm,H1: initialized
+0	11:35:57.741	ZigZag XAUUSDm,H1: uninit reason 3
+0	11:35:57.741	test_candel XAUUSDm,H1: uninit reason 3
+0	11:35:57.754	ZigZag XAUUSDm,H4: initialized
+0	11:35:57.754	test_candel XAUUSDm,H4: initialized
+0	11:35:58.644	ZigZag XAUUSDm,H4: uninit reason 3
+0	11:35:58.644	test_candel XAUUSDm,H4: uninit reason 3
+0	11:35:58.657	ZigZag XAUUSDm,Daily: initialized
+0	11:35:58.657	test_candel XAUUSDm,Daily: initialized
+0	11:36:06.116	ZigZag XAUUSDm,Daily: uninit reason 3
+0	11:36:06.116	test_candel XAUUSDm,Daily: uninit reason 3
+0	11:36:06.116	ZigZag XAUUSDm,H1: initialized
+0	11:36:06.116	test_candel XAUUSDm,H1: initialized
+0	11:36:25.311	Custom indicator ZigZag EURUSDm,H1: loaded successfully
+0	11:36:25.318	Custom indicator test\test_candel EURUSDm,H1: loaded successfully
+0	11:36:25.330	ZigZag EURUSDm,H1: initialized
+0	11:36:25.341	test_candel EURUSDm,H1: initialized
+0	11:36:34.256	ZigZag EURUSDm,H1: uninit reason 3
+0	11:36:34.256	test_candel EURUSDm,H1: uninit reason 3
+0	11:36:34.264	ZigZag EURUSDm,Weekly: initialized
+0	11:36:34.264	test_candel EURUSDm,Weekly: initialized
+0	11:36:44.458	ZigZag EURUSDm,Weekly: uninit reason 3
+0	11:36:44.458	test_candel EURUSDm,Weekly: uninit reason 3
+0	11:36:44.459	ZigZag EURUSDm,H4: initialized
+0	11:36:44.459	test_candel EURUSDm,H4: initialized
+0	11:36:53.729	ZigZag EURUSDm,H4: uninit reason 3
+0	11:36:53.729	test_candel EURUSDm,H4: uninit reason 3
+0	11:36:53.729	ZigZag EURUSDm,H1: initialized
+0	11:36:53.729	test_candel EURUSDm,H1: initialized
+0	11:36:57.742	ZigZag EURUSDm,H1: uninit reason 3
+0	11:36:57.742	test_candel EURUSDm,H1: uninit reason 3
+0	11:36:57.742	ZigZag EURUSDm,M30: initialized
+0	11:36:57.742	test_candel EURUSDm,M30: initialized
+0	11:46:06.501	ZigZag EURUSDm,M30: uninit reason 3
+0	11:46:06.501	test_candel EURUSDm,M30: uninit reason 3
+0	11:46:06.501	ZigZag EURUSDm,H1: initialized
+0	11:46:06.501	test_candel EURUSDm,H1: initialized
+0	11:46:10.426	ZigZag EURUSDm,H1: uninit reason 3
+0	11:46:10.426	test_candel EURUSDm,H1: uninit reason 3
+0	11:46:10.426	ZigZag EURUSDm,H4: initialized
+0	11:46:10.426	test_candel EURUSDm,H4: initialized
+0	11:50:19.157	ZigZag EURUSDm,H4: uninit reason 3
+0	11:50:19.157	test_candel EURUSDm,H4: uninit reason 3
+0	11:50:19.157	ZigZag EURUSDm,H1: initialized
+0	11:50:19.157	test_candel EURUSDm,H1: initialized
+0	11:50:29.337	ZigZag EURUSDm,H1: uninit reason 3
+0	11:50:29.337	test_candel EURUSDm,H1: uninit reason 3
+0	11:50:29.337	ZigZag EURUSDm,H4: initialized
+0	11:50:29.337	test_candel EURUSDm,H4: initialized
+0	12:33:58.081	ZigZag EURUSDm,H4: uninit reason 3
+0	12:33:58.081	test_candel EURUSDm,H4: uninit reason 3
+0	12:33:58.081	ZigZag EURUSDm,Daily: initialized
+0	12:33:58.081	test_candel EURUSDm,Daily: initialized
+0	12:33:59.406	ZigZag EURUSDm,Daily: uninit reason 3
+0	12:33:59.406	test_candel EURUSDm,Daily: uninit reason 3
+0	12:33:59.406	ZigZag EURUSDm,H4: initialized
+0	12:33:59.406	test_candel EURUSDm,H4: initialized
+0	13:57:03.804	ZigZag EURUSDm,H4: uninit reason 7
+0	13:57:03.804	test_candel EURUSDm,H4: uninit reason 7
+0	13:57:03.805	Custom indicator ZigZag EURUSDm,H4: removed
+0	13:57:03.807	Custom indicator test_candel EURUSDm,H4: removed
+0	13:57:03.817	Custom indicator ZigZag EURUSDm,H4: loaded successfully
+0	13:57:03.827	ZigZag EURUSDm,H4: initialized
+0	13:57:32.419	ZigZag EURUSDm,H4: uninit reason 7
+0	13:57:32.421	Custom indicator ZigZag EURUSDm,H4: removed
+0	13:57:32.429	Custom indicator ZigZag EURUSDm,H4: loaded successfully
+0	13:57:32.437	Custom indicator test\test_candel EURUSDm,H4: loaded successfully
+0	13:57:32.449	ZigZag EURUSDm,H4: initialized
+0	13:57:32.452	test_candel EURUSDm,H4: initialized
+0	13:57:59.802	ZigZag EURUSDm,H4: uninit reason 1
+0	13:57:59.803	Custom indicator ZigZag EURUSDm,H4: removed
+0	14:00:03.723	test_candel EURUSDm,H4: uninit reason 1
+0	14:00:03.731	Custom indicator test_candel EURUSDm,H4: removed
+0	14:00:21.483	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:00:22.859	classify_candel EURUSDm,H4: initialized
+0	14:01:56.051	classify_candel EURUSDm,H4: uninit reason 3
+0	14:01:56.051	classify_candel EURUSDm,Daily: initialized
+0	14:02:04.690	classify_candel EURUSDm,Daily: uninit reason 3
+0	14:02:04.690	classify_candel EURUSDm,H4: initialized
+0	14:03:21.729	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:03:21.739	classify_candel XAUUSDm,H1: initialized
+0	14:19:48.026	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:19:48.026	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:19:48.035	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:19:48.045	classify_candel XAUUSDm,H1: initialized
+0	14:19:48.045	classify_candel EURUSDm,H4: uninit reason 2
+0	14:19:48.045	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:19:48.055	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:19:48.065	classify_candel EURUSDm,H4: initialized
+0	14:20:27.459	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:20:27.459	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:20:27.469	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:20:27.479	classify_candel XAUUSDm,H1: initialized
+0	14:20:27.479	classify_candel EURUSDm,H4: uninit reason 2
+0	14:20:27.479	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:20:27.489	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:20:27.499	classify_candel EURUSDm,H4: initialized
+0	14:20:39.447	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:20:39.457	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:20:39.457	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:20:39.467	classify_candel XAUUSDm,H1: initialized
+0	14:20:39.477	classify_candel EURUSDm,H4: uninit reason 2
+0	14:20:39.477	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:20:39.477	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:20:39.497	classify_candel EURUSDm,H4: initialized
+0	14:21:23.040	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:21:23.040	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:21:23.050	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:21:23.060	classify_candel XAUUSDm,H1: initialized
+0	14:21:23.060	classify_candel EURUSDm,H4: uninit reason 2
+0	14:21:23.060	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:21:23.070	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:21:23.080	classify_candel EURUSDm,H4: initialized
+0	14:22:22.476	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:22:22.476	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:22:22.486	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:22:22.496	classify_candel XAUUSDm,H1: initialized
+0	14:22:22.496	classify_candel EURUSDm,H4: uninit reason 2
+0	14:22:22.496	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:22:22.506	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:22:22.516	classify_candel EURUSDm,H4: initialized
+0	14:23:29.415	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:23:29.415	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:23:29.425	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:23:29.435	classify_candel XAUUSDm,H1: initialized
+0	14:23:29.435	classify_candel EURUSDm,H4: uninit reason 2
+0	14:23:29.435	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:23:29.445	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:23:29.455	classify_candel EURUSDm,H4: initialized
+0	14:24:04.413	classify_candel XAUUSDm,H1: uninit reason 3
+0	14:24:04.414	classify_candel XAUUSDm,M15: initialized
+0	14:24:09.817	classify_candel XAUUSDm,M15: uninit reason 3
+0	14:24:09.817	classify_candel XAUUSDm,Daily: initialized
+0	14:24:15.933	classify_candel XAUUSDm,Daily: uninit reason 3
+0	14:24:15.950	classify_candel XAUUSDm,M30: initialized
+0	14:24:20.076	classify_candel XAUUSDm,M30: uninit reason 3
+0	14:24:20.076	classify_candel XAUUSDm,H1: initialized
+0	14:31:30.161	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:31:30.163	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:31:30.170	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:31:30.180	classify_candel XAUUSDm,H1: initialized
+0	14:31:30.182	classify_candel EURUSDm,H4: uninit reason 2
+0	14:31:30.183	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:31:30.191	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:31:30.201	classify_candel EURUSDm,H4: initialized
+0	14:31:42.677	classify_candel XAUUSDm,H1: uninit reason 2
+0	14:31:42.677	Custom indicator classify_candel XAUUSDm,H1: removed
+0	14:31:42.687	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	14:31:42.697	classify_candel XAUUSDm,H1: initialized
+0	14:31:42.697	classify_candel EURUSDm,H4: uninit reason 2
+0	14:31:42.697	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:31:42.707	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:31:42.717	classify_candel EURUSDm,H4: initialized
+0	14:36:55.950	classify_candel EURUSDm,H4: uninit reason 7
+0	14:36:55.951	Custom indicator classify_candel EURUSDm,H4: removed
+0	14:36:55.952	Custom indicator price_action\classify_candel EURUSDm,H4: loaded successfully
+0	14:36:55.962	classify_candel EURUSDm,H4: initialized
+0	18:38:10.705	Custom indicator price_action\classify_group_candle EURUSDm,H4: loaded successfully
+0	18:38:11.926	classify_group_candle EURUSDm,H4: initialized
+0	18:38:19.808	classify_candel EURUSDm,H4: uninit reason 1
+0	18:38:19.818	Custom indicator classify_candel EURUSDm,H4: removed
+0	18:38:34.821	classify_group_candle EURUSDm,H4: uninit reason 2
+0	18:38:34.821	Custom indicator classify_group_candle EURUSDm,H4: removed
+0	18:38:34.831	Custom indicator price_action\classify_group_candle EURUSDm,H4: loaded successfully
+0	18:38:34.841	classify_group_candle EURUSDm,H4: initialized
+0	18:39:26.008	classify_group_candle EURUSDm,H4: uninit reason 2
+0	18:39:26.008	Custom indicator classify_group_candle EURUSDm,H4: removed
+0	18:39:26.018	Custom indicator price_action\classify_group_candle EURUSDm,H4: loaded successfully
+0	18:39:26.028	classify_group_candle EURUSDm,H4: initialized
+0	19:46:31.054	classify_group_candle EURUSDm,H4: uninit reason 2
+0	19:46:31.054	Custom indicator classify_group_candle EURUSDm,H4: removed
+0	19:46:31.064	Custom indicator price_action\classify_group_candle EURUSDm,H4: loaded successfully
+0	19:46:31.073	classify_group_candle EURUSDm,H4: initialized
+0	19:46:53.274	classify_group_candle EURUSDm,H4: uninit reason 3
+0	19:46:53.275	classify_group_candle EURUSDm,H1: initialized
+0	19:48:03.493	Custom indicator price_action\classify_candel EURUSDm,H1: loaded successfully
+0	19:48:04.607	classify_candel EURUSDm,H1: initialized
+0	19:48:25.296	classify_group_candle EURUSDm,H1: uninit reason 2
+0	19:48:25.296	Custom indicator classify_group_candle EURUSDm,H1: removed
+0	19:48:25.296	Custom indicator price_action\classify_group_candle EURUSDm,H1: loaded successfully
+0	19:48:25.316	classify_group_candle EURUSDm,H1: initialized
+0	19:50:02.050	classify_group_candle EURUSDm,H1: uninit reason 4
+0	19:50:02.050	classify_candel EURUSDm,H1: uninit reason 4
+0	19:50:02.053	Custom indicator classify_group_candle EURUSDm,H1: removed
+0	19:50:02.055	Custom indicator classify_candel EURUSDm,H1: removed
+0	19:50:18.123	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	19:50:19.191	classify_group_candle XAUUSDm,H1: initialized
+0	19:53:27.337	classify_candel XAUUSDm,H1: uninit reason 3
+0	19:53:27.338	classify_group_candle XAUUSDm,H1: uninit reason 3
+0	19:53:27.344	classify_candel XAUUSDm,H4: initialized
+0	19:53:27.344	classify_group_candle XAUUSDm,H4: initialized
+0	19:53:29.095	classify_candel XAUUSDm,H4: uninit reason 3
+0	19:53:29.095	classify_group_candle XAUUSDm,H4: uninit reason 3
+0	19:53:29.104	classify_candel XAUUSDm,H1: initialized
+0	19:53:29.104	classify_group_candle XAUUSDm,H1: initialized
+0	19:53:34.848	classify_candel XAUUSDm,H1: uninit reason 3
+0	19:53:34.848	classify_group_candle XAUUSDm,H1: uninit reason 3
+0	19:53:34.860	classify_candel XAUUSDm,Daily: initialized
+0	19:53:34.860	classify_group_candle XAUUSDm,Daily: initialized
+0	19:53:37.737	classify_candel XAUUSDm,Daily: uninit reason 3
+0	19:53:37.737	classify_group_candle XAUUSDm,Daily: uninit reason 3
+0	19:53:37.737	classify_candel XAUUSDm,H4: initialized
+0	19:53:37.737	classify_group_candle XAUUSDm,H4: initialized
+0	19:55:11.642	classify_candel XAUUSDm,H4: uninit reason 3
+0	19:55:11.642	classify_group_candle XAUUSDm,H4: uninit reason 3
+0	19:55:11.648	classify_candel XAUUSDm,H1: initialized
+0	19:55:11.648	classify_group_candle XAUUSDm,H1: initialized
+0	20:06:08.046	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:06:08.046	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:06:08.056	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:06:08.066	classify_candel XAUUSDm,H1: initialized
+0	20:06:57.649	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:06:57.649	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:06:57.659	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:06:57.669	classify_candel XAUUSDm,H1: initialized
+0	20:07:24.197	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:07:24.197	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:07:24.207	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:07:24.217	classify_candel XAUUSDm,H1: initialized
+0	20:07:57.398	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:07:57.398	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:07:57.408	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:07:57.418	classify_candel XAUUSDm,H1: initialized
+0	20:08:03.009	classify_candel XAUUSDm,H1: uninit reason 3
+0	20:08:03.009	classify_group_candle XAUUSDm,H1: uninit reason 3
+0	20:08:03.015	classify_candel XAUUSDm,M30: initialized
+0	20:08:03.015	classify_group_candle XAUUSDm,M30: initialized
+0	20:08:06.380	classify_candel XAUUSDm,M30: uninit reason 3
+0	20:08:06.380	classify_group_candle XAUUSDm,M30: uninit reason 3
+0	20:08:06.380	classify_candel XAUUSDm,H1: initialized
+0	20:08:06.380	classify_group_candle XAUUSDm,H1: initialized
+0	20:09:35.774	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:09:35.774	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:09:35.784	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:09:35.794	classify_candel XAUUSDm,H1: initialized
+0	20:09:36.737	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:09:36.737	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:09:36.747	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:09:36.757	classify_candel XAUUSDm,H1: initialized
+0	20:09:37.146	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:09:37.146	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:09:37.156	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:09:37.166	classify_candel XAUUSDm,H1: initialized
+0	20:19:54.854	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:19:54.855	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:19:54.863	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:19:54.882	classify_candel XAUUSDm,H1: initialized
+0	20:20:33.175	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:20:33.177	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:20:33.184	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:20:33.194	classify_candel XAUUSDm,H1: initialized
+0	20:20:51.203	classify_candel XAUUSDm,H1: uninit reason 2
+0	20:20:51.204	Custom indicator classify_candel XAUUSDm,H1: removed
+0	20:20:51.212	Custom indicator price_action\classify_candel XAUUSDm,H1: loaded successfully
+0	20:20:51.223	classify_candel XAUUSDm,H1: initialized
+0	21:12:36.157	ZigZag XAUUSDm,H1: uninit reason 9
+0	21:12:36.157	test_candel XAUUSDm,H1: uninit reason 9
+0	21:12:36.158	classify_candel XAUUSDm,H1: uninit reason 9
+0	21:12:36.158	classify_group_candle XAUUSDm,H1: uninit reason 9
+0	21:12:36.198	Custom indicator ZigZag XAUUSDm,H1: removed
+0	21:12:36.199	Custom indicator test_candel XAUUSDm,H1: removed
+0	21:12:36.209	Custom indicator classify_candel XAUUSDm,H1: removed
+0	21:12:36.210	Custom indicator classify_group_candle XAUUSDm,H1: removed

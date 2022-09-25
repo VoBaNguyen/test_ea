@@ -182,12 +182,11 @@ void classifySingleCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
    double candleSize = high - low;
 
    // CONFIG
-   double tailShort = candleBody/4;
    double bodyShort = candleSize/6;
    double seemZero = candleBody/20;
    double seemLong = candleBody*2;
    double seemEqual = candleBody/20;
-   double bodyPinbar = candleSize/10;
+   double bodyPinbar = candleSize/6;
 
    string candleType;
    if(open <= close) {
@@ -210,24 +209,19 @@ void classifySingleCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
    if(MathMax(upperTail, lowerTail) > candleBody 
       && (upperTail + lowerTail) > 2*candleBody
       && candleSize > atr/2) {
-      
 
 
-      // Pinbar
-      // Dac diem: Gia open/close xap xi ngang nhau
-      // Y nghia: The hien su do du trong viec xac dinh vi the cua nha dau tu
-      if(MathMin(upperTail, lowerTail) > 3*bodyPinbar && candleBody < bodyPinbar) {
-         info[0] = "pinbar";
-         info[1] = candleType;
-         return;
-      }
-
-      // Hammer
-      // Dac diem: Nen co rau dai hon phan than nen thuc. Rau nen rat nho hoac khong co
+      // Pin Bar
+      // Dac diem: Nen co rau dai hon phan than nen thuc. Rau nen tren or duoi rat nho hoac khong co
       // Y nghia: Bao hieu xu huong yeu di, dao chieu cuc ki manh
-      if(MathMin(upperTail, lowerTail) < tailShort && 
-         MathMax(upperTail, lowerTail) > 3*candleBody) {
-         info[0] = "hammer";
+      if(MathMin(upperTail, lowerTail) < bodyPinbar && 
+         MathMax(upperTail, lowerTail) > 2*candleBody &&
+         candleBody < bodyPinbar) {
+         if(upperTail > lowerTail) {
+            info[0] = "pinbarSell";
+         } else {
+            info[0] = "pinbarBuy";
+         }
          info[1] = candleType;
          return;
       }
@@ -262,13 +256,18 @@ void classifyGroupCandle(int idx, string &grpInfo[], ENUM_TIMEFRAMES TimeFrame) 
    double high1  = iHigh(Symbol(), TimeFrame, idx+1);
    double low1   = iLow(Symbol(), TimeFrame, idx+1);
    double body1  = MathAbs(open1 - close1);
+   double size1  = high1 - low1;
 
    double open2  = iOpen(Symbol(), TimeFrame, idx);
    double close2 = iClose(Symbol(), TimeFrame, idx);
    double high2  = iHigh(Symbol(), TimeFrame, idx);
    double low2   = iLow(Symbol(), TimeFrame, idx);
    double body2  = MathAbs(open2 - close2);
+   double size2  = high2 - low2;
+   
    double atr = iATR(Symbol(), TimeFrame, 14, idx);
+   double delta = 0.01;
+   double minSize1 = size1/5;
    
    // Englufing dao chieu giam
    //      |
@@ -283,10 +282,16 @@ void classifyGroupCandle(int idx, string &grpInfo[], ENUM_TIMEFRAMES TimeFrame) 
    //          |          |
    //      STRONG     WEAK
    
-   if(open1 < close1 &&   // Candle 1 is bull
+   if(body1*1.1 > body2) {
+      return;
+   }
+   
+   if(body1 > minSize1 &&  // Filter Pin Bar
+      open1 < close1 &&   // Candle 1 is bull
       open2 > close2 &&   // Candle 2 is bear
-      MathMax(open1, close1) < high2 && low1 > close2 &&  // Candle 1 was covered by candle 2
-      body2 > atr
+      MathMax(open1, close1) < high2+delta && 
+      MathMin(open1, close1) > close2-delta &&
+      low1 > low2  // Candle 1 was covered by candle 2
    ) {
       grpInfo[0] = "insidebar"; // Mode buy
       grpInfo[1] = "sell"; // Insidebar
@@ -305,10 +310,12 @@ void classifyGroupCandle(int idx, string &grpInfo[], ENUM_TIMEFRAMES TimeFrame) 
    //      |              |       
    //      |                     
    //      STRONG         WEAK
-   if(open1 > close1 &&   // Candle 1 is bull
+   if(body1 > minSize1 &&  // Filter Pin Bar
+      open1 > close1 &&   // Candle 1 is bull
       open2 < close2 &&   // Candle 2 is bear
-      MathMax(open1, close1) < high2 && high1 < close2 &&  // Candle 1 was covered by candle 2
-      body2 > atr
+      MathMax(open1, close1) < high2 &&
+      MathMin(open1, close1) > open2-delta &&
+      high1 < high2  // Candle 1 was covered by candle 2
    ) {
       grpInfo[0] = "insidebar"; // Mode buy
       grpInfo[1] = "buy"; // Insidebar
