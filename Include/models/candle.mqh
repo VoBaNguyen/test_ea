@@ -242,7 +242,6 @@ void classifySingleCandle(int idx, string &info[], ENUM_TIMEFRAMES TimeFrame) {
       return;
    }
    
-   
    info[0] = "undefined";
    info[1] = candleType;
    return;
@@ -282,9 +281,11 @@ void classifyGroupCandle(int idx, string &grpInfo[], ENUM_TIMEFRAMES TimeFrame) 
    //          |          |
    //      STRONG     WEAK
    
-   if(body1*1.1 > body2) {
-      return;
-   }
+   if(body1*1.2 > body2) return;
+   
+   if(size1*1.2 > size2) return;
+   
+   if(body2 < atr) return;
    
    if(body1 > minSize1 &&  // Filter Pin Bar
       open1 < close1 &&   // Candle 1 is bull

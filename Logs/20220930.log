@@ -1,0 +1,90 @@
+0	21:28:47.896	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:28:47.916	classify_group_candle XAUUSDm,H1: initialized
+0	21:36:47.635	Script test\test_high_low XAUUSDm,M15: loaded successfully
+0	21:36:47.645	test_high_low XAUUSDm,M15: initialized
+0	21:36:47.645	test_high_low XAUUSDm,M15: Alert: 1674.573
+0	21:36:47.645	test_high_low XAUUSDm,M15: uninit reason 0
+0	21:36:47.655	Script test_high_low XAUUSDm,M15: removed
+0	21:38:36.417	classify_group_candle XAUUSDm,H1: uninit reason 1
+0	21:38:36.426	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:38:44.150	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:38:45.529	classify_group_candle XAUUSDm,H1: initialized
+0	21:42:44.248	Script test\test_high_low XAUUSDm,H1: loaded successfully
+0	21:42:44.258	test_high_low XAUUSDm,H1: initialized
+0	21:42:44.258	test_high_low XAUUSDm,H1: Alert: 0 - 1670.947
+0	21:42:44.258	test_high_low XAUUSDm,H1: Alert: 1 - 1669.431
+0	21:42:44.258	test_high_low XAUUSDm,H1: Alert: 2 - 1666.612
+0	21:42:44.258	test_high_low XAUUSDm,H1: Alert: 3 - 1670.082
+0	21:42:44.258	test_high_low XAUUSDm,H1: Alert: 4 - 1672.351
+0	21:42:44.258	test_high_low XAUUSDm,H1: Alert: Max: 4.0
+0	21:42:44.258	test_high_low XAUUSDm,H1: uninit reason 0
+0	21:42:44.258	Script test_high_low XAUUSDm,H1: removed
+3	21:43:33.160	cannot open file 'C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\Scripts\test\test_high_low.ex4' [2]
+3	21:43:51.912	cannot open file 'C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\Scripts\test\test_high_low.ex4' [2]
+0	21:44:29.050	Script test\test_high_low XAUUSDm,H1: loaded successfully
+0	21:44:29.060	test_high_low XAUUSDm,H1: initialized
+0	21:44:29.060	test_high_low XAUUSDm,H1: Alert: 0 - 1670.947
+0	21:44:29.060	test_high_low XAUUSDm,H1: Alert: 1 - 1669.431
+0	21:44:29.060	test_high_low XAUUSDm,H1: Alert: 2 - 1666.612
+0	21:44:29.060	test_high_low XAUUSDm,H1: Alert: 3 - 1670.082
+0	21:44:29.060	test_high_low XAUUSDm,H1: Alert: 4 - 1672.351
+0	21:44:29.060	test_high_low XAUUSDm,H1: Alert: Max: 4.0
+0	21:44:29.060	test_high_low XAUUSDm,H1: uninit reason 0
+0	21:44:29.060	Script test_high_low XAUUSDm,H1: removed
+0	21:44:57.338	Script test\test_high_low XAUUSDm,H1: loaded successfully
+0	21:44:57.358	test_high_low XAUUSDm,H1: initialized
+0	21:44:57.358	test_high_low XAUUSDm,H1: Alert: 0 - 1670.947
+0	21:44:57.358	test_high_low XAUUSDm,H1: Alert: 1 - 1669.431
+0	21:44:57.358	test_high_low XAUUSDm,H1: Alert: 2 - 1666.612
+0	21:44:57.358	test_high_low XAUUSDm,H1: Alert: 3 - 1670.082
+0	21:44:57.358	test_high_low XAUUSDm,H1: Alert: 4 - 1672.351
+0	21:44:57.358	test_high_low XAUUSDm,H1: Alert: Max: 4
+0	21:44:57.358	test_high_low XAUUSDm,H1: Alert: Max: 1672.351
+0	21:44:57.358	test_high_low XAUUSDm,H1: uninit reason 0
+0	21:44:57.358	Script test_high_low XAUUSDm,H1: removed
+0	21:46:07.877	classify_group_candle XAUUSDm,H1: uninit reason 1
+0	21:46:07.886	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:46:14.553	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:46:15.660	classify_group_candle XAUUSDm,H1: initialized
+0	21:47:12.849	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:47:14.068	classify_group_candle XAUUSDm,H1: initialized
+0	21:47:17.894	classify_group_candle XAUUSDm,H1: uninit reason 1
+0	21:47:17.903	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:47:18.971	classify_group_candle XAUUSDm,H1: uninit reason 1
+0	21:47:18.982	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:49:33.105	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:49:34.187	classify_group_candle XAUUSDm,H1: initialized
+0	21:51:26.787	classify_group_candle XAUUSDm,H1: uninit reason 2
+0	21:51:26.788	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:51:26.795	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:51:26.799	classify_group_candle XAUUSDm,H1: initialized
+0	21:51:27.702	classify_group_candle XAUUSDm,H1: uninit reason 2
+0	21:51:27.702	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:51:27.712	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:51:27.722	classify_group_candle XAUUSDm,H1: initialized
+0	21:51:28.135	classify_group_candle XAUUSDm,H1: uninit reason 2
+0	21:51:28.135	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:51:28.145	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:51:28.155	classify_group_candle XAUUSDm,H1: initialized
+0	21:53:50.123	classify_group_candle XAUUSDm,H1: uninit reason 2
+0	21:53:50.133	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:53:50.133	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:53:50.143	classify_group_candle XAUUSDm,H1: initialized
+0	21:53:51.246	classify_group_candle XAUUSDm,H1: uninit reason 2
+0	21:53:51.246	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:53:51.256	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:53:51.266	classify_group_candle XAUUSDm,H1: initialized
+0	21:54:35.314	classify_group_candle XAUUSDm,H1: uninit reason 2
+0	21:54:35.324	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:54:35.324	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:54:35.344	classify_group_candle XAUUSDm,H1: initialized
+0	21:55:00.413	classify_group_candle XAUUSDm,H1: uninit reason 2
+0	21:55:00.413	Custom indicator classify_group_candle XAUUSDm,H1: removed
+0	21:55:00.423	Custom indicator price_action\classify_group_candle XAUUSDm,H1: loaded successfully
+0	21:55:00.433	classify_group_candle XAUUSDm,H1: initialized
+0	23:04:35.252	classify_group_candle XAUUSDm,H1: uninit reason 3
+0	23:04:35.266	classify_group_candle XAUUSDm,H4: initialized
+0	23:04:37.055	classify_group_candle XAUUSDm,H4: uninit reason 3
+0	23:04:37.055	classify_group_candle XAUUSDm,H1: initialized
+0	23:53:04.807	classify_group_candle XAUUSDm,H1: uninit reason 9
+0	23:53:04.845	Custom indicator classify_group_candle XAUUSDm,H1: removed

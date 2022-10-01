@@ -331,9 +331,9 @@ bool isArrDecrease(double& data[]) {
 *        CANDEL METHODS          *
 *********************************/
 
-bool isCandlesType(string symbol, ENUM_TIMEFRAMES time_frame, int range, int type) {
+bool isCandlesType(string symbol, ENUM_TIMEFRAMES TimeFrame, int range, int type) {
    for(int i=1; i<=range; i++) {
-      int eleType = candleType(symbol, time_frame, i);
+      int eleType = candleType(symbol, TimeFrame, i);
       if (eleType != type) {
          return false;
       }      
@@ -342,9 +342,9 @@ bool isCandlesType(string symbol, ENUM_TIMEFRAMES time_frame, int range, int typ
 }
 
 
-int candleType(string symbol, ENUM_TIMEFRAMES time_frame, int shift) {
-   double open = iOpen(symbol, time_frame,shift); 
-   double close = iClose(symbol, time_frame,shift);
+int candleType(string symbol, ENUM_TIMEFRAMES TimeFrame, int shift) {
+   double open = iOpen(symbol, TimeFrame,shift); 
+   double close = iClose(symbol, TimeFrame,shift);
    if(open < close) {
       return 0;   //GREEN
    }
@@ -352,6 +352,50 @@ int candleType(string symbol, ENUM_TIMEFRAMES time_frame, int shift) {
 }
 
 
+string determineTrend(int numCandle, ENUM_TIMEFRAMES TimeFrame) {
+   int bull = 0;
+   int bear = 0;
+
+   for(int idx=1; idx<=numCandle; idx++) {
+      double open  = iOpen(Symbol(), TimeFrame, idx);
+      double close = iClose(Symbol(), TimeFrame, idx);
+      if(open < close) bull++;
+      if(open > close) bear++; 
+   }
+   
+   if(bull > bear) return "buy";
+   if(bear > bull) return "sell";
+   return "wait";
+}
+
+
+bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, double delta=0) {
+   double priceArr[4];
+   int range = ArraySize(priceArr);
+   if(type == "high") {
+      for(int idx=0; idx<range; idx++) {
+         priceArr[idx] = High[candleIdx+idx];
+      }
+      int maxIdx = ArrayMaximum(priceArr, WHOLE_ARRAY, 0);
+      double lastVal = High[candleIdx] + delta;
+      if(lastVal >= priceArr[maxIdx]) {
+         return True;
+      }
+   }
+   
+   else if (type == "low") {
+      for(int idx=0; idx<range; idx++) {
+         priceArr[idx] = Low[candleIdx+idx];
+      }
+      int minIdx = ArrayMinimum(priceArr, WHOLE_ARRAY, 0);
+      double lastVal = Low[candleIdx] - delta;
+      if(lastVal <= priceArr[minIdx]) {
+         return True;
+      }
+   }
+   
+   return false;
+}
 
 
 /*********************************

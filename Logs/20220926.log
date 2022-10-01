@@ -1,0 +1,48 @@
+0	19:49:12.141	Custom indicator ZigZag XAUUSDm,H1: loaded successfully
+0	19:49:12.153	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	19:49:12.178	ZigZag XAUUSDm,H1: initialized
+0	19:49:12.193	test_candel XAUUSDm,H1: initialized
+0	19:49:12.229	Custom indicator price_action\classify_candel XAUUSDm,Daily: loaded successfully
+0	19:49:12.240	Custom indicator price_action\classify_group_candle XAUUSDm,Daily: loaded successfully
+0	19:49:12.260	classify_candel XAUUSDm,Daily: initialized
+0	19:49:12.271	classify_group_candle XAUUSDm,Daily: initialized
+0	21:18:11.183	classify_candel XAUUSDm,Daily: uninit reason 1
+0	21:18:11.184	Custom indicator classify_candel XAUUSDm,Daily: removed
+0	21:26:01.867	classify_group_candle XAUUSDm,Daily: uninit reason 3
+0	21:26:01.881	classify_group_candle XAUUSDm,Monthly: initialized
+0	21:26:27.341	classify_group_candle XAUUSDm,Monthly: uninit reason 3
+0	21:26:27.352	classify_group_candle XAUUSDm,Weekly: initialized
+0	21:26:32.328	classify_group_candle XAUUSDm,Weekly: uninit reason 3
+0	21:26:32.334	classify_group_candle XAUUSDm,Daily: initialized
+0	21:26:42.887	classify_group_candle XAUUSDm,Daily: uninit reason 3
+0	21:26:42.887	classify_group_candle XAUUSDm,Weekly: initialized
+0	21:26:48.703	classify_group_candle XAUUSDm,Weekly: uninit reason 3
+0	21:26:48.712	classify_group_candle XAUUSDm,Daily: initialized
+0	21:26:55.709	classify_group_candle XAUUSDm,Daily: uninit reason 3
+0	21:26:55.709	classify_group_candle XAUUSDm,Weekly: initialized
+0	21:27:08.337	classify_group_candle XAUUSDm,Weekly: uninit reason 3
+0	21:27:08.343	classify_group_candle XAUUSDm,Daily: initialized
+0	21:27:37.850	classify_group_candle XAUUSDm,Daily: uninit reason 3
+0	21:27:37.861	classify_group_candle XAUUSDm,H4: initialized
+0	21:28:15.567	classify_group_candle XAUUSDm,H4: uninit reason 3
+0	21:28:15.567	classify_group_candle XAUUSDm,Daily: initialized
+0	21:31:21.009	classify_group_candle XAUUSDm,Daily: uninit reason 3
+0	21:31:21.009	classify_group_candle XAUUSDm,H4: initialized
+0	21:31:30.651	ZigZag XAUUSDm,H1: uninit reason 9
+0	21:31:30.651	test_candel XAUUSDm,H1: uninit reason 9
+0	21:31:30.651	classify_group_candle XAUUSDm,H4: uninit reason 9
+0	21:31:30.720	Custom indicator ZigZag XAUUSDm,H1: removed
+0	21:31:30.720	Custom indicator test_candel XAUUSDm,H1: removed
+0	21:31:30.740	Custom indicator classify_group_candle XAUUSDm,H4: removed
+0	22:58:07.186	Custom indicator ZigZag XAUUSDm,H1: loaded successfully
+0	22:58:07.196	Custom indicator test\test_candel XAUUSDm,H1: loaded successfully
+0	22:58:07.222	ZigZag XAUUSDm,H1: initialized
+0	22:58:07.237	test_candel XAUUSDm,H1: initialized
+0	22:58:07.263	Custom indicator price_action\classify_group_candle XAUUSDm,H4: loaded successfully
+0	22:58:07.277	classify_group_candle XAUUSDm,H4: initialized
+0	22:59:03.956	ZigZag XAUUSDm,H1: uninit reason 9
+0	22:59:03.956	test_candel XAUUSDm,H1: uninit reason 9
+0	22:59:03.956	classify_group_candle XAUUSDm,H4: uninit reason 9
+0	22:59:03.974	Custom indicator ZigZag XAUUSDm,H1: removed
+0	22:59:03.974	Custom indicator test_candel XAUUSDm,H1: removed
+0	22:59:03.983	Custom indicator classify_group_candle XAUUSDm,H4: removed
