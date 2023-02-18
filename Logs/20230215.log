@@ -1,0 +1,60 @@
+0	23:34:21.750	Expert backtest\Soft4FX Forex Simulator AUDCADm,H1: loaded successfully
+0	23:34:21.750	Soft4FX Forex Simulator AUDCADm,H1 inputs: Always_On_Top=false; Buy_Sell_Buttons_Order=0; 
+0	23:34:21.790	Expert backtest\Soft4FX Forex Simulator AUDCADm,H1: loaded successfully
+0	23:34:21.790	Soft4FX Forex Simulator AUDCADm,H1 inputs: Always_On_Top=false; Buy_Sell_Buttons_Order=0; 
+0	23:34:25.618	Soft4FX Forex Simulator AUDCADm,H1: Scaling: 13 16
+0	23:34:25.618	Soft4FX Forex Simulator AUDCADm,H1: Scaling: 13 16
+0	23:34:25.648	Soft4FX Forex Simulator AUDCADm,H1: Trying exe path: C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\Files\Forex Simulator.exe
+0	23:34:25.648	Soft4FX Forex Simulator AUDCADm,H1: Trying exe path: C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\Files\Forex Simulator.exe
+0	23:34:26.070	Soft4FX Forex Simulator AUDCADm,H1: initialized
+0	23:34:26.078	Soft4FX Forex Simulator AUDCADm,H1: initialized
+2	23:34:31.003	Soft4FX Forex Simulator AUDCADm,H1: ExpertRemove function called
+0	23:34:31.003	Soft4FX Forex Simulator AUDCADm,H1: uninit reason 0
+2	23:34:31.033	Soft4FX Forex Simulator AUDCADm,H1: ExpertRemove function called
+0	23:34:31.033	Soft4FX Forex Simulator AUDCADm,H1: uninit reason 0
+0	23:34:33.995	Expert Soft4FX Forex Simulator AUDCADm,H1: removed
+0	23:34:34.102	Expert Soft4FX Forex Simulator AUDCADm,H1: removed
+0	23:34:37.762	Compiling 'MACD Sample'
+0	23:34:37.762	Compiling 'Moving Average'
+0	23:34:39.413	Compiling 'Accelerator'
+0	23:34:39.413	Compiling 'Accumulation'
+0	23:34:39.413	Compiling 'Alligator'
+0	23:34:39.413	Compiling 'ATR'
+0	23:34:39.413	Compiling 'Awesome'
+0	23:34:39.413	Compiling 'Bands'
+0	23:34:39.413	Compiling 'Bears'
+0	23:34:39.413	Compiling 'Bulls'
+0	23:34:39.413	Compiling 'CCI'
+0	23:34:39.413	Compiling 'Custom Moving Averages'
+0	23:34:39.413	Compiling 'Heiken Ashi'
+0	23:34:39.413	Compiling 'Ichimoku'
+0	23:34:39.413	Compiling 'iExposure'
+0	23:34:39.413	Compiling 'MACD'
+0	23:34:39.413	Compiling 'Momentum'
+0	23:34:39.413	Compiling 'OsMA'
+0	23:34:39.413	Compiling 'Parabolic'
+0	23:34:39.413	Compiling 'RSI'
+0	23:34:39.413	Compiling 'Stochastic'
+0	23:34:39.413	Compiling 'ZigZag'
+0	23:34:39.413	Compiling 'SimplePanel'
+0	23:34:45.339	Compiling 'PeriodConverter'
+0	23:34:45.339	Compiling 'DLLSampleTester'
+0	23:34:45.339	Compiling 'PipeClient'
+0	23:34:45.339	Compiling 'PipeClientPure'
+0	23:34:47.151	Compiling 'stdlib'
+0	23:34:49.100	Expert backtest\Soft4FX Forex Simulator AUDCADm,H1: loaded successfully
+0	23:34:49.100	Soft4FX Forex Simulator AUDCADm,H1 inputs: Always_On_Top=false; Buy_Sell_Buttons_Order=0; 
+0	23:34:51.291	Soft4FX Forex Simulator AUDCADm,H1: Scaling: 13 16
+0	23:34:51.322	Soft4FX Forex Simulator AUDCADm,H1: Trying exe path: C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\Files\Forex Simulator.exe
+0	23:34:51.778	Soft4FX Forex Simulator AUDCADm,H1: initialized
+2	23:34:53.322	Soft4FX Forex Simulator AUDCADm,H1: ExpertRemove function called
+0	23:34:53.322	Soft4FX Forex Simulator AUDCADm,H1: uninit reason 0
+0	23:34:53.322	Expert Soft4FX Forex Simulator AUDCADm,H1: removed
+0	23:35:54.357	Expert backtest\Soft4FX Forex Simulator EURUSDm,H1: loaded successfully
+0	23:35:55.528	Soft4FX Forex Simulator EURUSDm,H1 inputs: Always_On_Top=false; Buy_Sell_Buttons_Order=0; 
+0	23:35:55.605	Soft4FX Forex Simulator EURUSDm,H1: Scaling: 13 16
+0	23:35:55.635	Soft4FX Forex Simulator EURUSDm,H1: Trying exe path: C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\Files\Forex Simulator.exe
+0	23:35:56.096	Soft4FX Forex Simulator EURUSDm,H1: initialized
+2	23:52:08.046	Soft4FX Forex Simulator EURUSDm,H1: ExpertRemove function called
+0	23:52:08.046	Soft4FX Forex Simulator EURUSDm,H1: uninit reason 0
+0	23:52:08.057	Expert Soft4FX Forex Simulator EURUSDm,H1: removed

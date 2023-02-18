@@ -22,8 +22,8 @@
 input int slippage = 10;
 input long EA_ID = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
-input int margin = 5;
-input double delta = 0.8;
+input int margin = 4;
+input double delta = 0.5;
 input double initLot = 0.1;
 input int SLPips = 10;
 input int TPPips = 30;
@@ -115,7 +115,8 @@ void OnTick()
             // Last order is BUY => Open SELL stop order
             if(orderType == ORDER_TYPE_BUY) {
                double lot = (sumLot(_Symbol, ORDER_TYPE_BUY)*k 
-                             + totalPos*margin)/TPPips 
+                             // + totalPos*margin)/TPPips 
+                             + margin)/TPPips 
                              - sumLot(_Symbol, ORDER_TYPE_SELL);
                int orderID = sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, lot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
             }
@@ -123,7 +124,8 @@ void OnTick()
             // Last order is SELL => Open BUY stop order
             else if(orderType == ORDER_TYPE_SELL) {
                double lot = (sumLot(_Symbol, ORDER_TYPE_SELL)*k 
-                             + totalPos*margin)/TPPips 
+                             // + totalPos*margin)/TPPips 
+                             + margin)/TPPips 
                              - sumLot(_Symbol, ORDER_TYPE_BUY);
                int orderID = sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, lot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
             }

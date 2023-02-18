@@ -86,7 +86,7 @@ bool selectOrder(int id, int idType, int mode) {
 int sendOrder(string symbol, ENUM_ORDER_TYPE ordType, 
                double lot, double entry, int slippage, 
                double SL, double TP, string comment, int EA) {
-   Alert("Send order. Type: ", ordType, 
+   Alert("Send order. Symbol: ", symbol, ", Type: ", ordType, 
          " - Lot: ", lot, " - Entry: ", entry,
          " - SL: ", SL, " - TP: ", TP);
    int orderID = OrderSend(symbol,ordType,lot,entry,slippage,SL,TP,comment,EA);
@@ -134,7 +134,7 @@ void modifyOrder(int ticket, double open, double SL, double TP, double delta = 0
 }
 
 
-int countPosition(long magicNumber) {
+int countPosition(long magicNumber, int orderType=-1) {
    int count = 0;
    for(int i=0; i<OrdersTotal(); i++) {
       if(OrderSelect(i, SELECT_BY_POS) == false) {
@@ -142,10 +142,50 @@ int countPosition(long magicNumber) {
          return 9999;
       }
       if(magicNumber == OrderMagicNumber()) {
-         count += 1;
+         if(orderType != -1) {
+            if(OrderType() == orderType) {
+               count += 1;
+            }
+         }
+         else {
+            count += 1;
+         }
       }
    }
    return count;
+}
+
+
+int lastOpenedOrder(int EA_ID) {
+   int latestId = -1;
+   
+   // No order was opened
+   if(countPosition(EA_ID) == 0) {
+      return latestId;
+   }
+   
+   // Get latest opened order
+   datetime latestTime = D'2015.01.01 00:00';
+   for(int i=0; i<OrdersTotal(); i++) {
+      if(OrderSelect(i, SELECT_BY_POS) == false) {
+         Alert("Fail to select position with ticket: ", OrderTicket());
+         continue;
+      }
+   
+      if(latestId == -1) {
+         latestId = OrderTicket();
+         latestTime = OrderOpenTime();
+         continue;
+      };
+   
+      datetime openTime = OrderOpenTime();
+      if(openTime > latestTime) {
+         latestId = OrderTicket();
+         latestTime = openTime;
+      }
+   }
+   
+   return latestId;   
 }
 
 
@@ -190,6 +230,40 @@ string getErr() {
    string errMsg = ErrorDescription(GetLastError());
    return errMsg;
 }
+
+
+double sumLot (string symbol, ENUM_ORDER_TYPE orderType) {
+   double totalLot = 0.0;
+   for(int i=0; i<OrdersTotal(); i++) {
+      if(OrderSelect(i, SELECT_BY_POS) == true) {
+         if(OrderType() == orderType) {
+            totalLot += OrderLots();
+         }
+      }
+   }
+   return totalLot;
+}
+
+
+bool deletePendingOrders(int orderType=-1) {
+   // In case trigger first postion and still hanging the second position
+   for(int i=0; i<OrdersTotal(); i++) {
+      if(OrderSelect(i, SELECT_BY_POS) == true) {
+         if(OrderType() == ORDER_TYPE_BUY_STOP || OrderType() == ORDER_TYPE_SELL_STOP) {
+            if(orderType != -1) {
+               if(orderType == OrderType()) {
+                  OrderDelete(OrderTicket());
+               }
+            } else {
+               OrderDelete(OrderTicket());
+            }
+         }
+      }
+   }
+   return true;
+}
+
+
 
 
 /*********************************
@@ -395,6 +469,13 @@ bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, doubl
    }
    
    return false;
+}
+
+
+void addToDoubleArray( double& theArray[][], double size, double price ) {
+   ArrayResize( theArray, ArraySize( theArray ) + 1 );
+   theArray[ ArraySize( theArray ) ][0] = size;
+   theArray[ ArraySize( theArray ) ][1] = price;
 }
 
 

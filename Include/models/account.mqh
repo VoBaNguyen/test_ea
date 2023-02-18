@@ -122,9 +122,23 @@ class MyAccount {
       void showBalance() {
          Alert("Balance: ", info.BALANCE);
       };
-      //+----------------------------------------+
-      //| Default constructor                    |
-      //+----------------------------------------+
+      
+      /*
+      1. The constructor, all parameters of which have default values, is not a default constructor.
+      2. The  public, protected and private keywords are used to indicate the extent, to which 
+      members of the base class will be available for the derived one. 
+      The public keyword after a colon in the header of a derived class indicates that 
+      the protected and public members of the base class CShape should be inherited as protected 
+      and public members of the derived class CCircle.
+      3. The private class members of the base class are not available for the derived class. 
+      The public inheritance also means that derived classes (CCircle and CSquare) are CShapes. 
+      That is, the Square (CSquare) is a shape (CShape), but the shape does not necessarily 
+      have to be a square.
+      */
+      
+      //+-----------------------------------------------------------------------+
+      //| An explicit call of a parametric constructor with a default parameter |
+      //+-----------------------------------------------------------------------+
       MyAccount(void) {
          AccountInfo info();
          firstName = "None";

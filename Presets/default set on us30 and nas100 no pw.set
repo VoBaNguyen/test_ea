@@ -1,0 +1,17 @@
+title6=FREE EA, Indicator > ForexCracked.com
+Password=
+MagicNumber=12345
+Slippage=1
+title1=TIME SETTINGS
+StartHour=16
+EndHour=22
+Secs=60
+title2=MONEY MANAGEMENT
+FixedLot=
+RiskPercent=2.5
+title3=TRADE SETTING IN POINTS
+Delta=0.5
+MaxDistance=12.0
+Stop=8.0
+MaxTrailing=3.0
+MaxSpread=5555

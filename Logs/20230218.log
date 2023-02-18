@@ -1,0 +1,360 @@
+0	09:54:11.267	Compiling 'test_hedging'
+0	09:54:43.124	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	09:54:43.150	test_hedging BTCAUDm,H1: initialized
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	09:54:43.150	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	09:54:43.150	test_hedging BTCAUDm,H1: uninit reason 0
+0	09:54:43.175	Script test_hedging BTCAUDm,H1: removed
+0	10:29:17.727	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:29:17.742	test_hedging BTCAUDm,H1: initialized
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:29:17.742	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:29:17.742	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:29:17.778	Script test_hedging BTCAUDm,H1: removed
+0	10:29:46.111	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:29:46.132	test_hedging BTCAUDm,H1: initialized
+0	10:29:46.132	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: Balance: 500.0
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:29:46.134	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:29:46.134	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:29:46.180	Script test_hedging BTCAUDm,H1: removed
+0	10:37:22.563	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:37:22.578	test_hedging BTCAUDm,H1: initialized
+0	10:37:22.578	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 0.02
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:37:22.579	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:37:22.579	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:37:22.596	Script test_hedging BTCAUDm,H1: removed
+0	10:40:54.899	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:40:54.914	test_hedging BTCAUDm,H1: initialized
+0	10:40:54.914	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:40:54.916	test_hedging BTCAUDm,H1: Alert: 0.02
+0	10:40:54.916	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:40:54.916	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:40:54.916	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:40:54.921	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:40:54.921	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:40:54.921	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:40:54.924	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:40:54.924	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:40:54.924	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:40:54.953	Script test_hedging BTCAUDm,H1: removed
+0	10:57:06.350	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:57:06.350	test_hedging BTCAUDm,H1 inputs: slippage=10; magicNumber=7777; TIME_FRAME=0; 
+0	10:57:06.379	test_hedging BTCAUDm,H1: initialized
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 0.02
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.23 - Entry: 35756.0 - SL: 35556.0 - TP: 36356.0
+3	10:57:06.379	test_hedging BTCAUDm,H1: trade operations not allowed by settings
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order ERROR: trade is not allowed in the expert properties
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.3966666666666667 - Entry: 35756.0 - SL: 35556.0 - TP: 36356.0
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order ERROR: trade is not allowed in the expert properties
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.5633333333333334 - Entry: 35756.0 - SL: 35556.0 - TP: 36356.0
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order ERROR: trade is not allowed in the expert properties
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.73 - Entry: 35756.0 - SL: 35556.0 - TP: 36356.0
+0	10:57:06.379	test_hedging BTCAUDm,H1: Alert: Send order ERROR: trade is not allowed in the expert properties
+0	10:57:06.379	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:57:06.410	Script test_hedging BTCAUDm,H1: removed
+0	10:57:26.302	Automated trading enabled
+0	10:57:28.649	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:57:28.649	test_hedging BTCAUDm,H1 inputs: slippage=10; magicNumber=7777; TIME_FRAME=0; 
+0	10:57:28.680	test_hedging BTCAUDm,H1: initialized
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 0.02
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.23 - Entry: 35754.9 - SL: 35554.9 - TP: 36354.9
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.3966666666666667 - Entry: 35754.9 - SL: 35554.9 - TP: 36354.9
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.5633333333333334 - Entry: 35754.9 - SL: 35554.9 - TP: 36354.9
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.73 - Entry: 35754.9 - SL: 35554.9 - TP: 36354.9
+0	10:57:28.680	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	10:57:28.680	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:57:28.705	Script test_hedging BTCAUDm,H1: removed
+0	10:57:53.848	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:57:53.848	test_hedging BTCAUDm,H1 inputs: slippage=10; magicNumber=7777; TIME_FRAME=0; 
+0	10:57:53.873	test_hedging BTCAUDm,H1: initialized
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 0.02
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.23 - Entry: 35761.8 - SL: 0.0 - TP: 36361.8
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.3966666666666667 - Entry: 35761.8 - SL: 0.0 - TP: 36361.8
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.5633333333333334 - Entry: 35761.8 - SL: 0.0 - TP: 36361.8
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order. Type: 2 - Lot: 0.73 - Entry: 35761.8 - SL: 0.0 - TP: 36361.8
+0	10:57:53.873	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	10:57:53.873	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:57:53.890	Script test_hedging BTCAUDm,H1: removed
+0	10:58:08.648	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:58:08.648	test_hedging BTCAUDm,H1 inputs: slippage=10; magicNumber=7777; TIME_FRAME=0; 
+0	10:58:08.671	test_hedging BTCAUDm,H1: initialized
+0	10:58:08.671	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:58:08.680	test_hedging BTCAUDm,H1: Alert: 0.02
+0	10:58:08.680	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:58:08.680	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:58:08.680	test_hedging BTCAUDm,H1: Alert: Send order. Type: 4 - Lot: 0.23 - Entry: 35763.4 - SL: 0.0 - TP: 36363.4
+0	10:58:08.680	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	10:58:08.680	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:58:08.680	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:58:08.687	test_hedging BTCAUDm,H1: Alert: Send order. Type: 4 - Lot: 0.3966666666666667 - Entry: 35763.4 - SL: 0.0 - TP: 36363.4
+0	10:58:08.687	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	10:58:08.687	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:58:08.689	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:58:08.689	test_hedging BTCAUDm,H1: Alert: Send order. Type: 4 - Lot: 0.5633333333333334 - Entry: 35763.4 - SL: 0.0 - TP: 36363.4
+2	10:58:09.071	test_hedging BTCAUDm,H1: open #232563794 buy stop 0.56 BTCAUDm at 35763.4 tp: 36363.4 ok
+0	10:58:09.071	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:58:09.071	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:58:09.071	test_hedging BTCAUDm,H1: Alert: Send order. Type: 4 - Lot: 0.73 - Entry: 35763.4 - SL: 0.0 - TP: 36363.4
+2	10:58:09.460	test_hedging BTCAUDm,H1: open #232563795 buy stop 0.73 BTCAUDm at 35763.4 tp: 36363.4 ok
+0	10:58:09.460	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:58:09.484	Script test_hedging BTCAUDm,H1: removed
+0	10:59:34.639	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	10:59:34.639	test_hedging BTCAUDm,H1 inputs: slippage=10; magicNumber=7777; TIME_FRAME=0; 
+0	10:59:34.669	test_hedging BTCAUDm,H1: initialized
+0	10:59:34.669	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: 1.31
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -1.06 - Entry: 35786.5 - SL: 0.0 - TP: 36386.5
+3	10:59:34.693	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -0.8933333333333333 - Entry: 35786.5 - SL: 0.0 - TP: 36386.5
+3	10:59:34.693	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -0.7266666666666667 - Entry: 35786.5 - SL: 0.0 - TP: 36386.5
+3	10:59:34.693	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	10:59:34.693	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	10:59:34.709	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	10:59:34.710	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	10:59:34.710	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -0.5600000000000001 - Entry: 35786.5 - SL: 0.0 - TP: 36386.5
+3	10:59:34.710	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	10:59:34.710	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	10:59:34.710	test_hedging BTCAUDm,H1: uninit reason 0
+0	10:59:34.732	Script test_hedging BTCAUDm,H1: removed
+0	11:00:20.546	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:00:20.546	test_hedging BTCAUDm,H1 inputs: slippage=10; magicNumber=7777; TIME_FRAME=0; 
+0	11:00:20.569	test_hedging BTCAUDm,H1: initialized
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 1.31
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 2SELL
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 3BUY
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -1.06 - Entry: 35788.6 - SL: 0.0 - TP: 36388.6
+3	11:00:20.569	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 4SELL
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 5BUY
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -0.8933333333333333 - Entry: 35788.6 - SL: 0.0 - TP: 36388.6
+3	11:00:20.569	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 6SELL
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 7BUY
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -0.7266666666666667 - Entry: 35788.6 - SL: 0.0 - TP: 36388.6
+3	11:00:20.569	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 8SELL
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: 9BUY
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: -0.5600000000000001 - Entry: 35788.6 - SL: 0.0 - TP: 36388.6
+3	11:00:20.569	test_hedging BTCAUDm,H1: invalid lots amount for OrderSend function
+0	11:00:20.569	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid function parameter value
+0	11:00:20.569	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:00:20.601	Script test_hedging BTCAUDm,H1: removed
+0	11:11:19.086	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:11:19.086	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:11:19.102	test_hedging BTCAUDm,H1: initialized
+0	11:11:19.102	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:11:19.102	test_hedging BTCAUDm,H1: Alert: 1.31
+0	11:11:19.102	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:11:19.121	Script test_hedging BTCAUDm,H1: removed
+0	11:17:43.440	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:17:43.440	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:17:43.456	test_hedging BTCAUDm,H1: initialized
+0	11:17:43.456	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:17:43.456	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:17:43.456	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:17:43.456	test_hedging BTCAUDm,H1: Alert: Symbol: BTCAUDm, Type: 0
+0	11:17:43.456	test_hedging BTCAUDm,H1: Alert: Symbol: BTCAUDm, Type: 0
+0	11:17:43.456	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:17:43.456	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:17:43.496	Script test_hedging BTCAUDm,H1: removed
+0	11:19:00.537	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:19:00.537	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:19:00.553	test_hedging BTCAUDm,H1: initialized
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: Symbol: BTCAUDm, Type: 0
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: Symbol: BTCAUDm, Type: 0
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 2
+0	11:19:00.553	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 2
+0	11:19:00.553	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:19:00.587	Script test_hedging BTCAUDm,H1: removed
+0	11:20:23.650	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:20:23.650	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:20:23.667	test_hedging BTCAUDm,H1: initialized
+0	11:20:23.667	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:20:23.667	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:20:23.667	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:20:23.667	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:20:23.667	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 0
+0	11:20:23.667	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 0
+0	11:20:23.667	test_hedging BTCAUDm,H1: Alert: 0SELL
+0	11:20:23.667	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:20:23.686	Script test_hedging BTCAUDm,H1: removed
+0	11:20:52.122	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:20:52.122	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:20:52.138	test_hedging BTCAUDm,H1: initialized
+0	11:20:52.138	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:20:52.138	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:20:52.138	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:20:52.139	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:20:52.139	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 0
+0	11:20:52.139	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 0
+0	11:20:52.139	test_hedging BTCAUDm,H1: Alert: 0SELL
+0	11:20:52.139	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:20:52.157	Script test_hedging BTCAUDm,H1: removed
+0	11:25:05.339	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:25:05.339	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:25:05.369	test_hedging BTCAUDm,H1: initialized
+0	11:25:05.370	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:25:05.370	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:25:05.384	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:25:05.384	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:25:05.384	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 0
+0	11:25:05.387	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 0
+0	11:25:05.388	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 1.0 - Entry: 35827.2 - SL: 0.0 - TP: 35227.2
+0	11:25:05.390	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	11:25:05.390	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:25:05.410	Script test_hedging BTCAUDm,H1: removed
+0	11:25:57.699	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:25:57.699	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:25:57.729	test_hedging BTCAUDm,H1: initialized
+0	11:25:57.729	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:25:57.729	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:25:57.732	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:25:57.732	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:25:57.732	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 0
+0	11:25:57.735	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 0
+0	11:25:57.737	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 3 - Lot: 1.0 - Entry: 35817.6 - SL: 0.0 - TP: 35217.6
+0	11:25:57.901	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	11:25:57.901	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:25:57.926	Script test_hedging BTCAUDm,H1: removed
+0	11:27:40.178	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:27:40.178	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:27:40.208	test_hedging BTCAUDm,H1: initialized
+0	11:27:40.208	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:27:40.208	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:27:40.211	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:27:40.211	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:27:40.211	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 0
+0	11:27:40.211	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 0
+0	11:27:40.216	test_hedging BTCAUDm,H1: Alert: Anchor price: 35806.7
+0	11:27:40.217	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 1.0 - Entry: 35806.7 - SL: 0.0 - TP: 35206.7
+0	11:27:40.218	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	11:27:40.218	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:27:40.237	Script test_hedging BTCAUDm,H1: removed
+0	11:28:05.212	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:28:05.212	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:28:05.243	test_hedging BTCAUDm,H1: initialized
+0	11:28:05.243	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:28:05.243	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:28:05.246	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:28:05.246	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:28:05.246	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 0
+0	11:28:05.249	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 0
+0	11:28:05.251	test_hedging BTCAUDm,H1: Alert: Anchor price: 35803.5
+0	11:28:05.251	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 1.0 - Entry: 35803.5 - SL: 0.0 - TP: 35203.5
+0	11:28:05.251	test_hedging BTCAUDm,H1: Alert: Send order ERROR: invalid stops
+0	11:28:05.251	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:28:05.271	Script test_hedging BTCAUDm,H1: removed
+0	11:28:11.942	Script test\test_hedging BTCAUDm,H1: loaded successfully
+0	11:28:11.942	test_hedging BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:28:11.972	test_hedging BTCAUDm,H1: initialized
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: --------------------------- New test ---------------------------
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: All opened orders:
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: ------------------
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: Pending BUY orders: 0
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: Pending SELL orders: 0
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: Anchor price: 35761.0
+0	11:28:11.972	test_hedging BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 1.0 - Entry: 35761.0 - SL: 0.0 - TP: 35161.0
+2	11:28:12.305	test_hedging BTCAUDm,H1: open #232564438 sell stop 1.00 BTCAUDm at 35761.0 tp: 35161.0 ok
+0	11:28:12.305	test_hedging BTCAUDm,H1: uninit reason 0
+0	11:28:12.324	Script test_hedging BTCAUDm,H1: removed
+0	11:31:55.500	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:31:57.127	hedging_v1 BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=0; 
+0	11:31:57.155	hedging_v1 BTCAUDm,H1: Alert: Init Hedging V1 strategy
+0	11:31:57.155	hedging_v1 BTCAUDm,H1: initialized
+0	11:31:59.754	hedging_v1 BTCAUDm,H1: Alert: --------------------------- New tick ---------------------------
+0	11:31:59.754	hedging_v1 BTCAUDm,H1: Alert: All opened orders:
+0	11:31:59.754	hedging_v1 BTCAUDm,H1: Alert: Symbol: EURUSDm, Type: 0
+0	11:31:59.754	hedging_v1 BTCAUDm,H1: Alert: Symbol: BTCAUDm, Type: 1
+0	11:31:59.755	hedging_v1 BTCAUDm,H1: Alert: Pending BUY orders: 1
+0	11:31:59.755	hedging_v1 BTCAUDm,H1: Alert: Pending SELL orders: 1
+0	11:32:02.724	hedging_v1 BTCAUDm,H1: uninit reason 4
+0	11:32:02.724	hedging_v1 BTCAUDm,H1: Alert: Remove strategy
+0	11:32:02.740	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:49:21.122	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:49:22.444	Expert hedging_v1 BTCAUDm,H1: removed
+0	16:37:29.047	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	16:37:30.727	Expert hedging_v1 BTCAUDm,H1: removed
+0	21:42:36.792	Automated trading disabled
+0	21:42:38.415	Automated trading enabled
+0	21:42:38.852	Automated trading disabled
