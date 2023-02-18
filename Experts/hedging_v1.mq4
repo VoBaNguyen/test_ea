@@ -16,29 +16,21 @@
 #include <common/utils.mqh>;
 
 
-
 //+------------------------------------------------------------------+
 //| Setup default parameters for the EA                              |
 //+------------------------------------------------------------------+
 input int slippage = 10;
 input long EA_ID = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
-double delta = 0.5;
-int SLPips = 20;
-int TPPips = 60;
+input int margin = 5;
+input double delta = 0.8;
+input double initLot = 0.1;
+input int SLPips = 10;
+input int TPPips = 30;
+
+// Calculate default setting
 int k = SLPips + TPPips;
-int margin = 5;
-double initLot = 1;
-
-double anchorPrice = Ask;
-double anchorBuy = anchorPrice + delta;
-double anchorSell = anchorPrice - delta;
-
-double buyTP = calTP(true, anchorBuy,TPPips);
-double sellTP = calTP(false, anchorSell,TPPips);
-
-double buySL = sellTP;
-double sellSL = buyTP;
+double anchorPriceArr[1] = {1854.8};
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
@@ -66,53 +58,95 @@ void OnTick()
   {
 //---
    Alert("--------------------------- New tick ---------------------------");
+   double anchorPrice = anchorPriceArr[0];
 
-
-   // If there's a pending order => SKIP
-   int pendingOrders = countPosition(EA_ID, ORDER_TYPE_BUY_STOP) + 
-                       countPosition(EA_ID, ORDER_TYPE_SELL_STOP);
-   if(pendingOrders > 0) {
-      return;
-   }
-   
-   
    // Count BUY/SELL position to calculate
-   int totalPos = countPosition(EA_ID, ORDER_TYPE_BUY) + 
-                  countPosition(EA_ID, ORDER_TYPE_SELL);
-   
-   // Let's start with SELL => First order is SELL
-   int signum = MathPow(-1, totalPos+1);
-   if (totalPos == 0) {
-      sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, initLot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
-      sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, initLot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
-      return;
+   int totalPos = countPosition(EA_ID, ORDER_TYPE_BUY) + countPosition(EA_ID, ORDER_TYPE_SELL);
+   int pendingOrders = countPosition(EA_ID, ORDER_TYPE_BUY_STOP) + countPosition(EA_ID, ORDER_TYPE_SELL_STOP);
+
+   if(totalPos == 0) {
+      // Close pending order from previous setup hedging.
+      closeOldPendingOrders();
+      
+      if(pendingOrders == 0) {
+         // SETUP FOR THE NEXT HEDGING ROUND!
+         anchorPriceArr[0] = Ask;
+         double anchorPrice = anchorPriceArr[0];
+         double anchorBuy = anchorPrice + delta;
+         double anchorSell = anchorPrice - delta;
+         double buyTP = calTP(true, anchorBuy,TPPips);
+         double sellTP = calTP(false, anchorSell,TPPips);         
+         double buySL = sellTP;
+         double sellSL = buyTP;
+         Alert("New anchorPrice: ", anchorPrice);
+         sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, initLot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
+         sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, initLot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
+      }
    }
 
-   
-   // If there's no pending order, we need to prepare for the next reverse of the price by open an opposite order.
-   int ticket = lastOpenedOrder(EA_ID);
-   if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES)){
-      int orderType = OrderType();
+   else {
+      Alert("anchorPrice: ", anchorPrice);
+      double anchorBuy = anchorPrice + delta;
+      double anchorSell = anchorPrice - delta;
+      double buyTP = calTP(true, anchorBuy,TPPips);
+      double sellTP = calTP(false, anchorSell,TPPips);
+      double buySL = sellTP;
+      double sellSL = buyTP;
       
-      // Last order is BUY => Open SELL stop order
-      if(orderType == ORDER_TYPE_BUY) {
-         double lot = (sumLot(_Symbol, ORDER_TYPE_BUY)*k 
-                       + totalPos*margin)/TPPips 
-                       - sumLot(_Symbol, ORDER_TYPE_SELL);
-         double entry = anchorPrice + (SLPips/10)*signum;
-         double TP = calTP(true, entry,TPPips);
-         int orderID = sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, lot, entry, slippage, 0, sellTP, "", EA_ID);
+      // In case trigger first postion and still hanging the second position
+      for(int i=0; i<OrdersTotal(); i++) {
+         if(OrderSelect(i, SELECT_BY_POS) == true) {
+            if(OrderType() == ORDER_TYPE_BUY_STOP || OrderType() == ORDER_TYPE_SELL_STOP) {
+               if(OrderLots() == initLot) {
+                  OrderDelete(OrderTicket());
+               }
+            }
+         }
       }
       
-      // Last order is SELL => Open BUY stop order
-      else if(orderType == ORDER_TYPE_SELL) {
-         double lot = (sumLot(_Symbol, ORDER_TYPE_SELL)*k 
-                       + totalPos*margin)/TPPips 
-                       - sumLot(_Symbol, ORDER_TYPE_BUY);
-         double entry = anchorPrice + (SLPips/10)*signum;
-         double TP = calTP(true, entry,TPPips);
-         int orderID = sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, lot, entry, slippage, 0, buyTP, "", EA_ID);
+      // If there's no pending order, we need to prepare for the next reverse of the price by open an opposite order.
+      int pendingOrders = countPosition(EA_ID, ORDER_TYPE_BUY_STOP) + countPosition(EA_ID, ORDER_TYPE_SELL_STOP);
+      if(pendingOrders == 0) {
+         int signum = MathPow(-1, totalPos+1);
+         int lastTicket = lastOpenedOrder(EA_ID);
+         if(selectOrder(lastTicket, SELECT_BY_TICKET, MODE_TRADES)){
+            int orderType = OrderType();
+            
+            // Last order is BUY => Open SELL stop order
+            if(orderType == ORDER_TYPE_BUY) {
+               double lot = (sumLot(_Symbol, ORDER_TYPE_BUY)*k 
+                             + totalPos*margin)/TPPips 
+                             - sumLot(_Symbol, ORDER_TYPE_SELL);
+               int orderID = sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, lot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
+            }
+            
+            // Last order is SELL => Open BUY stop order
+            else if(orderType == ORDER_TYPE_SELL) {
+               double lot = (sumLot(_Symbol, ORDER_TYPE_SELL)*k 
+                             + totalPos*margin)/TPPips 
+                             - sumLot(_Symbol, ORDER_TYPE_BUY);
+               int orderID = sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, lot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
+            }
+         }
       }
    }
   }
 //+------------------------------------------------------------------+
+
+
+
+void closeOldPendingOrders() {
+   // In case trigger first postion and still hanging the second position
+   for(int i=0; i<OrdersTotal(); i++) {
+      if(OrderSelect(i, SELECT_BY_POS) == true) {
+         if(OrderType() == ORDER_TYPE_BUY_STOP || OrderType() == ORDER_TYPE_SELL_STOP) {
+            if(OrderType() == ORDER_TYPE_BUY_STOP && Ask < OrderStopLoss()) {
+               OrderDelete(OrderTicket());
+            } 
+            else if (OrderType() == ORDER_TYPE_SELL_STOP && Ask > OrderStopLoss()) {
+               OrderDelete(OrderTicket());
+            }
+         }
+      }
+   }
+}
