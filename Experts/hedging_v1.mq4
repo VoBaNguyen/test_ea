@@ -22,15 +22,17 @@
 input int slippage = 10;
 input long EA_ID = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
-input int margin = 4;
-input double delta = 0.5;
-input double initLot = 0.1;
-input int SLPips = 10;
-input int TPPips = 30;
+input ENUM_HOUR startHour = h15; // Start operation hour
+input ENUM_HOUR lastHour  = h22; // Last operation hour
+input int margin     = 5;        // pips
+input double delta   = 5;        // pips
+input double initLot = 0.1;      // lot
+input int SLPips     = 10;       // pips
+input int TPPips     = 30;       // pips
 
 // Calculate default setting
 int k = SLPips + TPPips;
-double anchorPriceArr[1] = {1854.8};
+double anchorPriceArr[1];
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
@@ -58,6 +60,11 @@ void OnTick()
   {
 //---
    Alert("--------------------------- New tick ---------------------------");
+   string symbol = "AUDJPYm";
+   if(anchorPriceArr[0] == 0) {
+      anchorPriceArr[0] = Ask;
+   }
+   
    double anchorPrice = anchorPriceArr[0];
 
    // Count BUY/SELL position to calculate
@@ -65,6 +72,11 @@ void OnTick()
    int pendingOrders = countPosition(EA_ID, ORDER_TYPE_BUY_STOP) + countPosition(EA_ID, ORDER_TYPE_SELL_STOP);
 
    if(totalPos == 0) {
+      // Check active hours
+      if(!checkActiveHours(startHour, lastHour)) {
+         return;
+      }
+   
       // Close pending order from previous setup hedging.
       closeOldPendingOrders();
       
@@ -72,10 +84,10 @@ void OnTick()
          // SETUP FOR THE NEXT HEDGING ROUND!
          anchorPriceArr[0] = Ask;
          double anchorPrice = anchorPriceArr[0];
-         double anchorBuy = anchorPrice + delta;
-         double anchorSell = anchorPrice - delta;
-         double buyTP = calTP(true, anchorBuy,TPPips);
-         double sellTP = calTP(false, anchorSell,TPPips);         
+         double anchorBuy = calTP(true, anchorPrice, delta);
+         double anchorSell = calTP(false, anchorPrice, delta);
+         double buyTP = calTP(true, anchorBuy, TPPips);
+         double sellTP = calTP(false, anchorSell, TPPips);
          double buySL = sellTP;
          double sellSL = buyTP;
          Alert("New anchorPrice: ", anchorPrice);
@@ -86,10 +98,10 @@ void OnTick()
 
    else {
       Alert("anchorPrice: ", anchorPrice);
-      double anchorBuy = anchorPrice + delta;
-      double anchorSell = anchorPrice - delta;
-      double buyTP = calTP(true, anchorBuy,TPPips);
-      double sellTP = calTP(false, anchorSell,TPPips);
+      double anchorBuy = calTP(true, anchorPrice, delta);
+      double anchorSell = calTP(false, anchorPrice, delta);
+      double buyTP = calTP(true, anchorBuy, TPPips);
+      double sellTP = calTP(false, anchorSell, TPPips);
       double buySL = sellTP;
       double sellSL = buyTP;
       
@@ -114,18 +126,14 @@ void OnTick()
             
             // Last order is BUY => Open SELL stop order
             if(orderType == ORDER_TYPE_BUY) {
-               double lot = (sumLot(_Symbol, ORDER_TYPE_BUY)*k 
-                             // + totalPos*margin)/TPPips 
-                             + margin)/TPPips 
+               double lot = (sumLot(_Symbol, ORDER_TYPE_BUY)*(k + margin))/TPPips 
                              - sumLot(_Symbol, ORDER_TYPE_SELL);
                int orderID = sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, lot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
             }
             
             // Last order is SELL => Open BUY stop order
             else if(orderType == ORDER_TYPE_SELL) {
-               double lot = (sumLot(_Symbol, ORDER_TYPE_SELL)*k 
-                             // + totalPos*margin)/TPPips 
-                             + margin)/TPPips 
+               double lot = (sumLot(_Symbol, ORDER_TYPE_SELL)*(k + margin))/TPPips 
                              - sumLot(_Symbol, ORDER_TYPE_BUY);
                int orderID = sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, lot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
             }

@@ -38,8 +38,17 @@
 *         COMMON METHODS         *
 *********************************/
 
-double getPip() {
-   return MathPow(10, -_Digits+2);
+double getPip(string symbol="") {
+   if(symbol == "") {
+      symbol = _Symbol;
+   }
+   double bid    = MarketInfo(symbol, MODE_BID);
+   double ask    = MarketInfo(symbol, MODE_ASK);
+   double point  = MarketInfo(symbol, MODE_POINT);
+   int    digits = (int)MarketInfo(symbol, MODE_DIGITS);
+   int    spread = (int)MarketInfo(symbol, MODE_SPREAD);
+
+   return(MathPow(10, -digits+1));
 }
 
 int calcPip(double price1, double price2) {
@@ -124,10 +133,10 @@ void closeOrder(int ticket, double lotSize, double price, int slippage) {
 
 
 void modifyOrder(int ticket, double open, double SL, double TP, double delta = 0.05) {
-   OrderSelect(ticket, SELECT_BY_TICKET);
+   bool selectStt = OrderSelect(ticket, SELECT_BY_TICKET);
    if(OrderStopLoss() != SL && MathAbs(OrderStopLoss() - SL) > delta) {
-      bool stt = OrderModify(ticket,open,SL,TP,0, Black);
-      if (!stt) {
+      bool modStt = OrderModify(ticket,open,SL,TP,0, Black);
+      if (!modStt) {
          Alert ("Failed to modify order: ", getErr());
       }
    }
@@ -189,7 +198,7 @@ int lastOpenedOrder(int EA_ID) {
 }
 
 
-bool isRecentOpen(long delaySeconds) {
+bool isRecentOpen(int delaySeconds) {
    for(int i=0; i<OrdersTotal(); i++) {
       if(OrderSelect(i, SELECT_BY_POS) == true) {
          datetime openTime = OrderOpenTime();
@@ -203,7 +212,7 @@ bool isRecentOpen(long delaySeconds) {
 }
 
 
-bool isRecentClose(long delaySeconds) {
+bool isRecentClose(int delaySeconds) {
    for(int i=0; i<OrdersHistoryTotal(); i++) {
       if(OrderSelect(i, SELECT_BY_POS, MODE_HISTORY) == true) {
          datetime limitTime = OrderCloseTime() + delaySeconds;
@@ -252,10 +261,10 @@ bool deletePendingOrders(int orderType=-1) {
          if(OrderType() == ORDER_TYPE_BUY_STOP || OrderType() == ORDER_TYPE_SELL_STOP) {
             if(orderType != -1) {
                if(orderType == OrderType()) {
-                  OrderDelete(OrderTicket());
+                  bool stt = OrderDelete(OrderTicket());
                }
             } else {
-               OrderDelete(OrderTicket());
+               bool stt = OrderDelete(OrderTicket());
             }
          }
       }
@@ -453,7 +462,7 @@ bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, doubl
       int maxIdx = ArrayMaximum(priceArr, WHOLE_ARRAY, 0);
       double lastVal = High[candleIdx] + delta;
       if(lastVal >= priceArr[maxIdx]) {
-         return True;
+         return true;
       }
    }
    
@@ -464,7 +473,7 @@ bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, doubl
       int minIdx = ArrayMinimum(priceArr, WHOLE_ARRAY, 0);
       double lastVal = Low[candleIdx] - delta;
       if(lastVal <= priceArr[minIdx]) {
-         return True;
+         return true;
       }
    }
    
@@ -491,5 +500,48 @@ bool inRange(double value, double center, double delta) {
 
 
 
+/*********************************
+*         TRADING HOURS          *
+*********************************/
+// Definition of an hour. This is necessary for a drop down menu for hours input.
+enum ENUM_HOUR
+{
+   h00 = 00, // 00:00
+   h01 = 01, // 01:00
+   h02 = 02, // 02:00
+   h03 = 03, // 03:00
+   h04 = 04, // 04:00
+   h05 = 05, // 05:00
+   h06 = 06, // 06:00
+   h07 = 07, // 07:00
+   h08 = 08, // 08:00
+   h09 = 09, // 09:00
+   h10 = 10, // 10:00
+   h11 = 11, // 11:00
+   h12 = 12, // 12:00
+   h13 = 13, // 13:00
+   h14 = 14, // 14:00
+   h15 = 15, // 15:00
+   h16 = 16, // 16:00
+   h17 = 17, // 17:00
+   h18 = 18, // 18:00
+   h19 = 19, // 19:00
+   h20 = 20, // 20:00
+   h21 = 21, // 21:00
+   h22 = 22, // 22:00
+   h23 = 23, // 23:00
+};
 
-
+bool checkActiveHours(ENUM_HOUR StartHour, ENUM_HOUR LastHour)
+{
+   // Set operations disabled by default.
+   bool OperationsAllowed = false;
+   // Check if the current hour is between the allowed hours of operations. If so, return true.
+   if ((StartHour == LastHour) && (Hour() == StartHour))
+      OperationsAllowed = true;
+   if ((StartHour < LastHour) && (Hour() >= StartHour) && (Hour() <= LastHour))
+      OperationsAllowed = true;
+   if ((StartHour > LastHour) && (((Hour() >= LastHour) && (Hour() <= 23)) || ((Hour() <= StartHour) && (Hour() > 0))))
+      OperationsAllowed = true;
+   return OperationsAllowed;
+}
