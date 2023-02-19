@@ -200,3 +200,155 @@
 0	10:56:51.710	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
 0	10:56:51.710	test_pips BTCAUDm,H1: uninit reason 0
 0	10:56:51.763	Script test_pips BTCAUDm,H1: removed
+0	10:58:06.684	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	10:58:06.700	test_pips BTCAUDm,H1: initialized
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: Symbol: BTCUSDm, Pips: 0.01
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: Symbol: XAUUSDm, Pips: 0.01
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001
+0	10:58:06.700	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	10:58:06.700	test_pips BTCAUDm,H1: uninit reason 0
+0	10:58:06.723	Script test_pips BTCAUDm,H1: removed
+0	10:59:26.975	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	10:59:26.991	test_pips BTCAUDm,H1: initialized
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: Symbol: BTCUSDm, Pips: 0.01
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: Symbol: XAUUSDm, Pips: 0.01
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001
+0	10:59:26.991	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	10:59:26.991	test_pips BTCAUDm,H1: uninit reason 0
+0	10:59:27.061	Script test_pips BTCAUDm,H1: removed
+0	11:03:10.135	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:03:10.149	test_pips BTCAUDm,H1: initialized
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: Symbol: BTCUSDm, Pips: 0.01
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: Symbol: XAUUSDm, Pips: 0.01
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001
+0	11:03:10.150	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:03:10.150	test_pips BTCAUDm,H1: uninit reason 0
+0	11:03:10.169	Script test_pips BTCAUDm,H1: removed
+0	11:06:22.241	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:06:22.257	test_pips BTCAUDm,H1: initialized
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: Symbol: BTCUSDm, Pips: 0.01
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: Symbol: XAUUSDm, Pips: 0.01
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001
+0	11:06:22.257	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:06:22.257	test_pips BTCAUDm,H1: uninit reason 0
+0	11:06:22.296	Script test_pips BTCAUDm,H1: removed
+0	11:06:26.197	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:06:26.213	test_pips BTCAUDm,H1: initialized
+0	11:06:26.214	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:06:26.214	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01
+0	11:06:26.214	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01
+0	11:06:26.214	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01
+0	11:06:26.214	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001
+0	11:06:26.214	test_pips BTCAUDm,H1: Alert: Symbol: BTCUSDm, Pips: 0.01
+0	11:06:26.274	test_pips BTCAUDm,H1: Alert: Symbol: XAUUSDm, Pips: 0.01
+0	11:06:26.274	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001
+0	11:06:26.274	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:06:26.274	test_pips BTCAUDm,H1: uninit reason 0
+0	11:06:26.289	Script test_pips BTCAUDm,H1: removed
+0	11:07:10.935	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:07:10.951	test_pips BTCAUDm,H1: initialized
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01, Ask: 143.485
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01, Ask: 161.564
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01, Ask: 92.29300000000001
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001, Ask: 0.68789
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: Symbol: BTCUSDm, Pips: 0.01, Ask: 24684.97
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: Symbol: XAUUSDm, Pips: 0.01, Ask: 1842.663
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001, Ask: 1.06951
+0	11:07:10.951	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:07:10.951	test_pips BTCAUDm,H1: uninit reason 0
+0	11:07:10.972	Script test_pips BTCAUDm,H1: removed
+0	11:13:02.795	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:13:02.809	test_pips BTCAUDm,H1: initialized
+0	11:13:02.809	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01, Ask: 143.485
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01, Ask: 161.564
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01, Ask: 92.29300000000001
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001, Ask: 0.68789
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: Symbol: BTCUSDm, Pips: 0.1, Ask: 24675.3
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: Symbol: XAUUSDm, Pips: 0.01, Ask: 1842.663
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001, Ask: 1.06951
+0	11:13:02.810	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:13:02.810	test_pips BTCAUDm,H1: uninit reason 0
+0	11:13:02.871	Script test_pips BTCAUDm,H1: removed
+0	11:13:45.846	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:13:45.848	test_pips BTCAUDm,H1: initialized
+0	11:13:45.848	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:13:45.848	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01, Ask: 143.485
+0	11:13:45.848	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01, Ask: 161.564
+0	11:13:45.848	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01, Ask: 92.29300000000001
+0	11:13:45.848	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001, Ask: 0.68789
+0	11:13:45.848	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001, Ask: 1.06951
+0	11:13:45.848	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:13:45.848	test_pips BTCAUDm,H1: uninit reason 0
+0	11:13:45.907	Script test_pips BTCAUDm,H1: removed
+0	11:21:53.625	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:21:55.210	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:22:32.909	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:22:34.564	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:25:01.271	Compiling 'hedging_v1'
+0	11:25:02.636	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:25:02.655	test_pips BTCAUDm,H1: initialized
+0	11:25:02.656	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:25:02.656	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01, Ask: 143.485
+0	11:25:02.656	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01, Ask: 161.564
+0	11:25:02.656	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01, Ask: 92.29300000000001
+0	11:25:02.657	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001, Ask: 0.68789
+0	11:25:02.657	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001, Ask: 1.06951
+0	11:25:02.657	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:25:02.663	test_pips BTCAUDm,H1: Alert: 0.0
+0	11:25:02.663	test_pips BTCAUDm,H1: uninit reason 0
+0	11:25:02.709	Script test_pips BTCAUDm,H1: removed
+0	11:25:12.845	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:25:12.861	test_pips BTCAUDm,H1: initialized
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01, Ask: 143.485
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01, Ask: 161.564
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01, Ask: 92.29300000000001
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001, Ask: 0.68789
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001, Ask: 1.06951
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:25:12.861	test_pips BTCAUDm,H1: Alert: 2.0
+0	11:25:12.861	test_pips BTCAUDm,H1: uninit reason 0
+0	11:25:12.867	Script test_pips BTCAUDm,H1: removed
+0	11:25:20.579	Script test\test_pips BTCAUDm,H1: loaded successfully
+0	11:25:20.595	test_pips BTCAUDm,H1: initialized
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: Symbol: EURJPYm, Pips: 0.01, Ask: 143.485
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: Symbol: GBPJPYm, Pips: 0.01, Ask: 161.564
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: Symbol: AUDJPYm, Pips: 0.01, Ask: 92.29300000000001
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: Symbol: AUDUSDm, Pips: 0.0001, Ask: 0.68789
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: Symbol: EURUSDm, Pips: 0.0001, Ask: 1.06951
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: AccountLeverage: 2000
+0	11:25:20.596	test_pips BTCAUDm,H1: Alert: 0.0
+0	11:25:20.596	test_pips BTCAUDm,H1: uninit reason 0
+0	11:25:20.603	Script test_pips BTCAUDm,H1: removed
+0	11:26:11.254	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:26:12.472	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:26:27.691	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:26:28.917	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:28:11.519	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:28:12.757	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:34:35.707	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:34:36.922	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:40:26.241	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:40:27.392	Expert hedging_v1 BTCAUDm,H1: removed
+0	11:44:22.060	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	11:44:23.532	Expert hedging_v1 BTCAUDm,H1: removed

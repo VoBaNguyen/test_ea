@@ -24,15 +24,15 @@ input long EA_ID = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
 input ENUM_HOUR startHour = h15; // Start operation hour
 input ENUM_HOUR lastHour  = h22; // Last operation hour
-input int margin     = 5;        // Least earn per trade
-input int delta   = 5;        // Distance between BUY/SELL vs Entry
-input double initLot = 0.1;      // Initial Lot Size
-input int SLPips     = 10;       // Stoploss Pips
-input int TPPips     = 30;       // Takeprofit Pips
+input int margin     = 5;        // pips
+input double delta   = 5;        // pips
+input double initLot = 0.1;      // lot
+input int SLPips     = 10;       // pips
+input int TPPips     = 30;       // pips
 
 // Calculate default setting
 int k = SLPips + TPPips;
-double anchorPriceArr[2];
+double anchorPriceArr[1];
 
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
@@ -40,7 +40,7 @@ double anchorPriceArr[2];
 int OnInit()
   {
 //---
-   Print("Init hedging_v1 strategy");
+   Alert("Init hedging_v1 strategy");
 //---
    return(INIT_SUCCEEDED);
   }
@@ -51,7 +51,7 @@ int OnInit()
 void OnDeinit(const int reason)
   {
 //---
-   Print("Remove strategy");
+   Alert("Remove strategy");
   }
 //+------------------------------------------------------------------+
 //| Expert tick function                                             |
@@ -59,11 +59,12 @@ void OnDeinit(const int reason)
 void OnTick()
   {
 //---
-   Print("--------------------------- New tick ---------------------------");
-   if(anchorPriceArr[0] == 0 && anchorPriceArr[1] == 0) {
+   Alert("--------------------------- New tick ---------------------------");
+   if(anchorPriceArr[0] == 0) {
       anchorPriceArr[0] = Ask;
-      anchorPriceArr[1] = Bid;
    }
+   
+   double anchorPrice = anchorPriceArr[0];
 
    // Count BUY/SELL position to calculate
    int totalPos = countPosition(EA_ID, ORDER_TYPE_BUY) + countPosition(EA_ID, ORDER_TYPE_SELL);
@@ -81,23 +82,23 @@ void OnTick()
       if(pendingOrders == 0) {
          // SETUP FOR THE NEXT HEDGING ROUND!
          anchorPriceArr[0] = Ask;
-         anchorPriceArr[1] = Bid;
-         double anchorBuy = calTP(true, anchorPriceArr[0], delta);
-         double anchorSell = calTP(false, anchorPriceArr[1], delta);
+         double anchorPrice = anchorPriceArr[0];
+         double anchorBuy = calTP(true, anchorPrice, delta);
+         double anchorSell = calTP(false, anchorPrice, delta);
          double buyTP = calTP(true, anchorBuy, TPPips);
          double sellTP = calTP(false, anchorSell, TPPips);
          double buySL = sellTP;
          double sellSL = buyTP;
-         Print("New anchorPrice - Ask: ", anchorPriceArr[0], ", Bid: ", anchorPriceArr[1]);
+         Alert("New anchorPrice: ", anchorPrice);
          sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, initLot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
          sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, initLot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
       }
    }
 
    else {
-      Print("anchorPrice - Ask: ", anchorPriceArr[0], ", Bid: ", anchorPriceArr[1]);
-      double anchorBuy = calTP(true, anchorPriceArr[0], delta);
-      double anchorSell = calTP(false, anchorPriceArr[1], delta);
+      Alert("anchorPrice: ", anchorPrice);
+      double anchorBuy = calTP(true, anchorPrice, delta);
+      double anchorSell = calTP(false, anchorPrice, delta);
       double buyTP = calTP(true, anchorBuy, TPPips);
       double sellTP = calTP(false, anchorSell, TPPips);
       double buySL = sellTP;
@@ -108,7 +109,7 @@ void OnTick()
          if(OrderSelect(i, SELECT_BY_POS) == true) {
             if(OrderType() == ORDER_TYPE_BUY_STOP || OrderType() == ORDER_TYPE_SELL_STOP) {
                if(OrderLots() == initLot) {
-                  bool delStt = OrderDelete(OrderTicket());
+                  OrderDelete(OrderTicket());
                }
             }
          }
@@ -149,10 +150,10 @@ void closeOldPendingOrders() {
       if(OrderSelect(i, SELECT_BY_POS) == true) {
          if(OrderType() == ORDER_TYPE_BUY_STOP || OrderType() == ORDER_TYPE_SELL_STOP) {
             if(OrderType() == ORDER_TYPE_BUY_STOP && Ask < OrderStopLoss()) {
-               bool delStt = OrderDelete(OrderTicket());
+               OrderDelete(OrderTicket());
             } 
-            else if (OrderType() == ORDER_TYPE_SELL_STOP && Bid > OrderStopLoss()) {
-               bool delStt = OrderDelete(OrderTicket());
+            else if (OrderType() == ORDER_TYPE_SELL_STOP && Ask > OrderStopLoss()) {
+               OrderDelete(OrderTicket());
             }
          }
       }

@@ -52,8 +52,8 @@ double getPip(string symbol="") {
 }
 
 int calcPip(double price1, double price2) {
-   double delta = MathAbs(price1 - price2);
-   int pips = MathRound(delta/getPip());
+   double _delta = MathAbs(price1 - price2);
+   int pips = MathRound(_delta/getPip());
    return pips;
 }
 
@@ -107,16 +107,16 @@ int sendOrder(string symbol, ENUM_ORDER_TYPE ordType,
 
 
 double orderProfit(int ticket) {
-   double delta, pips, entry;
+   double _delta, pips, entry;
    
    if(selectOrder(ticket, SELECT_BY_TICKET, MODE_TRADES)){      
       entry = OrderOpenPrice();
       if(OrderType() == 0) {
-         delta = Ask - entry;
+         _delta = Ask - entry;
       } else {
-         delta = entry - Bid;
+         _delta = entry - Bid;
       }
-      pips = NormalizeDouble(delta/getPip(), 1);
+      pips = NormalizeDouble(_delta/getPip(), 1);
       return pips;
    } else {
       return 0;
@@ -132,9 +132,9 @@ void closeOrder(int ticket, double lotSize, double price, int slippage) {
 }
 
 
-void modifyOrder(int ticket, double open, double SL, double TP, double delta = 0.05) {
+void modifyOrder(int ticket, double open, double SL, double TP, double _delta = 0.05) {
    bool selectStt = OrderSelect(ticket, SELECT_BY_TICKET);
-   if(OrderStopLoss() != SL && MathAbs(OrderStopLoss() - SL) > delta) {
+   if(OrderStopLoss() != SL && MathAbs(OrderStopLoss() - SL) > _delta) {
       bool modStt = OrderModify(ticket,open,SL,TP,0, Black);
       if (!modStt) {
          Alert ("Failed to modify order: ", getErr());
@@ -299,8 +299,8 @@ bool idcUpward(double& buffer[], double threshold = 0.0) {
    int size = ArraySize(buffer);
    bool upward = isArrIncrease(buffer);
    if(upward) {
-      double delta = MathAbs(buffer[0] - buffer[size-1]);
-      if(delta > threshold) {
+      double _delta = MathAbs(buffer[0] - buffer[size-1]);
+      if(_delta > threshold) {
          return true;
       }
    }
@@ -312,8 +312,8 @@ bool idcDownward(double& buffer[], double threshold = 0.0) {
    int size = ArraySize(buffer);
    bool downward = isArrDecrease(buffer);
    if(downward) {
-      double delta = MathAbs(buffer[0] - buffer[size-1]);
-      if(delta > threshold) {
+      double _delta = MathAbs(buffer[0] - buffer[size-1]);
+      if(_delta > threshold) {
          return true;
       }
    }
@@ -366,8 +366,8 @@ bool isSideway(double& line1[], double& line2[], double threshold) {
    int size = ArraySize(line1);
    double sum = 0;
    for(int i=0; i<size-1; i++) {
-      double delta = MathAbs(line2[i] - line1[i]);
-      sum += delta;
+      double _delta = MathAbs(line2[i] - line1[i]);
+      sum += _delta;
    }
    double avg = sum/size;
    if(avg > threshold) {
@@ -452,7 +452,7 @@ string determineTrend(int numCandle, ENUM_TIMEFRAMES TimeFrame) {
 }
 
 
-bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, double delta=0) {
+bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, double _delta=0) {
    double priceArr[4];
    int range = ArraySize(priceArr);
    if(type == "high") {
@@ -460,7 +460,7 @@ bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, doubl
          priceArr[idx] = High[candleIdx+idx];
       }
       int maxIdx = ArrayMaximum(priceArr, WHOLE_ARRAY, 0);
-      double lastVal = High[candleIdx] + delta;
+      double lastVal = High[candleIdx] + _delta;
       if(lastVal >= priceArr[maxIdx]) {
          return true;
       }
@@ -471,7 +471,7 @@ bool isLocalExtremum(int candleIdx,string type, ENUM_TIMEFRAMES TimeFrame, doubl
          priceArr[idx] = Low[candleIdx+idx];
       }
       int minIdx = ArrayMinimum(priceArr, WHOLE_ARRAY, 0);
-      double lastVal = Low[candleIdx] - delta;
+      double lastVal = Low[candleIdx] - _delta;
       if(lastVal <= priceArr[minIdx]) {
          return true;
       }
@@ -491,8 +491,8 @@ void addToDoubleArray( double& theArray[][], double size, double price ) {
 /*********************************
 *      MATHEMATIC METHODS        *
 *********************************/
-bool inRange(double value, double center, double delta) {
-   if(center - delta <= value && value <= center + delta) {
+bool inRange(double value, double center, double _delta) {
+   if(center - _delta <= value && value <= center + _delta) {
       return true;
    }
    return false;
