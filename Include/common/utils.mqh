@@ -42,14 +42,32 @@ double getPip(string symbol="") {
    if(symbol == "") {
       symbol = _Symbol;
    }
+   /*
    double bid    = MarketInfo(symbol, MODE_BID);
    double ask    = MarketInfo(symbol, MODE_ASK);
    double point  = MarketInfo(symbol, MODE_POINT);
    int    digits = (int)MarketInfo(symbol, MODE_DIGITS);
    int    spread = (int)MarketInfo(symbol, MODE_SPREAD);
+   */
 
-   return(MathPow(10, -digits+1));
+   return getPoints()*10;
 }
+
+
+double getPoints()
+{
+   // If there are 3 or fewer digits (JPY, for example), then return 0.01, which is the pip value.
+   if (Digits <= 3){
+      return(0.01);
+   }
+   // If there are 4 or more digits, then return 0.0001, which is the pip value.
+   else if (Digits >= 4){
+      return(0.0001);
+   }
+   // In all other cases, return 0.
+   else return(0);
+}
+
 
 int calcPip(double price1, double price2) {
    double _delta = MathAbs(price1 - price2);
@@ -97,7 +115,8 @@ int sendOrder(string symbol, ENUM_ORDER_TYPE ordType,
                double SL, double TP, string comment, int EA) {
    Alert("Send order. Symbol: ", symbol, ", Type: ", ordType, 
          " - Lot: ", lot, " - Entry: ", entry,
-         " - SL: ", SL, " - TP: ", TP);
+         " - SL: ", SL, " - TP: ", TP,
+         " - Ask: ", Ask, " - Bid: ", Bid, " - Spread: ", MarketInfo( _Symbol, MODE_SPREAD ));
    int orderID = OrderSend(symbol,ordType,lot,entry,slippage,SL,TP,comment,EA);
    if(orderID < 0) {
       Alert("Send order ERROR: " + getErr());
@@ -124,11 +143,13 @@ double orderProfit(int ticket) {
 }
 
 
-void closeOrder(int ticket, double lotSize, double price, int slippage) {
+bool closeOrder(int ticket, double lotSize, double price, int slippage) {
    bool stt = OrderClose(ticket, lotSize, price, slippage, 0);
    if (stt == false) {
       Alert ("Failed to close order: ", getErr());
    }
+   
+   return stt;
 }
 
 
@@ -270,6 +291,26 @@ bool deletePendingOrders(int orderType=-1) {
       }
    }
    return true;
+}
+
+
+bool closeAllOrder(int slippage) {
+   bool finalStt = True;
+   for(int i=0; i<OrdersTotal(); i++) {
+      if(OrderSelect(i, SELECT_BY_POS) == true) {
+         if(OrderType() == ORDER_TYPE_BUY) {
+            bool stt = closeOrder(OrderTicket(), OrderLots(), Bid, slippage);
+            bool finalStt = finalStt && stt;
+         } 
+         
+         else if(OrderType() == ORDER_TYPE_SELL) {
+            bool stt = closeOrder(OrderTicket(), OrderLots(), Ask, slippage);
+            bool finalStt = finalStt && stt;
+         }
+      }
+   }
+   
+   return finalStt;
 }
 
 

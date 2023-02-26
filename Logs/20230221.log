@@ -1,0 +1,35 @@
+0	06:43:19.352	Expert hedging_v1 BTCAUDm,H1: loaded successfully
+0	06:43:21.233	hedging_v1 BTCAUDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=15; startHour=0; lastHour=23; margin=5; delta=5; initLot=0.1; SLPips=10; TPPips=30; 
+0	06:43:21.257	hedging_v1 BTCAUDm,H1: Init hedging_v1 strategy
+0	06:43:21.257	hedging_v1 BTCAUDm,H1: initialized
+0	06:43:22.568	hedging_v1 BTCAUDm,H1: --------------------------- New tick ---------------------------
+0	06:43:22.568	hedging_v1 BTCAUDm,H1: New anchorPrice - Ask: 35844.3, Bid: 35800.6
+0	06:43:22.568	hedging_v1 BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: 0.1 - Entry: 35849.3 - SL: 35765.6 - TP: 35879.3
+0	06:43:22.568	hedging_v1 BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	06:43:22.568	hedging_v1 BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 0.1 - Entry: 35795.6 - SL: 35879.3 - TP: 35765.6
+0	06:43:22.568	hedging_v1 BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	06:43:27.742	hedging_v1 BTCAUDm,H1: --------------------------- New tick ---------------------------
+0	06:43:27.742	hedging_v1 BTCAUDm,H1: New anchorPrice - Ask: 35842.3, Bid: 35797.5
+0	06:43:27.742	hedging_v1 BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: 0.1 - Entry: 35847.3 - SL: 35762.5 - TP: 35877.3
+0	06:43:27.742	hedging_v1 BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	06:43:27.742	hedging_v1 BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 0.1 - Entry: 35792.5 - SL: 35877.3 - TP: 35762.5
+0	06:43:27.742	hedging_v1 BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	06:43:33.037	hedging_v1 BTCAUDm,H1: --------------------------- New tick ---------------------------
+0	06:43:33.037	hedging_v1 BTCAUDm,H1: New anchorPrice - Ask: 35840.5, Bid: 35797.3
+0	06:43:33.037	hedging_v1 BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: 0.1 - Entry: 35845.5 - SL: 35762.3 - TP: 35875.5
+0	06:43:33.037	hedging_v1 BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	06:43:33.037	hedging_v1 BTCAUDm,H1: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 0.1 - Entry: 35792.3 - SL: 35875.5 - TP: 35762.3
+0	06:43:33.037	hedging_v1 BTCAUDm,H1: Alert: Send order ERROR: invalid trade volume
+0	06:43:33.788	hedging_v1 BTCAUDm,H1: uninit reason 3
+0	06:43:33.788	hedging_v1 BTCAUDm,H1: Remove strategy
+0	06:43:34.964	hedging_v1 BTCAUDm,M15: Init hedging_v1 strategy
+0	06:43:34.964	hedging_v1 BTCAUDm,M15: initialized
+0	06:43:38.122	hedging_v1 BTCAUDm,M15: --------------------------- New tick ---------------------------
+0	06:43:38.122	hedging_v1 BTCAUDm,M15: New anchorPrice - Ask: 35841.2, Bid: 35799.4
+0	06:43:38.122	hedging_v1 BTCAUDm,M15: Alert: Send order. Symbol: BTCAUDm, Type: 4 - Lot: 0.1 - Entry: 35846.2 - SL: 35764.4 - TP: 35876.2
+0	06:43:38.122	hedging_v1 BTCAUDm,M15: Alert: Send order ERROR: invalid trade volume
+0	06:43:38.122	hedging_v1 BTCAUDm,M15: Alert: Send order. Symbol: BTCAUDm, Type: 5 - Lot: 0.1 - Entry: 35794.4 - SL: 35876.2 - TP: 35764.4
+0	06:43:38.122	hedging_v1 BTCAUDm,M15: Alert: Send order ERROR: invalid trade volume
+0	06:43:40.462	hedging_v1 BTCAUDm,M15: uninit reason 1
+0	06:43:40.462	hedging_v1 BTCAUDm,M15: Remove strategy
+0	06:43:40.476	Expert hedging_v1 BTCAUDm,M15: removed

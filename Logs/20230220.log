@@ -1,0 +1,81 @@
+0	21:36:59.032	Compiling 'hedging_v1_btcusd'
+0	21:37:37.312	Expert hedging_v1 EURUSDm,H1: loaded successfully
+0	21:37:50.101	hedging_v1 EURUSDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=15; startHour=15; lastHour=22; margin=5; delta=5; initLot=0.1; SLPips=10; TPPips=30; 
+0	21:37:50.128	hedging_v1 EURUSDm,H1: Init hedging_v1 strategy
+0	21:37:50.128	hedging_v1 EURUSDm,H1: initialized
+0	21:37:54.844	hedging_v1 EURUSDm,H1: --------------------------- New tick ---------------------------
+0	21:37:57.262	hedging_v1 EURUSDm,H1: --------------------------- New tick ---------------------------
+0	21:37:58.723	hedging_v1 EURUSDm,H1: --------------------------- New tick ---------------------------
+0	21:37:59.420	hedging_v1 EURUSDm,H1: uninit reason 1
+0	21:37:59.420	hedging_v1 EURUSDm,H1: Remove strategy
+0	21:37:59.430	Expert hedging_v1 EURUSDm,H1: removed
+0	21:37:59.443	Expert hedging_v1 EURUSDm,H1: loaded successfully
+0	21:38:11.043	hedging_v1 EURUSDm,H1 inputs: slippage=10; EA_ID=7777; TIME_FRAME=15; startHour=15; lastHour=22; margin=5; delta=5; initLot=0.1; SLPips=10; TPPips=30; 
+0	21:38:11.099	hedging_v1 EURUSDm,H1: Init hedging_v1 strategy
+0	21:38:11.099	hedging_v1 EURUSDm,H1: initialized
+0	21:38:11.389	hedging_v1 EURUSDm,H1: --------------------------- New tick ---------------------------
+0	21:38:12.420	hedging_v1 EURUSDm,H1: --------------------------- New tick ---------------------------
+0	21:38:13.445	hedging_v1 EURUSDm,H1: --------------------------- New tick ---------------------------
+0	21:38:13.774	hedging_v1 EURUSDm,H1: uninit reason 3
+0	21:38:13.774	hedging_v1 EURUSDm,H1: Remove strategy
+0	21:38:13.881	hedging_v1 EURUSDm,M15: Init hedging_v1 strategy
+0	21:38:13.881	hedging_v1 EURUSDm,M15: initialized
+0	21:38:16.256	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:38:26.624	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:38:28.890	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:38:35.287	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:38:35.580	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:38:47.041	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:38:53.577	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:38:54.422	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:39:19.335	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:39:24.284	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:39:24.654	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:39:26.005	hedging_v1 EURUSDm,M15: --------------------------- New tick ---------------------------
+0	21:39:32.489	hedging_v1 EURUSDm,M15: uninit reason 1
+0	21:39:32.489	hedging_v1 EURUSDm,M15: Remove strategy
+0	21:39:32.498	Expert hedging_v1 EURUSDm,M15: removed
+0	21:43:33.356	Expert hedging_v1 GBPJPYm,M15: loaded successfully
+0	21:43:49.145	hedging_v1 GBPJPYm,M15 inputs: slippage=10; EA_ID=7777; TIME_FRAME=15; startHour=8; lastHour=15; margin=10; delta=10; initLot=0.1; SLPips=20; TPPips=60; 
+0	21:43:49.179	hedging_v1 GBPJPYm,M15: Init hedging_v1 strategy
+0	21:43:49.179	hedging_v1 GBPJPYm,M15: initialized
+0	21:43:49.309	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:43:49.309	hedging_v1 GBPJPYm,M15: New anchorPrice - Ask: 161.384, Bid: 161.361
+0	21:43:49.309	hedging_v1 GBPJPYm,M15: Alert: Send order. Symbol: GBPJPYm, Type: 4 - Lot: 0.1 - Entry: 161.484 - SL: 160.661 - TP: 162.084
+2	21:43:49.663	hedging_v1 GBPJPYm,M15: open #233188882 buy stop 0.10 GBPJPYm at 161.484 sl: 160.661 tp: 162.084 ok
+0	21:43:49.663	hedging_v1 GBPJPYm,M15: Alert: Send order. Symbol: GBPJPYm, Type: 5 - Lot: 0.1 - Entry: 161.261 - SL: 162.084 - TP: 160.661
+2	21:43:50.013	hedging_v1 GBPJPYm,M15: open #233188883 sell stop 0.10 GBPJPYm at 161.261 sl: 162.084 tp: 160.661 ok
+0	21:43:50.783	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:43:52.197	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:43:53.239	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:43:53.620	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:43:53.941	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:07.517	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:11.858	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:13.357	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:19.076	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:20.160	hedging_v1 GBPJPYm,M15: uninit reason 1
+0	21:44:20.160	hedging_v1 GBPJPYm,M15: Remove strategy
+0	21:44:20.173	Expert hedging_v1 GBPJPYm,M15: removed
+0	21:44:24.400	Expert hedging_v1 GBPJPYm,M15: loaded successfully
+0	21:44:27.896	hedging_v1 GBPJPYm,M15 inputs: slippage=10; EA_ID=7777; TIME_FRAME=15; startHour=8; lastHour=15; margin=5; delta=5; initLot=0.1; SLPips=10; TPPips=30; 
+0	21:44:27.931	hedging_v1 GBPJPYm,M15: Init hedging_v1 strategy
+0	21:44:27.931	hedging_v1 GBPJPYm,M15: initialized
+0	21:44:28.071	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:28.071	hedging_v1 GBPJPYm,M15: New anchorPrice - Ask: 161.406, Bid: 161.383
+0	21:44:28.071	hedging_v1 GBPJPYm,M15: Alert: Send order. Symbol: GBPJPYm, Type: 4 - Lot: 0.1 - Entry: 161.456 - SL: 161.033 - TP: 161.756
+2	21:44:28.416	hedging_v1 GBPJPYm,M15: open #233189227 buy stop 0.10 GBPJPYm at 161.456 sl: 161.033 tp: 161.756 ok
+0	21:44:28.416	hedging_v1 GBPJPYm,M15: Alert: Send order. Symbol: GBPJPYm, Type: 5 - Lot: 0.1 - Entry: 161.333 - SL: 161.756 - TP: 161.033
+2	21:44:28.786	hedging_v1 GBPJPYm,M15: open #233189233 sell stop 0.10 GBPJPYm at 161.333 sl: 161.756 tp: 161.033 ok
+0	21:44:29.066	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:31.553	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:35.649	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:37.905	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:38.285	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:39.378	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:41.037	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:42.077	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:50.451	hedging_v1 GBPJPYm,M15: --------------------------- New tick ---------------------------
+0	21:44:54.377	hedging_v1 GBPJPYm,M15: uninit reason 7
+0	21:44:54.377	hedging_v1 GBPJPYm,M15: Remove strategy
+0	21:44:54.383	Expert hedging_v1 GBPJPYm,M15: removed

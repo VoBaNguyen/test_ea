@@ -83,6 +83,7 @@ void OnTick()
       keltnerMid[i-1] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",periodLKN,1,i);
       keltnerLow[i-1] = iCustom(Symbol(),TIME_FRAME,"Keltner_Channel",periodLKN,2,i);
    }
+   
    CopyClose(Symbol(), TIME_FRAME, 0, arrSize, priceClose);
    CopyOpen(Symbol(), TIME_FRAME, 0, arrSize, priceOpen);
    

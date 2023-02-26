@@ -22,8 +22,8 @@
 input int slippage = 10;
 input long EA_ID = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
-input ENUM_HOUR startHour = h15; // Start operation hour
-input ENUM_HOUR lastHour  = h22; // Last operation hour
+input ENUM_HOUR startHour = h00; // Start operation hour
+input ENUM_HOUR lastHour  = h23; // Last operation hour
 input int margin     = 5;        // Least earn per trade
 input int delta   = 5;        // Distance between BUY/SELL vs Entry
 input double initLot = 0.1;      // Initial Lot Size
@@ -59,10 +59,8 @@ void OnDeinit(const int reason)
 void OnTick()
   {
 //---
-   Print("--------------------------- New tick ---------------------------");
-   if(anchorPriceArr[0] == 0 && anchorPriceArr[1] == 0) {
+   if(anchorPriceArr[0] == 0 && anchorPriceArr[0] == 0) {
       anchorPriceArr[0] = Ask;
-      anchorPriceArr[1] = Bid;
    }
 
    // Count BUY/SELL position to calculate
@@ -81,23 +79,21 @@ void OnTick()
       if(pendingOrders == 0) {
          // SETUP FOR THE NEXT HEDGING ROUND!
          anchorPriceArr[0] = Ask;
-         anchorPriceArr[1] = Bid;
          double anchorBuy = calTP(true, anchorPriceArr[0], delta);
-         double anchorSell = calTP(false, anchorPriceArr[1], delta);
+         double anchorSell = calTP(false, anchorPriceArr[0], delta);
          double buyTP = calTP(true, anchorBuy, TPPips);
          double sellTP = calTP(false, anchorSell, TPPips);
          double buySL = sellTP;
          double sellSL = buyTP;
-         Print("New anchorPrice - Ask: ", anchorPriceArr[0], ", Bid: ", anchorPriceArr[1]);
+         Print("New anchorPrice - Ask: ", anchorPriceArr[0]);
          sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, initLot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
          sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, initLot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
       }
    }
 
    else {
-      Print("anchorPrice - Ask: ", anchorPriceArr[0], ", Bid: ", anchorPriceArr[1]);
       double anchorBuy = calTP(true, anchorPriceArr[0], delta);
-      double anchorSell = calTP(false, anchorPriceArr[1], delta);
+      double anchorSell = calTP(false, anchorPriceArr[0], delta);
       double buyTP = calTP(true, anchorBuy, TPPips);
       double sellTP = calTP(false, anchorSell, TPPips);
       double buySL = sellTP;
@@ -121,11 +117,13 @@ void OnTick()
          int lastTicket = lastOpenedOrder(EA_ID);
          if(selectOrder(lastTicket, SELECT_BY_TICKET, MODE_TRADES)){
             int orderType = OrderType();
-            
+            Print("anchorPrice - Ask: ", anchorPriceArr[0]);
+----
             // Last order is BUY => Open SELL stop order
             if(orderType == ORDER_TYPE_BUY) {
                double lot = (sumLot(_Symbol, ORDER_TYPE_BUY)*(k + margin))/TPPips 
                              - sumLot(_Symbol, ORDER_TYPE_SELL);
+               lot = NormalizeDouble(lot, 2);
                int orderID = sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, lot, anchorSell, slippage, sellSL, sellTP, "", EA_ID);
             }
             
@@ -133,6 +131,7 @@ void OnTick()
             else if(orderType == ORDER_TYPE_SELL) {
                double lot = (sumLot(_Symbol, ORDER_TYPE_SELL)*(k + margin))/TPPips 
                              - sumLot(_Symbol, ORDER_TYPE_BUY);
+               lot = NormalizeDouble(lot, 2);
                int orderID = sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, lot, anchorBuy, slippage, buySL, buyTP, "", EA_ID);
             }
          }
