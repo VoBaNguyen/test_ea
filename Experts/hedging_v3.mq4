@@ -22,16 +22,16 @@
 input int slippage = 0;
 input long EA_ID = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
-input ENUM_HOUR startHour = h10;  // Start operation hour
-input ENUM_HOUR lastHour  = h20;  // Last operation hour
+input ENUM_HOUR startHour = h09;  // Start operation hour
+input ENUM_HOUR lastHour  = h21;  // Last operation hour
 input int earnPerTrade    = 10;    // Least earn per trade
 input int delta           = 10;   // Distance between BUY/SELL vs Entry
+input double minATR       = 1.5;    // Min ATR
 input double initLot      = 0.02; // Initial Lot Size
-input double rr           = 1;    // Reward/Risk
+input double rr           = 0.5;    // Reward/Risk
 
 // Calculate default setting
 double distance = delta*2;
-double minDistance = delta*2;
 double TPPips = distance*rr;
 int k = distance + TPPips;
 double initPrice = 0;
@@ -82,13 +82,14 @@ void OnTick()
 
 		if(pendingOrders == 0) {
 		   // Check ATR > Distance between BUY & SELL orders
-         double ATRCurr = iATR(Symbol(),TIME_FRAME,20,1);
-         double ATRPips = NormalizeDouble(ATRCurr/getPip(), 2);
-         if(ATRPips < minDistance) {
+         double ATRFast = iATR(Symbol(),TIME_FRAME,10,1);
+         double ATRSlow = iATR(Symbol(),TIME_FRAME,50,1);
+         double ATRPips = NormalizeDouble(ATRFast/getPip(), 2);
+         if(ATRFast < ATRSlow || ATRFast < minATR) {
             return;
          } else {
    			// OVERWRITE INITIAL SETTING!
-   			double delta = ATRPips/2;
+   			double delta = ATRPips/3;
    			double distance = delta*2;
             double TPPips = distance*rr;
             int k = distance + TPPips;

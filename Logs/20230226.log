@@ -1,0 +1,142 @@
+0	11:02:00.646	Compiling 'hedging_keltner_v1'
+0	11:02:00.646	Compiling 'scalp_keltner_ma_v2'
+0	15:57:36.108	Compiling 'hedging_v2'
+0	16:05:41.477	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:41.493	test_atr BTCAUDm,H1: initialized
+0	16:05:41.493	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:41.493	test_atr BTCAUDm,H1: Alert: ATRPips: 0.0
+0	16:05:41.493	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:41.508	Script test_atr BTCAUDm,H1: removed
+0	16:05:44.637	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:44.652	test_atr BTCAUDm,H1: initialized
+0	16:05:44.652	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:44.652	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:44.652	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:44.668	Script test_atr BTCAUDm,H1: removed
+0	16:05:47.059	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:47.075	test_atr BTCAUDm,H1: initialized
+0	16:05:47.075	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:47.075	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:47.075	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:47.122	Script test_atr BTCAUDm,H1: removed
+0	16:05:47.622	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:47.638	test_atr BTCAUDm,H1: initialized
+0	16:05:47.638	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:47.638	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:47.638	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:47.653	Script test_atr BTCAUDm,H1: removed
+0	16:05:48.138	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:48.153	test_atr BTCAUDm,H1: initialized
+0	16:05:48.153	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:48.153	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:48.153	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:48.186	Script test_atr BTCAUDm,H1: removed
+0	16:05:52.592	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:52.607	test_atr BTCAUDm,H1: initialized
+0	16:05:52.607	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:52.607	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:52.607	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:52.623	Script test_atr BTCAUDm,H1: removed
+0	16:05:53.577	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:53.593	test_atr BTCAUDm,H1: initialized
+0	16:05:53.593	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:53.593	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:53.593	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:53.608	Script test_atr BTCAUDm,H1: removed
+0	16:05:54.328	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:54.343	test_atr BTCAUDm,H1: initialized
+0	16:05:54.343	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:54.343	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:54.343	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:54.359	Script test_atr BTCAUDm,H1: removed
+0	16:05:55.203	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:05:55.219	test_atr BTCAUDm,H1: initialized
+0	16:05:55.219	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:05:55.219	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:05:55.219	test_atr BTCAUDm,H1: uninit reason 0
+0	16:05:55.234	Script test_atr BTCAUDm,H1: removed
+0	16:06:10.762	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:06:10.777	test_atr BTCAUDm,H1: initialized
+0	16:06:10.777	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:06:10.777	test_atr BTCAUDm,H1: Alert: ATRPips: 3.784750000000008
+0	16:06:10.777	test_atr BTCAUDm,H1: uninit reason 0
+0	16:06:10.793	Script test_atr BTCAUDm,H1: removed
+0	16:06:44.098	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:06:44.113	test_atr BTCAUDm,H1: initialized
+0	16:06:44.113	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:06:44.113	test_atr BTCAUDm,H1: Alert: ATRPips: 3.78
+0	16:06:44.113	test_atr BTCAUDm,H1: uninit reason 0
+0	16:06:44.207	Script test_atr BTCAUDm,H1: removed
+0	16:06:51.614	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:06:51.630	test_atr BTCAUDm,H1: initialized
+0	16:06:51.630	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:06:51.630	test_atr BTCAUDm,H1: Alert: ATRPips: 3.78
+0	16:06:51.630	test_atr BTCAUDm,H1: uninit reason 0
+0	16:06:51.661	Script test_atr BTCAUDm,H1: removed
+0	16:08:52.517	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:08:52.517	test_atr BTCAUDm,H1: initialized
+0	16:08:52.517	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:08:52.517	test_atr BTCAUDm,H1: Alert: ATRCurr: 3.784750000000008
+0	16:08:52.517	test_atr BTCAUDm,H1: Alert: ATRPips: 3.78
+0	16:08:52.517	test_atr BTCAUDm,H1: uninit reason 0
+0	16:08:52.549	Script test_atr BTCAUDm,H1: removed
+0	16:09:20.600	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:09:20.615	test_atr BTCAUDm,H1: initialized
+0	16:09:20.615	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:09:20.615	test_atr BTCAUDm,H1: Alert: ATRCurr: 3.784750000000008Get pips: 1.0
+0	16:09:20.615	test_atr BTCAUDm,H1: Alert: ATRPips: 3.78
+0	16:09:20.615	test_atr BTCAUDm,H1: uninit reason 0
+0	16:09:20.662	Script test_atr BTCAUDm,H1: removed
+0	16:11:16.184	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:11:16.200	test_atr BTCAUDm,H1: initialized
+0	16:11:16.200	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:11:16.200	test_atr BTCAUDm,H1: Alert: MODE_POINT: 0.001
+0	16:11:16.200	test_atr BTCAUDm,H1: Alert: MODE_DIGITS: 3.0
+0	16:11:16.200	test_atr BTCAUDm,H1: Alert: ATRCurr: 3.784750000000008Get pips: 1.0
+0	16:11:16.200	test_atr BTCAUDm,H1: Alert: ATRPips: 3.78
+0	16:11:16.200	test_atr BTCAUDm,H1: uninit reason 0
+0	16:11:16.263	Script test_atr BTCAUDm,H1: removed
+0	16:13:06.172	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:13:06.188	test_atr BTCAUDm,H1: initialized
+0	16:13:06.188	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:13:06.188	test_atr BTCAUDm,H1: Alert: MODE_POINT: 0.001
+0	16:13:06.188	test_atr BTCAUDm,H1: Alert: MODE_DIGITS: 3.0
+0	16:13:06.188	test_atr BTCAUDm,H1: Alert: ATRCurr: 3.784750000000008Get pips: 1.0
+0	16:13:06.188	test_atr BTCAUDm,H1: Alert: ATRPips: 378.48
+0	16:13:06.188	test_atr BTCAUDm,H1: uninit reason 0
+0	16:13:06.204	Script test_atr BTCAUDm,H1: removed
+0	16:13:27.012	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:13:27.028	test_atr BTCAUDm,H1: initialized
+0	16:13:27.028	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:13:27.028	test_atr BTCAUDm,H1: Alert: MODE_POINT: 0.001
+0	16:13:27.028	test_atr BTCAUDm,H1: Alert: MODE_DIGITS: 3.0
+0	16:13:27.028	test_atr BTCAUDm,H1: Alert: ATRCurr: 3.784750000000008Get pips: 0.01
+0	16:13:27.028	test_atr BTCAUDm,H1: Alert: ATRPips: 378.48
+0	16:13:27.028	test_atr BTCAUDm,H1: uninit reason 0
+0	16:13:27.059	Script test_atr BTCAUDm,H1: removed
+0	16:14:48.982	Script test\test_atr BTCAUDm,H1: loaded successfully
+0	16:14:48.998	test_atr BTCAUDm,H1: initialized
+0	16:14:48.998	test_atr BTCAUDm,H1: Alert: ---------------- NEW TRIAL ----------------
+0	16:14:48.998	test_atr BTCAUDm,H1: Alert: MODE_POINT: 0.001
+0	16:14:48.998	test_atr BTCAUDm,H1: Alert: MODE_DIGITS: 3.0
+0	16:14:48.998	test_atr BTCAUDm,H1: Alert: ATRCurr: 3.784750000000008Get pips: 0.1
+0	16:14:48.998	test_atr BTCAUDm,H1: Alert: ATRPips: 37.85
+0	16:14:48.998	test_atr BTCAUDm,H1: uninit reason 0
+0	16:14:49.014	Script test_atr BTCAUDm,H1: removed
+0	19:07:11.103	Expert backtest\Soft4FX Forex Simulator XAUUSDm,H1: loaded successfully
+0	19:07:12.751	Soft4FX Forex Simulator XAUUSDm,H1 inputs: Always_On_Top=false; Buy_Sell_Buttons_Order=0; 
+0	19:07:12.831	Soft4FX Forex Simulator XAUUSDm,H1: Scaling: 13 16
+0	19:07:12.862	Soft4FX Forex Simulator XAUUSDm,H1: Trying exe path: C:\Users\vbngu\AppData\Roaming\MetaQuotes\Terminal\2191F4A3D14D7B4B1EBB84F924777883\MQL4\Files\Forex Simulator.exe
+0	19:07:13.341	Soft4FX Forex Simulator XAUUSDm,H1: initialized
+0	19:08:12.758	Expert hedging_v3 !STD_XAUUSD,M5: loaded successfully
+0	19:08:15.211	Expert hedging_v3 !STD_XAUUSD,M5: removed
+0	19:08:19.179	Expert hedging_v3 !STD_XAUUSD,M5: loaded successfully
+0	19:08:23.240	hedging_v3 !STD_XAUUSD,M5 inputs: slippage=0; EA_ID=7777; TIME_FRAME=15; startHour=9; lastHour=21; earnPerTrade=10; delta=10; initLot=0.01; rr=1.0; 
+0	19:08:23.287	hedging_v3 !STD_XAUUSD,M5: Init hedging_v1 strategy
+0	19:08:23.287	hedging_v3 !STD_XAUUSD,M5: initialized
+0	19:15:08.024	hedging_v3 !STD_XAUUSD,M5: uninit reason 4
+0	19:15:08.024	hedging_v3 !STD_XAUUSD,M5: Remove strategy
+0	19:15:08.041	Expert hedging_v3 !STD_XAUUSD,M5: removed
+2	19:15:09.598	Soft4FX Forex Simulator XAUUSDm,H1: ExpertRemove function called
+0	19:15:09.598	Soft4FX Forex Simulator XAUUSDm,H1: uninit reason 0
+0	19:15:09.600	Expert Soft4FX Forex Simulator XAUUSDm,H1: removed
