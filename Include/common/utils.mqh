@@ -156,6 +156,7 @@ bool closeOrder(int ticket, double lotSize, double price, int slippage) {
 void modifyOrder(int ticket, double open, double SL, double TP, double _delta = 0.05) {
    bool selectStt = OrderSelect(ticket, SELECT_BY_TICKET);
    if(OrderStopLoss() != SL && MathAbs(OrderStopLoss() - SL) > _delta) {
+      Print("Modifying order ", ticket, " - Open: ", open, " - SL: ", SL, " - TP: ", TP);
       bool modStt = OrderModify(ticket,open,SL,TP,0, Black);
       if (!modStt) {
          Alert ("Failed to modify order: ", getErr());
