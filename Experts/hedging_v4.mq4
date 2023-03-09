@@ -19,23 +19,24 @@
 //+------------------------------------------------------------------+
 //| Setup default parameters for the EA                              |
 //+------------------------------------------------------------------+
-input int slippage = 3;
+input int slippage = 5;
 input long EA_ID = 7777; //EA Id
-input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
-input ENUM_HOUR startHour = h00;  // Start operation hour
-input ENUM_HOUR lastHour  = h23;  // Last operation hour
-input int earnPerTrade    = 10;    // Least earn per trade (pips)
-input double minATR       = 2;    // Min ATR
-input double initLot      = 0.02; // Initial Lot Size
-input double rr           = 1;    // Reward/Risk
+input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
+input int earnPerTrade    = 5;     // Least earn per trade (pips)
+input double minDistance  = 20;     // Min distance between BUY/SELL (pips)
+input double initLot      = 0.02;   // Initial Lot Size
+input double rr           = 1;      // Reward/Risk
+input ENUM_HOUR startHighFluctuate = h08p5;   // Start London sesison/NY session
+input ENUM_HOUR endHighFluctuate   = h21p5;   // End London sesison/NY session
+input double ATRMultiplier = 1.5;   // ATR Multiplier in high fluctuate sessions
 
 // Calculate default setting
-string mode = "None";
-double initPrice = 0;
-double distance = NormalizeDouble(minATR/getPip(), Digits);
-double TPPips = distance*rr;
-double SLPips = distance*(1+rr);
-double k = distance*(1+rr);
+string firstTrade;
+double initPrice;
+double distance;
+double TPPips;
+double SLPips;
+double k;
 
 MyAccount account = MyAccount("nguyen", "vo", EA_ID);
 
@@ -44,9 +45,12 @@ MyAccount account = MyAccount("nguyen", "vo", EA_ID);
 //+------------------------------------------------------------------+
 int OnInit()
   {
-//---
 	Print("Init hedging_v1 strategy");
-//---
+   firstTrade = "None";
+   initPrice = 0;
+   distance = minDistance;
+   TPPips = distance*rr;
+   SLPips = distance*(1+rr);
 	return(INIT_SUCCEEDED);
   }
   
@@ -68,89 +72,78 @@ void OnTick()
 	int pendingOrders = countPosition(EA_ID, ORDER_TYPE_BUY_STOP) + countPosition(EA_ID, ORDER_TYPE_SELL_STOP);
 
 	if(totalPos == 0) {	
-	   // Close pending order from previous setup hedging.
-		closeOldPendingOrders();
-	
-		// Check active hours
-		if(!checkActiveHours(startHour, lastHour)) {
-			return;
-		}      
+	   // RESET: Close pending order from previous setup hedging.
+		closeOldPendingOrders();   
+	   firstTrade = "None";
+      initPrice = 0;
+      
+	   // Check ATR > Distance between BUY & SELL orders
+      double ATR = iATR(Symbol(),TIME_FRAME,20,1);
+      double RSI = iRSI(Symbol(), TIME_FRAME, 14, PRICE_CLOSE, 0);
+      double ATRPips = NormalizeDouble(ATR/getPip(), Digits);
+      
+      PrintFormat("ATR: %.2f - ATR pips: %.2f", ATR, ATRPips);
+		if(checkActiveHours(startHighFluctuate, endHighFluctuate)) {
+			ATRPips = ATRPips*ATRMultiplier;
+		}
+      
+		// OVERWRITE INITIAL SETTING!
+		distance = MathMax(minDistance, ATRPips);
+      TPPips = distance*rr;
+      SLPips = distance*(1+rr);
 
-		if(pendingOrders == 0) {
-		   // Check ATR > Distance between BUY & SELL orders
-         double ATR = iATR(Symbol(),TIME_FRAME,10,1);
-         double RSI = iRSI(Symbol(), TIME_FRAME, 14, PRICE_CLOSE, 0);
-         double ATRPips = NormalizeDouble(ATR/getPip(), Digits);
-         /* if(ATR < minATR) {
-            return;
-         } */
-         
-			// OVERWRITE INITIAL SETTING!
-			double distance = ATRPips;
-         double TPPips = distance*rr;
-         double SLPips = distance*(1+rr);
-         double k = distance + TPPips;
-
-			// Send a market order
-			if(RSI >= 50) {
-			   // RSI >= 50 => BUY => Entry = initBuy
-			   mode = OP_BUY;
-			   initPrice = Ask;
-			   sendOrder(Symbol(), OP_BUY, initLot, initPrice, slippage, 0, 0, "Open first order.", EA_ID);
-			} 
-			else if(RSI < 50) {
-			   // RSI < 50 => SELL => Entry = initSell
-			   mode = OP_SELL;
-			   initPrice = Bid;
-			   sendOrder(Symbol(), OP_SELL, initLot, initPrice, slippage, 0, 0, "Open first order.", EA_ID);
-			} 
-			else {
-			   Print("Something wrong  with RSI value");
-			}
+		// Send a market order
+		if(RSI >= 50) {
+		   // RSI >= 50 => BUY => Entry = initBuy
+		   firstTrade = ORDER_TYPE_BUY;
+		   initPrice = Ask;
+		   sendOrder(Symbol(), ORDER_TYPE_BUY, initLot, initPrice, slippage, 0, 0, "Open first order.", EA_ID);
+		}
+		else if(RSI < 50) {
+		   // RSI < 50 => SELL => Entry = initSell
+		   firstTrade = ORDER_TYPE_SELL;
+		   initPrice = Bid;
+		   sendOrder(Symbol(), ORDER_TYPE_SELL, initLot, initPrice, slippage, 0, 0, "Open first order.", EA_ID);
+		}
+		else {
+		   Print("Something wrong  with RSI value");
 		}
 	}
 
 	else {
-      
-	   if(mode == "None" || initPrice == 0) {
-	      Print("Setup not correct - Mode: ", mode, " - Init price: ", initPrice);
+	   if(firstTrade == "None" || initPrice == 0) {
+	      Print("Setup not correct - Mode: ", firstTrade, " - Init price: ", initPrice);
 	      return;
 	   }
 		
-		// If there's no pending order, we need to prepare for the next reverse of the price by open an opposite order.
 		int pendingOrders = countPosition(EA_ID, ORDER_TYPE_BUY_STOP) + countPosition(EA_ID, ORDER_TYPE_SELL_STOP);
 		if(pendingOrders == 0) {
-		
-		
-		   // Modify SL/TP and send new pending order
-		   
-		   
-   		// Suppose mode is BUY
+		   // If there's no pending order, we need to prepare for the next reverse of the price by open an opposite order.
+		   // Modify SL/TP and send new pending order.
+   		// Suppose firstTrade is BUY.
    		double initBuy = initPrice;
-   		double initSell = calTP(false, initPrice, distance);
-   	   if(mode == OP_SELL) {
-      		double initBuy = calTP(true, initPrice, distance);
-      		double initSell = initPrice;
+   		double initSell = calSL(true, initPrice, distance);
+   	   if(firstTrade == ORDER_TYPE_SELL) {
+   	      double initSell = initPrice;
+      		double initBuy = calSL(false, initPrice, distance);
    	   }
-   
+    
    		double buyTP = calTP(true, initBuy, TPPips);
    		double sellTP = calTP(false, initSell, TPPips);
    		double buySL = sellTP;
    		double sellSL = buyTP;
    		
-   		// 
+   		PrintFormat("distance: %.2f - initBuy: %.2f - initSell: %.2f - buyTP: %.2f - sellTP: %.2f", distance, initBuy, initSell, buyTP, sellTP);
+   		
+   		// Modify SL/TP of the first trade
    		if(totalPos == 1) {	
    			int lastTicket = lastOpenedOrder(EA_ID);
   			   OrderSelect(lastTicket, SELECT_BY_TICKET, MODE_TRADES);
 			   initPrice = OrderOpenPrice();
-            if(mode == OP_BUY) {
-   			   double buyTP = calTP(true, initPrice, TPPips);
-   			   double buySL = calSL(true, initPrice, SLPips);
+            if(firstTrade == ORDER_TYPE_BUY) {
    			   modifyOrder(lastTicket, OrderOpenPrice(), buySL, buyTP, 0);
             }
-            else if(mode == OP_SELL) {
-   			   double sellTP = calTP(False, initPrice, TPPips);
-   			   double sellSL = calSL(False, initPrice, SLPips);
+            else if(firstTrade == ORDER_TYPE_SELL) {
    			   modifyOrder(lastTicket, OrderOpenPrice(), sellSL, sellTP, 0);
             }
 		   }
@@ -158,23 +151,23 @@ void OnTick()
 			int signum = MathPow(-1, totalPos+1);
 			int lastTicket = lastOpenedOrder(EA_ID);
 			if(selectOrder(lastTicket, SELECT_BY_TICKET, MODE_TRADES)){
-				int orderType = OrderType();
+				int lastOrdType = OrderType();
 				Print("initPrice - Ask: ", initPrice);
 
 				// Last order is BUY => Open SELL stop order
-				if(orderType == ORDER_TYPE_BUY) {
-					double lot = (sumLot(_Symbol, ORDER_TYPE_BUY)*(k + earnPerTrade))/TPPips 
-									  - sumLot(_Symbol, ORDER_TYPE_SELL);
-					lot = NormalizeDouble(lot, 2);
-					int orderID = sendOrder(_Symbol, ORDER_TYPE_SELL_STOP, lot, initSell, slippage, sellSL, sellTP, "", EA_ID);
+				if(lastOrdType == ORDER_TYPE_BUY) {
+					double lot = (sumLot(Symbol(), ORDER_TYPE_BUY)*(SLPips + earnPerTrade))/TPPips 
+									  - sumLot(Symbol(), ORDER_TYPE_SELL);
+					lot = MathMax(NormalizeDouble(lot, 2), 0.01);
+					int orderID = sendOrder(Symbol(), ORDER_TYPE_SELL_STOP, lot, initSell, slippage, sellSL, sellTP, "", EA_ID);
 				}
 				
 				// Last order is SELL => Open BUY stop order
-				else if(orderType == ORDER_TYPE_SELL) {
-					double lot = (sumLot(_Symbol, ORDER_TYPE_SELL)*(k + earnPerTrade))/TPPips 
-									  - sumLot(_Symbol, ORDER_TYPE_BUY);
-					lot = NormalizeDouble(lot, 2);
-					int orderID = sendOrder(_Symbol, ORDER_TYPE_BUY_STOP, lot, initBuy, slippage, buySL, buyTP, "", EA_ID);
+				else if(lastOrdType == ORDER_TYPE_SELL) {
+					double lot = (sumLot(Symbol(), ORDER_TYPE_SELL)*(SLPips + earnPerTrade))/TPPips 
+									  - sumLot(Symbol(), ORDER_TYPE_BUY);
+					lot = MathMax(NormalizeDouble(lot, 2), 0.01);
+					int orderID = sendOrder(Symbol(), ORDER_TYPE_BUY_STOP, lot, initBuy, slippage, buySL, buyTP, "", EA_ID);
 				}
 			}
 		}
