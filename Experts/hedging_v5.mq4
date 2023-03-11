@@ -19,20 +19,17 @@
 //+------------------------------------------------------------------+
 //| Setup default parameters for the EA                              |
 //+------------------------------------------------------------------+
-input int slippage = 5;
+input int slippage = 0;
 input long EA_ID = 7777; //EA Id
 input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
-input int earnPerTrade    = 10;     // Least earn per trade (pips)
+input int earnPerTrade    = 5;     // Least earn per trade (pips)
 input double minDistance  = 20;     // Min distance between BUY/SELL (pips)
-input double initLot      = 0.02;   // Initial Lot Size
+input double initLot      = 0.01;   // Initial Lot Size
 input double rr           = 1;      // Reward/Risk
 input ENUM_HOUR startHighFluctuate = h08p5;   // Start London sesison/NY session
 input ENUM_HOUR endHighFluctuate   = h21p5;   // End London sesison/NY session
-input double ATRMultiplier = 1.5;   // ATR Multiplier in high fluctuate sessions
-input int RSIPeriod = 7;            // RSI Period
-input int ATRPeriod = 20;           // ATR Period
-input double RSIMin = 35;
-input double RSIMax = 65;
+input double HFMultiplier = 1.5;   // High Fluctuate Multiplier in high fluctuate sessions
+input int maxDragdown = 10; // Max dragdown allow (%)
 
 // Calculate default setting
 string firstTrade;
@@ -50,6 +47,7 @@ MyAccount account = MyAccount("nguyen", "vo", EA_ID);
 int OnInit()
   {
 	Print("Init hedging_v1 strategy");
+	MyAccount account("Nguyen", "Vo", EA_ID);
    firstTrade = "None";
    initPrice = 0;
    distance = minDistance;
@@ -77,28 +75,20 @@ void OnTick()
 
 	if(totalPos == 0) {	
 	   // RESET: Close pending order from previous setup hedging.
-		closePendingOrders();   
+		closeOldPendingOrders();   
+		
 	   firstTrade = "None";
       initPrice = 0;
-      
-	   // Check ATR > Distance between BUY & SELL orders
-      double ATR = iATR(Symbol(),TIME_FRAME,ATRPeriod,1);
-      double RSI = iRSI(Symbol(), TIME_FRAME, RSIPeriod, PRICE_CLOSE, 0);
-      double ATRPips = NormalizeDouble(ATR/getPip(), Digits);
-      
-      if(RSI >= RSIMax || RSI <= RSIMin) {
-         PrintFormat("RSI (= %.2f) is out of range [%.1f, %.1f], not open new order.", RSI, RSIMin, RSIMax);
-      }
-      
-      PrintFormat("ATR: %.2f - ATR pips: %.2f", ATR, ATRPips);
+      double RSI = iRSI(Symbol(), TIME_FRAME, 14, PRICE_CLOSE, 0);
 		if(checkActiveHours(startHighFluctuate, endHighFluctuate)) {
-			ATRPips = ATRPips*ATRMultiplier;
+			distance = minDistance*HFMultiplier;
+         TPPips = distance*rr;
+         SLPips = distance*(1+rr);
+		} else {
+		   distance = minDistance;
+         TPPips = distance*rr;
+         SLPips = distance*(1+rr);
 		}
-      
-		// OVERWRITE INITIAL SETTING!
-		distance = MathMax(minDistance, ATRPips);
-      TPPips = distance*rr;
-      SLPips = distance*(1+rr);
 
 		// Send a market order
 		if(RSI >= 50) {
@@ -119,6 +109,14 @@ void OnTick()
 	}
 
 	else {
+	
+	   // Check max drag down:
+      double absDragdown = account.info.EQUITY - account.info.BALANCE;
+      double relDragdown = NormalizeDouble(absDragdown/account.info.BALANCE*100, 2);
+      if(relDragdown < 0 && MathAbs(relDragdown) > maxDragdown) {
+         closeAllOrder(slippage);
+      }
+	
 	   if(firstTrade == "None" || initPrice == 0) {
 	      Print("Setup not correct - Mode: ", firstTrade, " - Init price: ", initPrice);
 	      return;
@@ -140,9 +138,9 @@ void OnTick()
    		double sellTP = calTP(false, initSell, TPPips);
    		double buySL = sellTP;
    		double sellSL = buyTP;
-   		
-   		PrintFormat("distance: %.2f - initBuy: %.2f - initSell: %.2f - buyTP: %.2f - sellTP: %.2f", distance, initBuy, initSell, buyTP, sellTP);
-   		
+
+         PrintFormat("distance: %.2f - TPPips: %.2f - SLPips: %.2f", distance, TPPips, SLPips);
+
    		// Modify SL/TP of the first trade
    		if(totalPos == 1) {	
    			int lastTicket = lastOpenedOrder(EA_ID);
@@ -185,7 +183,7 @@ void OnTick()
 
 
 
-void closePendingOrders() {
+void closeOldPendingOrders() {
 	// In case trigger first postion and still hanging the second position
 	for(int i=0; i<OrdersTotal(); i++) {
 		if(OrderSelect(i, SELECT_BY_POS) == true) {
