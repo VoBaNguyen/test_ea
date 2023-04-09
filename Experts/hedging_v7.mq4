@@ -29,20 +29,20 @@ Hedging v7:
 //+------------------------------------------------------------------+
 input int slippage = 5;
 input long EA_ID = 7777; //EA Id
-input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_CURRENT;
-input int earnPerTrade    = 10;      // Least earn per trade (pips)
-input double distance     = 20;     // Min distance between BUY/SELL (pips)
+input ENUM_TIMEFRAMES TIME_FRAME = PERIOD_M15;
+input int earnPerTrade    = 10;     // Least earn per trade (pips)
+input double minATR       = 2;    // Min ATR
 input double initLot      = 0.02;   // Initial Lot Size
-input double rr           = 1.5;    // Reward/Risk
-input ENUM_HOUR startTime = h04p5;   // Start trading time
-input ENUM_HOUR endTime   = h19p5;   // End trading time
-input int ATRPeriod = 16;           // ATR Period
-input int targetProfit = 150 ;      // Profit target per day
+input double rr           = 1;      // Reward/Risk
+input ENUM_HOUR startTime = h04p5;  // Start trading time
+input ENUM_HOUR endTime   = h19p5;  // End trading time
+input int ATRPeriod = 14;           // ATR Period
+input int targetProfit = 100 ;      // Profit target per day
 
 
 // Calculate default setting
 string tradeMode;
-double initPrice, TPPips, SLPips, k;
+double initPrice, TPPips, SLPips, k, distance;
 double buySL, buyTP, sellSL, sellTP, initBuy, initSell;
 
 MyAccount account = MyAccount("nguyen", "vo", EA_ID);
@@ -55,6 +55,8 @@ int OnInit()
 	Print("Init hedging_v1 strategy");
    tradeMode = "None";
    initPrice = 0;
+   double ATRPips = NormalizeDouble(minATR/getPip(), Digits);
+   double distance = ATRPips;
    TPPips = distance*rr;
    SLPips = distance*(1+rr);
    buySL = 0;
@@ -90,9 +92,11 @@ void OnTick()
       initPrice = 0;
    
       // Check if current time in active hours
+      /*
    	if(!checkActiveHours(startTime, endTime)) {
          return;
       }
+      */
 
       // If meet target profit - Close all order - Stop trading
       // Get the current date and time
@@ -108,6 +112,15 @@ void OnTick()
          return;
       }
 
+
+      // Check ATR > Distance between BUY & SELL orders
+      double ATR = iATR(Symbol(),TIME_FRAME,ATRPeriod,1);
+      if(ATR < minATR) {
+         PrintFormat("ATR (%.2f) < minATR (%.2f)", ATR, minATR); 
+         return;
+      }
+      
+      distance = 0.5 * NormalizeDouble(ATR/getPip(), Digits);
       openNewMarketOrder();
       return;
 	}

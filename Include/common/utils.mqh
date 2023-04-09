@@ -62,7 +62,7 @@ double getPoints()
    }
    // If there are 4 or more digits, then return 0.0001, which is the pip value.
    else if (Digits >= 4){
-      return(0.0001);
+      return(0.00001);
    }
    // In all other cases, return 0.
    else return(0);
@@ -111,15 +111,26 @@ bool selectOrder(int id, int idType, int mode) {
 }
 
 int sendOrder(string symbol, ENUM_ORDER_TYPE ordType, 
-               double lot, double entry, int slippage, 
+               double lot, double entry, int _slippage, 
                double SL, double TP, string comment, int EA) {
    Alert("Send order. Symbol: ", symbol, ", Type: ", ordType, 
          " - Lot: ", lot, " - Entry: ", entry,
          " - SL: ", SL, " - TP: ", TP,
          " - Ask: ", Ask, " - Bid: ", Bid, " - Spread: ", MarketInfo( _Symbol, MODE_SPREAD ));
-   int orderID = OrderSend(symbol,ordType,lot,entry,slippage,SL,TP,comment,EA);
+   int orderID = OrderSend(symbol,ordType,lot,entry,_slippage,SL,TP,comment,EA);
    if(orderID < 0) {
-      Alert("Send order ERROR: " + getErr());
+      Alert("Order ID: ", orderID, " - Send order ERROR: ", getErr());
+      if(GetLastError() == 138) {
+         Alert("Requote - Try again in 1 seconds");
+         Sleep(1000);
+         return -1;
+      } else if(GetLastError() == 130) {
+         Alert("Invalid stops - Stop trading for 1 hour");
+         Sleep(1000*60*60);
+         return -1;
+      }else {
+         ExpertRemove();
+      }
    }
    return orderID;
 }
@@ -202,7 +213,7 @@ int lastOpenedOrder(int EA_ID) {
          Alert("Fail to select position with ticket: ", OrderTicket());
          continue;
       }
-   
+
       if(latestId == -1) {
          latestId = OrderTicket();
          latestTime = OrderOpenTime();
@@ -301,20 +312,18 @@ bool closeAllOrder(int slippage) {
       if(OrderSelect(i, SELECT_BY_POS) == true) {
          if(OrderType() == ORDER_TYPE_BUY) {
             bool stt = closeOrder(OrderTicket(), OrderLots(), Bid, slippage);
-            bool finalStt = finalStt && stt;
+            finalStt = finalStt && stt;
          } 
          
          else if(OrderType() == ORDER_TYPE_SELL) {
             bool stt = closeOrder(OrderTicket(), OrderLots(), Ask, slippage);
-            bool finalStt = finalStt && stt;
+            finalStt = finalStt && stt;
          }
       }
    }
    
    return finalStt;
 }
-
-
 
 
 /*********************************
@@ -548,35 +557,62 @@ bool inRange(double value, double center, double _delta) {
 // Definition of an hour. This is necessary for a drop down menu for hours input.
 enum ENUM_HOUR
 {
-   h00 = 00, // 00:00
-   h01 = 01, // 01:00
-   h02 = 02, // 02:00
-   h03 = 03, // 03:00
-   h04 = 04, // 04:00
-   h05 = 05, // 05:00
-   h06 = 06, // 06:00
-   h07 = 07, // 07:00
-   h08 = 08, // 08:00
-   h09 = 09, // 09:00
-   h10 = 10, // 10:00
-   h11 = 11, // 11:00
-   h12 = 12, // 12:00
-   h13 = 13, // 13:00
-   h14 = 14, // 14:00
-   h15 = 15, // 15:00
-   h16 = 16, // 16:00
-   h17 = 17, // 17:00
-   h18 = 18, // 18:00
-   h19 = 19, // 19:00
-   h20 = 20, // 20:00
-   h21 = 21, // 21:00
-   h22 = 22, // 22:00
-   h23 = 23, // 23:00
+   h00 = 000, // 00:00
+   h01 = 010, // 01:00
+   h02 = 020, // 02:00
+   h03 = 030, // 03:00
+   h04 = 040, // 04:00
+   h05 = 050, // 05:00
+   h06 = 060, // 06:00
+   h07 = 070, // 07:00
+   h08 = 080, // 08:00
+   h09 = 090, // 09:00
+   h10 = 100, // 10:00
+   h11 = 110, // 11:00
+   h12 = 120, // 12:00
+   h13 = 130, // 13:00
+   h14 = 140, // 14:00
+   h15 = 150, // 15:00
+   h16 = 160, // 16:00
+   h17 = 170, // 17:00
+   h18 = 180, // 18:00
+   h19 = 190, // 19:00
+   h20 = 200, // 20:00
+   h21 = 210, // 21:00
+   h22 = 220, // 22:00
+   h23 = 230, // 23:00
+   h00p5 = 005, // 00:30
+   h01p5 = 015, // 01:30
+   h02p5 = 025, // 02:30
+   h03p5 = 035, // 03:30
+   h04p5 = 045, // 04:30
+   h05p5 = 055, // 05:30
+   h06p5 = 065, // 06:30
+   h07p5 = 075, // 07:30
+   h08p5 = 085, // 08:30
+   h09p5 = 095, // 09:30
+   h10p5 = 105, // 10:30
+   h11p5 = 115, // 11:30
+   h12p5 = 125, // 12:30
+   h13p5 = 135, // 13:30
+   h14p5 = 145, // 14:30
+   h15p5 = 155, // 15:30
+   h16p5 = 165, // 16:30
+   h17p5 = 175, // 17:30
+   h18p5 = 185, // 18:30
+   h19p5 = 195, // 19:30
+   h20p5 = 205, // 20:30
+   h21p5 = 215, // 21:30
+   h22p5 = 225, // 22:30
+   h23p5 = 235, // 23:30   
+
 };
 
 bool checkActiveHours(ENUM_HOUR StartHour, ENUM_HOUR LastHour)
 {
    // Set operations disabled by default.
+   StartHour = StartHour/10;
+   LastHour = LastHour/10;
    bool OperationsAllowed = false;
    // Check if the current hour is between the allowed hours of operations. If so, return true.
    if ((StartHour == LastHour) && (Hour() == StartHour))
@@ -587,3 +623,50 @@ bool checkActiveHours(ENUM_HOUR StartHour, ENUM_HOUR LastHour)
       OperationsAllowed = true;
    return OperationsAllowed;
 }
+
+
+/*******************************
+* UTILS BY GPT
+*******************************/
+int getLastOpenedOrderIdByType() {
+    int lastOrder = OrdersTotal() - 1; // Get the index of the last order
+    if (lastOrder >= 0) { // Check if there is at least one order
+        for (int i = lastOrder; i >= 0; i--) { // Loop through orders in reverse order
+            if (OrderSelect(i, SELECT_BY_POS, MODE_TRADES)) { // Select the order
+                if (OrderType() == ORDER_TYPE_BUY || OrderType() == ORDER_TYPE_SELL) { // Check if the order type matches
+                    int lastOrderId = OrderTicket(); // Get the order ID
+                    return lastOrderId; // Return the order ID
+                }
+            } else {
+                Print("Error selecting order: ", GetLastError());
+            }
+        }
+    } else {
+        Print("No orders found.");
+    }
+    return 0; // Return 0 if no matching order is found
+}
+
+
+int randomZeroOrOne()
+{
+    int randomNum = MathRand();
+    int zeroOrOne = randomNum % 2;
+    return zeroOrOne;
+}
+
+
+double calculateClosedProfit(datetime from, datetime to)
+{
+    double profit = 0;
+    int total = OrdersHistoryTotal();
+    for (int i = total - 1; i >= 0; i--) {
+        if (OrderSelect(i, SELECT_BY_POS, MODE_HISTORY)) {
+            if (OrderCloseTime() >= from && OrderCloseTime() <= to) {
+                profit += OrderProfit();
+            }
+        }
+    }
+    return profit;
+}
+

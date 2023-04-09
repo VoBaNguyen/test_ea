@@ -102,3 +102,8 @@
    at System.IO.Pipes.PipeStream.EndWrite(IAsyncResult asyncResult)
    at System.IO.Pipes.PipeStream.WriteCore(Byte[] buffer, Int32 offset, Int32 count)
    at Trading_Simulator.pipe.MT4Server.Send(Byte[] msg, Int32 length)
+4/2/2023 9:02:33 PM  System.IO.IOException: Pipe is broken.
+   at System.IO.Pipes.PipeStream.WinIOError(Int32 errorCode)
+   at System.IO.Pipes.PipeStream.BeginWriteCore(Byte[] buffer, Int32 offset, Int32 count, AsyncCallback callback, Object state)
+   at System.IO.Pipes.PipeStream.WriteCore(Byte[] buffer, Int32 offset, Int32 count)
+   at Trading_Simulator.pipe.MT4Server.Send(Byte[] msg, Int32 length)

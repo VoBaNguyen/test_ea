@@ -1,0 +1,52 @@
+0	15:18:31.079	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:18:31.110	test_obv XAUUSDm,H1: initialized
+0	15:18:31.110	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:18:31.110	test_obv XAUUSDm,H1: uninit reason 0
+0	15:18:31.126	Script test_obv XAUUSDm,H1: removed
+0	15:19:30.260	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:19:30.276	test_obv XAUUSDm,H1: initialized
+0	15:19:30.276	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:19:30.276	test_obv XAUUSDm,H1: uninit reason 0
+0	15:19:30.307	Script test_obv XAUUSDm,H1: removed
+0	15:20:02.769	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:20:02.785	test_obv XAUUSDm,H1: initialized
+0	15:20:02.785	test_obv XAUUSDm,H1: Obv max: -36412.00 - Obv min: -59296.00
+0	15:20:02.785	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:20:02.785	test_obv XAUUSDm,H1: uninit reason 0
+0	15:20:02.800	Script test_obv XAUUSDm,H1: removed
+0	15:20:18.276	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:20:18.276	test_obv XAUUSDm,H1: initialized
+0	15:20:18.276	test_obv XAUUSDm,H1: Alert: Obv max: %.2f - Obv min: %.2f-36412.0-59296.0
+0	15:20:18.276	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:20:18.276	test_obv XAUUSDm,H1: uninit reason 0
+0	15:20:18.370	Script test_obv XAUUSDm,H1: removed
+0	15:20:45.070	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:20:45.085	test_obv XAUUSDm,H1: initialized
+0	15:20:45.085	test_obv XAUUSDm,H1: Obv max: -36412.00 - Obv min: -59296.00
+0	15:20:45.085	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:20:45.085	test_obv XAUUSDm,H1: uninit reason 0
+0	15:20:45.101	Script test_obv XAUUSDm,H1: removed
+0	15:21:31.268	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:21:31.284	test_obv XAUUSDm,H1: initialized
+0	15:21:31.284	test_obv XAUUSDm,H1: Obv max: -36412.00 - Obv min: -59296.00
+0	15:21:31.284	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:21:31.284	test_obv XAUUSDm,H1: uninit reason 0
+0	15:21:31.299	Script test_obv XAUUSDm,H1: removed
+0	15:21:43.266	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:21:43.281	test_obv XAUUSDm,H1: initialized
+0	15:21:43.281	test_obv XAUUSDm,H1: Obv max: -36412.00 - Obv min: -59296.00
+0	15:21:43.281	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:21:43.281	test_obv XAUUSDm,H1: uninit reason 0
+0	15:21:43.312	Script test_obv XAUUSDm,H1: removed
+0	15:22:07.658	Script test\test_obv XAUUSDm,H1: loaded successfully
+0	15:22:07.658	test_obv XAUUSDm,H1: initialized
+0	15:22:07.658	test_obv XAUUSDm,H1: Obv max: -36412.00 - Obv min: -59296.00
+0	15:22:07.658	test_obv XAUUSDm,H1: Alert: 22884.0
+0	15:22:07.658	test_obv XAUUSDm,H1: uninit reason 0
+0	15:22:07.690	Script test_obv XAUUSDm,H1: removed
+0	15:22:24.076	Script test\test_obv EURUSDm,M15: loaded successfully
+0	15:22:24.092	test_obv EURUSDm,M15: initialized
+0	15:22:24.092	test_obv EURUSDm,M15: Obv max: 106100.00 - Obv min: 104992.00
+0	15:22:24.092	test_obv EURUSDm,M15: Alert: 1108.0
+0	15:22:24.092	test_obv EURUSDm,M15: uninit reason 0
+0	15:22:24.092	Script test_obv EURUSDm,M15: removed

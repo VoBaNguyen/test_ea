@@ -102,10 +102,10 @@ void OnTick()
    if(totalPos < maxPos) {
    
       // Signal
-      bool isMA1Upward   = idcUpward(bufMA1, arrSize, thresholdMA);   
-      bool isMA1Downward = idcDownward(bufMA1, arrSize, thresholdMA);
-      bool isKNUpward    = idcUpward(keltnerMid, arrSize, thresholdKN);
-      bool isKNDownward  = idcDownward(keltnerMid, arrSize, thresholdKN);
+      bool isMA1Upward   = idcUpward(bufMA1, arrSize);   
+      bool isMA1Downward = idcDownward(bufMA1, arrSize);
+      bool isKNUpward    = idcUpward(keltnerMid, arrSize);
+      bool isKNDownward  = idcDownward(keltnerMid, arrSize);
       double keltnerWidth = MathAbs(lowKN-upKN);
       double curMA1 = NormalizeDouble(iMA(Symbol(),TIME_FRAME,periodMA1,0,MODE_SMA,PRICE_CLOSE,0), _Digits);
       double lastMA1 = NormalizeDouble(iMA(Symbol(),TIME_FRAME,periodMA1,0,MODE_SMA,PRICE_CLOSE,1), _Digits);
